@@ -1,0 +1,55 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "[Tests] PHPUnit",
+            "type": "shell",
+            "command": "./vendor/bin/phpunit",
+            "problemMatcher": []
+        },
+        {
+            "label": "[Tests] PHPUnit (coverage-html)",
+            "type": "shell",
+            "command": "./vendor/bin/phpunit --coverage-html .logs/coverage-html",
+            "problemMatcher": []
+        },
+        {
+            "label": "[CS] PHP CS Fixer",
+            "type": "shell",
+            "command": "./vendor/bin/php-cs-fixer fix -v",
+            "problemMatcher": []
+        },
+        {
+            "label": "Commit",
+            "type": "shell",
+            "command": "git add -A && git commit -m \"U-$(Get-Date -UFormat +'%y%m%d%H%M%S')\"",
+            "problemMatcher": []
+        },
+        {
+            "label": "Commit [skip ci]",
+            "type": "shell",
+            "command": "git add -A && git commit -m \"U-$(Get-Date -UFormat +'%y%m%d%H%M%S')' '[skip' 'ci]\" && git push",
+            "problemMatcher": []
+        },
+        {
+            "label": "Commit & Push",
+            "type": "shell",
+            "command": "git add -A && git commit -m \"U-$(Get-Date -UFormat +'%y%m%d%H%M%S')\" && git push",
+            "problemMatcher": []
+        },
+        {
+            "label": "[SA] Psalm",
+            "type": "shell",
+            "command": "psalm",
+            "problemMatcher": []
+        },
+        {
+            "label": "[SA] Psalm (baseline)",
+            "type": "shell",
+            "command": "psalm --set-baseline=psalm-baseline.xml",
+            "problemMatcher": []
+        }
+    ]
+}
