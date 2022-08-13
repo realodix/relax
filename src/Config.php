@@ -54,8 +54,6 @@ class Config
      */
     private static function resolveSet($ruleSet): RuleSetInterface
     {
-        $nameSpace = 'Realodix\\Relax\\RuleSet\\';
-
         if (is_string($ruleSet)) {
             if (preg_match('/^@[A-Z]/', $ruleSet)) {
                 $ruleSet = self::$ruleSetNameSpace.ltrim($ruleSet, '@');
@@ -72,7 +70,7 @@ class Config
                 // Diisi 1 karena ditunjukkan untuk `create()` (1 level di atasnya)
                 $stack[1]['class'].$stack[1]['type'].$stack[1]['function'],
                 $stack[1]['line'],
-                ltrim($ruleSet, $nameSpace),
+                ltrim($ruleSet, self::$ruleSetNameSpace),
             ));
         }
 
