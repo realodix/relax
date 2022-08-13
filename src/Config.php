@@ -30,7 +30,7 @@ class Config
         }
 
         if (is_string($rules) || $rules instanceof RuleSetInterface) {
-            $ruleSet = self::ruleSet($rules);
+            $ruleSet = self::resolveSet($rules);
             $ruleSetName = $ruleSet->getName().' ('.count($ruleSet->getRules()).' rules)';
             $rules = $ruleSet->getRules();
         }
@@ -48,17 +48,21 @@ class Config
     }
 
     /**
+     * Resolve input set into group of rules.
+     *
      * @param string|RuleSetInterface $ruleSet
      */
-    private static function ruleSet($ruleSet): RuleSetInterface
+    private static function resolveSet($ruleSet): RuleSetInterface
     {
         $nameSpace = 'Realodix\\Relax\\RuleSet\\';
 
         if (is_string($ruleSet)) {
-            $ruleSet = self::$ruleSetNameSpace.ucfirst($ruleSet);
+            if (preg_match('/^@[A-Z]/', $ruleSet)) {
+                $ruleSet = self::$ruleSetNameSpace.ltrim($ruleSet, '@');
 
-            if (class_exists($ruleSet) && is_subclass_of($ruleSet, RuleSetInterface::class)) {
-                return new $ruleSet;
+                if (class_exists($ruleSet) && is_subclass_of($ruleSet, RuleSetInterface::class)) {
+                    return new $ruleSet;
+                }
             }
 
             $stack = debug_backtrace();

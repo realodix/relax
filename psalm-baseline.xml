@@ -1,2 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<files psalm-version="4.26.0@6998fabb2bf528b65777bf9941920888d23c03ac"/>
+<files psalm-version="4.26.0@6998fabb2bf528b65777bf9941920888d23c03ac">
+  <file src="src/Config.php">
+    <PossiblyUndefinedArrayOffset occurrences="4">
+      <code>$stack[0]['class']</code>
+      <code>$stack[0]['type']</code>
+      <code>$stack[1]['class']</code>
+      <code>$stack[1]['type']</code>
+    </PossiblyUndefinedArrayOffset>
+  </file>
+</files>

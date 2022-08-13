@@ -51,7 +51,7 @@ class RuleSetTest extends TestCase
     {
         $this->assertInstanceOf(
             ConfigInterface::class,
-            Config::create('realodix')
+            Config::create('@Realodix')
         );
     }
 
@@ -67,6 +67,36 @@ class RuleSetTest extends TestCase
         $this->assertInstanceOf(
             \PhpCsFixer\ConfigInterface::class,
             Config::create('string')
+        );
+    }
+
+    /**
+     * Rule set is called via string, but not valid
+     *
+     * @test
+     */
+    public function ruleSetIsCalledViaStringButNotValid2(): void
+    {
+        $this->expectException(\InvalidArgumentException::class);
+
+        $this->assertInstanceOf(
+            \PhpCsFixer\ConfigInterface::class,
+            Config::create('Realodix')
+        );
+    }
+
+    /**
+     * Rule set is called via string, but not valid
+     *
+     * @test
+     */
+    public function ruleSetIsCalledViaStringButNotValid3(): void
+    {
+        $this->expectException(\InvalidArgumentException::class);
+
+        $this->assertInstanceOf(
+            \PhpCsFixer\ConfigInterface::class,
+            Config::create('realodix')
         );
     }
 

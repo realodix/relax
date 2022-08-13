@@ -16,7 +16,7 @@ class AbstractRuleSetTest extends TestCase
     public function testGetDefaultNameRules(): void
     {
         $actual = $this->nameCleanup((new DefaultName)->getName());
-        $expected = Helper::classBasename(new DefaultName);
+        $expected = '@'.Helper::classBasename(new DefaultName);
 
         $this->assertSame($expected, $actual);
     }

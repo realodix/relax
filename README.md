@@ -30,7 +30,7 @@ In your PHP CS Fixer configuration file, use the following contents:
 
 use Realodix\Relax\Config;
 
-return Config::create('realodix');
+return Config::create('@Realodix');
 ```
 
 #### Rule Sets
@@ -39,9 +39,9 @@ Rule set defines a set of rules that can be used to fix code style issues in you
 
 | Preset | Description |
 | -------- |-------------|
-| [`laravel`][rs_laravel] | The rule set by Laravel Pint |
-| [`realodix`][rs_realodix] | Inherits `Laravel` with some tweaks |
-| [`spatie`][rs_spatie] | The rule set used by Spatie |
+| [`@Laravel`][rs_laravel] | The rule set by Laravel Pint |
+| [`@Realodix`][rs_realodix] | Inherits `@Laravel` with some tweaks |
+| [`@Spatie`][rs_spatie] | The rule set used by Spatie |
 
 #### Custom Fixers
 
@@ -94,7 +94,7 @@ $finder = Finder::laravel(__DIR__.'Foo')
     ->notName('*.foo.php')
     ->append(['.php-cs-fixer.dist.php']);
 
-return Config::create('realodix', $localRules)
+return Config::create('@Realodix', $localRules)
     ->setRiskyAllowed(false)
     ->registerCustomFixers(new \PhpCsFixerCustomFixers\CustomFixer());
 ```
