@@ -43,6 +43,8 @@ Rule set defines a set of rules that can be used to fix code style issues in you
 | [`@Realodix`][rs_realodix] | Inherits `@Laravel` with some tweaks |
 | [`@Spatie`][rs_spatie] | The rule set used by Spatie |
 
+:bulb: If you wish, you can also add the [PHP-CS-Fixer rule sets][pcf_doc_ruleset].
+
 #### Custom Fixers
 
 - [`Laravel/laravel_phpdoc_alignment`][`fx_laravel_phpdoc_alignment`]
@@ -75,15 +77,16 @@ use Realodix\Relax\Finder;
 
 // You can add or override rule set
 $localRules = [
-    // Adding a rule
+    // Add rule
     'array_syntax' => true,
-    // Adding a rule or override predefined rules
-    'binary_operator_spaces' => [
-        'operators' => ['=>' => 'align_single_space_minimal']
-    ],
-    // Override predefined rules
-    'ternary_operator_spaces' => false,
-    // Adding custom rules
+
+    // Add rule or override predefined rule
+    'visibility_required' => true,
+
+    // Override predefined rule
+    'braces' => false,
+
+    // Add custom rule
     'CustomFixer/rule_1' => true,
     'CustomFixer/rule_2' => true,
 ];
@@ -94,14 +97,14 @@ $finder = Finder::laravel(__DIR__.'Foo')
     ->notName('*.foo.php')
     ->append(['.php-cs-fixer.dist.php']);
 
-return Config::create('@Realodix', $localRules)
+return Config::create('@PSR2', $localRules)
     ->setRiskyAllowed(false)
     ->registerCustomFixers(new \PhpCsFixerCustomFixers\CustomFixer());
 ```
 
 Relax is built on top of [`PHP-CS-Fixer`][php-cs-fixer]. Therefore, you may use any of its rules to fix code style issues in your project. For more details, see  [PHP-CS-Fixer: Config][pcf_doc_config] documentation and [MLocati: PHP-CS-Fixer Configurator][pcf_doc_config_mlocati].
 
-If you want to completely define rules locally without using existing rule sets, you can do that:
+If you wish to completely define rules locally without using existing rule sets, you can do that:
 
 ```php
 <?php
@@ -181,3 +184,4 @@ This package is licensed under the [MIT License](/LICENSE).
 [pcf_doc_usage]: https://github.com/FriendsOfPHP/PHP-CS-Fixer/blob/master/doc/usage.rst
 [pcf_doc_config]: https://github.com/FriendsOfPHP/PHP-CS-Fixer/blob/master/doc/config.rst
 [pcf_doc_config_mlocati]: https://mlocati.github.io/php-cs-fixer-configurator
+[pcf_doc_ruleset]: https://github.com/FriendsOfPHP/PHP-CS-Fixer/blob/master/doc/ruleSets/index.rst

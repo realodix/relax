@@ -16,7 +16,7 @@ class Config
     {
         $ruleSetName = 'Local rules';
 
-        // Array dicek karena `array_merge()` pada metode ini membutuhkan tipe array.
+        // Array dicek karena `array_merge()` pada `setRules()` membutuhkan tipe array.
         // String|RuleSetInterface dicek karena `ruleSet()` membutuhkannya.
         if (! is_array($rules) && ! is_string($rules) && ! $rules instanceof RuleSetInterface) {
             $stack = debug_backtrace();
@@ -51,16 +51,23 @@ class Config
      * Resolve input set into group of rules.
      *
      * @param string|RuleSetInterface $ruleSet
+     *
+     * @return RuleSetInterface|object
      */
-    private static function resolveSet($ruleSet): RuleSetInterface
+    private static function resolveSet($ruleSet)
     {
         if (is_string($ruleSet)) {
             if (preg_match('/^@[A-Z]/', $ruleSet)) {
-                $ruleSet = self::$ruleSetNameSpace.ltrim($ruleSet, '@');
+                $localRuleSet = self::$ruleSetNameSpace.ltrim($ruleSet, '@');
 
-                if (class_exists($ruleSet) && is_subclass_of($ruleSet, RuleSetInterface::class)) {
-                    return new $ruleSet;
+                if (class_exists($localRuleSet) && is_subclass_of($localRuleSet, RuleSetInterface::class)) {
+                    return new $localRuleSet;
                 }
+
+                $pcfNameSpace = 'PhpCsFixer\\RuleSet\\Sets\\';
+                $pcfRuleSet = $pcfNameSpace.ltrim(str_replace(':risky', 'Risky', $ruleSet), '@').'Set';
+
+                return new $pcfRuleSet;
             }
 
             $stack = debug_backtrace();

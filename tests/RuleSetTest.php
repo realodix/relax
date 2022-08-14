@@ -2,7 +2,6 @@
 
 namespace Realodix\Relax\Tests;
 
-use PhpCsFixer\ConfigInterface;
 use PhpCsFixer\FixerFactory;
 use PhpCsFixer\RuleSet\RuleSet as PhpCsFixerRuleSet;
 use PHPUnit\Framework\TestCase;
@@ -37,7 +36,7 @@ class RuleSetTest extends TestCase
     public function ruleSetIsCalledViaMethod(): void
     {
         $this->assertInstanceOf(
-            ConfigInterface::class,
+            \PhpCsFixer\ConfigInterface::class,
             Config::create(new RuleSet)
         );
     }
@@ -50,8 +49,34 @@ class RuleSetTest extends TestCase
     public function ruleSetIsCalledViaString(): void
     {
         $this->assertInstanceOf(
-            ConfigInterface::class,
+            \PhpCsFixer\ConfigInterface::class,
             Config::create('@Realodix')
+        );
+    }
+
+    /**
+     * PHP-CS-Fixer rule sets is called via string
+     *
+     * @test
+     */
+    public function phpCsFixerRuleSetsIsCalledViaString(): void
+    {
+        $this->assertInstanceOf(
+            \PhpCsFixer\ConfigInterface::class,
+            Config::create('@PSR2')
+        );
+    }
+
+    /**
+     * PHP-CS-Fixer rule sets is called via string
+     *
+     * @test
+     */
+    public function phpCsFixerRuleSetsIsCalledViaString2(): void
+    {
+        $this->assertInstanceOf(
+            \PhpCsFixer\ConfigInterface::class,
+            Config::create('@PhpCsFixer:risky')
         );
     }
 
@@ -123,7 +148,7 @@ class RuleSetTest extends TestCase
     public function ruleSetIsCalledViaArray(): void
     {
         $this->assertInstanceOf(
-            ConfigInterface::class,
+            \PhpCsFixer\ConfigInterface::class,
             Config::create(['foo' => 'bar'])
         );
     }
