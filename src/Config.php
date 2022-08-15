@@ -14,8 +14,6 @@ class Config
      */
     public static function create($rules, array $localRules = []): ConfigInterface
     {
-        $ruleSetName = 'Local rules';
-
         // Array dicek karena `array_merge()` pada `setRules()` membutuhkan tipe array.
         // String|RuleSetInterface dicek karena `ruleSet()` membutuhkannya.
         if (! is_array($rules) && ! is_string($rules) && ! $rules instanceof RuleSetInterface) {
@@ -28,6 +26,8 @@ class Config
                 gettype($rules)
             ));
         }
+
+        $ruleSetName = 'Local rules';
 
         if (is_string($rules) || $rules instanceof RuleSetInterface) {
             $ruleSet = self::resolveSet($rules);
@@ -67,7 +67,9 @@ class Config
                 $pcfNameSpace = 'PhpCsFixer\\RuleSet\\Sets\\';
                 $pcfRuleSet = $pcfNameSpace.ltrim(str_replace(':risky', 'Risky', $ruleSet), '@').'Set';
 
-                return new $pcfRuleSet;
+                if (class_exists($pcfRuleSet)) {
+                    return new $pcfRuleSet;
+                }
             }
 
             $stack = debug_backtrace();

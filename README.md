@@ -23,7 +23,13 @@ For more details, see [PHP-CS-Fixer: Usage][pcf_doc_usage] documentation.
 
 ## Configuring Relax
 
-In your PHP CS Fixer configuration file, use the following contents:
+Run this command below:
+
+```sh
+./vendor/bin/relax init
+```
+
+or in your PHP CS Fixer configuration file, use the following contents:
 
 ```php
 <?php
@@ -86,7 +92,7 @@ $localRules = [
     // Override predefined rule
     'braces' => false,
 
-    // Add custom rule
+    // Add custom fixers
     'CustomFixer/rule_1' => true,
     'CustomFixer/rule_2' => true,
 ];
@@ -98,6 +104,7 @@ $finder = Finder::laravel(__DIR__.'Foo')
     ->append(['.php-cs-fixer.dist.php']);
 
 return Config::create('@PSR2', $localRules)
+    ->setFinder($finder)
     ->setRiskyAllowed(false)
     ->registerCustomFixers(new \PhpCsFixerCustomFixers\CustomFixer());
 ```
