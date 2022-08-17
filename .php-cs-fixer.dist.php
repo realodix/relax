@@ -8,7 +8,7 @@ $localRules = [
 ];
 
 $finder = Finder::base()
-    ->append(['.php-cs-fixer.dist.php']);
+    ->append(['.php-cs-fixer.dist.php', 'bin/relax']);
 
 return Config::create('@Realodix', $localRules)
     ->setFinder($finder);
