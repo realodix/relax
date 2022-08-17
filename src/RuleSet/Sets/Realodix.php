@@ -1,8 +1,9 @@
 <?php
 
-namespace Realodix\Relax\RuleSet;
+namespace Realodix\Relax\RuleSet\Sets;
 
 use PhpCsFixerCustomFixers\Fixer;
+use Realodix\Relax\RuleSet\AbstractRuleSet;
 
 final class Realodix extends AbstractRuleSet
 {

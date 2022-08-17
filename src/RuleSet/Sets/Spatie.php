@@ -1,6 +1,8 @@
 <?php
 
-namespace Realodix\Relax\RuleSet;
+namespace Realodix\Relax\RuleSet\Sets;
+
+use Realodix\Relax\RuleSet\AbstractRuleSet;
 
 /**
  * Latest commit a312900 on Nov 15, 2021

@@ -1,6 +1,6 @@
 <?php
 
-namespace Realodix\Relax\Tests;
+namespace Realodix\Relax\Tests\Unit;
 
 use PhpCsFixer\Finder as PhpCsFixerFinder;
 use PHPUnit\Framework\TestCase;
