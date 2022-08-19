@@ -22,6 +22,7 @@ final class Realodix extends AbstractRuleSet
                 'anonymous_classes_opening_brace' => 'next_line_unless_newline_at_signature_end',
             ],
             'method_argument_space' => ['on_multiline' => 'ignore', 'after_heredoc' => true],
+            'whitespace_after_comma_in_array' => ['ensure_single_space' => true],
             // Laravel/laravel_
             'Laravel/laravel_phpdoc_alignment' => false,
             'Laravel/laravel_phpdoc_order' => false,
