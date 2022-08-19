@@ -20,7 +20,7 @@ class GenerateConfigCommand extends Command
      */
     protected $input;
 
-    const FILE_NAME = '.php-cs-fixer.php';
+    private const FILE_NAME = '.php-cs-fixer.php';
 
     public function configure(): void
     {
