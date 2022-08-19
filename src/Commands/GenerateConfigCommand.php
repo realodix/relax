@@ -4,7 +4,6 @@ namespace Realodix\Relax\Commands;
 
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 
@@ -20,12 +19,13 @@ class GenerateConfigCommand extends Command
      */
     protected $input;
 
+    protected static $defaultName = 'init';
+
     private const FILE_NAME = '.php-cs-fixer.php';
 
     public function configure(): void
     {
-        $this->setName('init')
-            ->addArgument('init', InputOption::VALUE_REQUIRED, 'Relax initialization file');
+        $this->setDescription('Generate PHP-CS-FIXER configuration file.');
     }
 
     /**
