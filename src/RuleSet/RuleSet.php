@@ -57,9 +57,9 @@ final class RuleSet
      *
      * @param array|string|RuleSetInterface $ruleSet
      *
-     * @throws \InvalidArgumentException
-     *
      * @return array|RuleSetInterface|RuleSetDescriptionInterface
+     *
+     * @throws \InvalidArgumentException
      */
     private function getSetDefinitions($ruleSet)
     {

@@ -27,7 +27,7 @@ final class Realodix extends AbstractRuleSet
             'Laravel/laravel_phpdoc_order' => false,
             'Laravel/laravel_phpdoc_separation' => false,
             'phpdoc_align' => ['tags' => ['param', 'throws', 'type', 'var', 'return']],
-            'phpdoc_order' => true,
+            'phpdoc_order' => ['order' => ['param', 'return', 'throws']],
             'phpdoc_separation' => true,
 
             /*
