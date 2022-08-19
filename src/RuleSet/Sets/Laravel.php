@@ -3,6 +3,7 @@
 namespace Realodix\Relax\RuleSet\Sets;
 
 use Realodix\Relax\RuleSet\AbstractRuleSet;
+
 /**
  * Latest commit c598b68 on Jul 14, 2022
  * https://github.com/laravel/pint/blob/main/resources/presets/laravel.php

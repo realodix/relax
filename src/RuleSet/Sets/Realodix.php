@@ -18,13 +18,17 @@ final class Realodix extends AbstractRuleSet
             'phpdoc_summary' => false,
             'ternary_operator_spaces' => false,
             'unary_operator_spaces' => false,
-            'Laravel/laravel_phpdoc_alignment' => false,
-            'Laravel/laravel_phpdoc_order' => false,
-            'Laravel/laravel_phpdoc_separation' => false,
             'curly_braces_position' => [
                 'anonymous_classes_opening_brace' => 'next_line_unless_newline_at_signature_end',
             ],
             'method_argument_space' => ['on_multiline' => 'ignore', 'after_heredoc' => true],
+            // Laravel/laravel_
+            'Laravel/laravel_phpdoc_alignment' => false,
+            'Laravel/laravel_phpdoc_order' => false,
+            'Laravel/laravel_phpdoc_separation' => false,
+            'phpdoc_align' => ['tags' => ['param', 'throws', 'type', 'var', 'return']],
+            'phpdoc_order' => true,
+            'phpdoc_separation' => true,
 
             /*
              * Addition
@@ -43,18 +47,6 @@ final class Realodix extends AbstractRuleSet
             'phpdoc_var_annotation_correct_order' => true,
             'simple_to_complex_string_variable' => true,
             'single_line_comment_spacing' => true,
-
-            // Relates to changes to `Laravel/laravel_` rules
-            'phpdoc_align' => [
-                // align_phpdoc
-                'tags' => [
-                    'param',
-                    'throws', 'type', 'var',
-                    'return',
-                ],
-            ],
-            'phpdoc_separation' => true,
-            'phpdoc_order' => true,
 
             Fixer\CommentSurroundedBySpacesFixer::name() => true,
             Fixer\MultilineCommentOpeningClosingAloneFixer::name() => true,
