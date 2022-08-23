@@ -28,6 +28,7 @@ final class RealodixPlus extends AbstractRuleSet
                     'expectedException', 'expectedExceptionCode', 'expectedExceptionMessage', 'expectedExceptionMessageRegExp',
                 ],
             ],
+            'php_unit_method_casing' => true,
 
             Fixer\NoUselessCommentFixer::name() => true,
         ];

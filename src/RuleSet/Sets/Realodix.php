@@ -43,7 +43,6 @@ final class Realodix extends AbstractRuleSet
             'no_unneeded_import_alias' => true,
             'no_useless_else' => true,
             'no_useless_nullsafe_operator' => true,
-            'php_unit_method_casing' => true,
             'phpdoc_trim_consecutive_blank_line_separation' => true,
             'phpdoc_var_annotation_correct_order' => true,
             'simple_to_complex_string_variable' => true,
