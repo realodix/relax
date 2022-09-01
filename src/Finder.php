@@ -22,6 +22,9 @@ class Finder
                 '_ide_helper_models.php',
                 '_ide_helper.php',
                 '.phpstorm.meta.php',
+            ])->exclude([
+                'build',
+                'node_modules',
             ]);
     }
 
@@ -36,8 +39,6 @@ class Finder
                 'public',
                 'resources',
                 'storage',
-                'node_modules',
-            ])
-            ->notName('*.blade.php');
+            ])->notName('*.blade.php');
     }
 }
