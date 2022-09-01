@@ -29,7 +29,12 @@ final class Realodix extends AbstractRuleSet
             'Laravel/laravel_phpdoc_separation' => false,
             'phpdoc_align' => ['tags' => ['param', 'throws', 'type', 'var', 'return']],
             'phpdoc_order' => ['order' => ['param', 'return', 'throws']],
-            'phpdoc_separation' => true,
+            'phpdoc_separation' => [
+                'groups' => [
+                    // https://phpunit.readthedocs.io/en/9.5/annotations.html
+                    ['test', 'dataProvider'],
+                ],
+            ],
 
             /*
              * Addition
