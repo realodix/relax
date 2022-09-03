@@ -44,7 +44,6 @@ final class Realodix extends AbstractRuleSet
             'new_with_braces' => ['named_class' => false, 'anonymous_class' => false],
             'no_empty_comment' => true,
             'no_superfluous_phpdoc_tags' => ['allow_mixed' => true, 'allow_unused_params' => true],
-            'no_trailing_comma_in_singleline_function_call' => true,
             'no_unneeded_import_alias' => true,
             'no_useless_else' => true,
             'no_useless_nullsafe_operator' => true,
