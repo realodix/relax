@@ -28,11 +28,29 @@ final class Realodix extends AbstractRuleSet
             'Laravel/laravel_phpdoc_order' => false,
             'Laravel/laravel_phpdoc_separation' => false,
             'phpdoc_align' => ['tags' => ['param', 'throws', 'type', 'var', 'return']],
-            'phpdoc_order' => ['order' => ['param', 'return', 'throws']],
+            'phpdoc_order' => [
+                'order' => [
+                    'test', 'dataProvider', 'testWith',
+                    'param', 'return', 'throws',
+                ],
+            ],
             'phpdoc_separation' => [
                 'groups' => [
+                    ['param', 'param-out', 'return'],
+                    ['template', 'extends', 'implements', 'template-extends', 'template-implements', 'template-covariant', 'template-use'],
+                    // https://github.com/FriendsOfPHP/PHP-CS-Fixer/blob/master/doc/rules/phpdoc/phpdoc_separation.rst
+                    // Dengan perubahan `deprecated` & `since` digabungkan ke kolompok `package`.
+                    ['category', 'package', 'subpackage', 'deprecated', 'since'], ['link', 'see'],
+                    ['property', 'property-read', 'property-write'], ['author', 'copyright', 'license'],
                     // https://phpunit.readthedocs.io/en/9.5/annotations.html
-                    ['test', 'dataProvider'],
+                    ['test', 'testWith', 'dataProvider', 'covers', 'uses'], ['runInSeparateProcess', 'preserveGlobalState'],
+                    ['runTestsInSeparateProcesses', 'runClassInSeparateProcess'],
+                    // https://psalm.dev/docs/annotating_code/supported_annotations/
+                    ['psalm-param', 'psalm-return', 'psalm-suppress', 'psalm-pure', 'psalm-param-out', 'psalm-template',
+                        'psalm-assert', 'psalm-assert-if-true', 'psalm-assert-if-false', 'psalm-if-this-is', 'psalm-this-out',
+                        'psalm-property', 'psalm-property-read', 'psalm-property-write', ],
+                    // PHPSatan
+                    ['phpstan-param', 'phpstan-return', 'phpstan-type', 'phpstan-import-type'],
                 ],
             ],
 
