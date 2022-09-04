@@ -55,8 +55,7 @@ final class RuleSet
      * - Relax: RuleSetInterface
      * - PhpCsFixer: RuleSetDescriptionInterface
      *
-     * @param array|string|RuleSetInterface $ruleSet
-     *
+     * @param  array|string|RuleSetInterface                      $ruleSet
      * @return array|RuleSetInterface|RuleSetDescriptionInterface
      *
      * @throws \InvalidArgumentException
