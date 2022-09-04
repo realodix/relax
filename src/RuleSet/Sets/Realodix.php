@@ -30,7 +30,6 @@ final class Realodix extends AbstractRuleSet
             'phpdoc_align' => ['tags' => ['param', 'throws', 'type', 'var', 'return']],
             'phpdoc_order' => [
                 'order' => [
-                    'test', 'dataProvider', 'testWith',
                     'param', 'return', 'throws',
                 ],
             ],
