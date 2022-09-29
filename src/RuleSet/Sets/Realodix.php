@@ -42,7 +42,7 @@ final class Realodix extends AbstractRuleSet
                     ['category', 'package', 'subpackage', 'deprecated', 'since'], ['link', 'see'],
                     ['property', 'property-read', 'property-write'], ['author', 'copyright', 'license'],
                     // https://phpunit.readthedocs.io/en/9.5/annotations.html
-                    ['test', 'testWith', 'dataProvider', 'covers', 'uses'], ['runInSeparateProcess', 'preserveGlobalState'],
+                    ['test', 'testWith', 'dataProvider', 'covers', 'group', 'uses'], ['runInSeparateProcess', 'preserveGlobalState'],
                     ['runTestsInSeparateProcesses', 'runClassInSeparateProcess'],
                     // https://psalm.dev/docs/annotating_code/supported_annotations/
                     ['psalm-param', 'psalm-return', 'psalm-suppress', 'psalm-pure', 'psalm-param-out', 'psalm-template',
