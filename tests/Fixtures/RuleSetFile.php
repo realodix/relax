@@ -8,6 +8,8 @@ final class RuleSetFile extends AbstractRuleSet
 {
     protected function rules(): array
     {
-        return [];
+        return [
+            ['foo' => 'bar'],
+        ];
     }
 }

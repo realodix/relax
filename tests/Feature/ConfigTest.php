@@ -56,4 +56,22 @@ class ConfigTest extends TestCase
             count(Config::create(new RuleSetFile, $rules2)->getRules())
         );
     }
+
+    /**
+     * Nama aturan ketika user menambahkan aturan lokal
+     *
+     * @test
+     */
+    public function theNameOfTheRuleWhenTheUserAddsALocalRule(): void
+    {
+        $this->assertSame(
+            '@RuleSetFile (1 rules)',
+            Config::create(new RuleSetFile)->getName()
+        );
+
+        $this->assertSame(
+            '@RuleSetFile (1 + 1 rules)',
+            Config::create(new RuleSetFile, ['foo' => 'bar'])->getName()
+        );
+    }
 }

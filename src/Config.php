@@ -14,7 +14,10 @@ class Config
     public static function create($rules, array $localRules = []): ConfigInterface
     {
         $ruleSet = new RuleSet($rules);
-        $ruleSetName = $ruleSet->getName().' ('.count($ruleSet->getRules()).' rules)';
+        $numberOfRules = count($localRules) === 0 ?
+            ' ('.count($ruleSet->getRules()).' rules)'
+            : ' ('.count($ruleSet->getRules()).' + '.count($localRules).' rules)';
+        $ruleSetName = $ruleSet->getName().$numberOfRules;
 
         return (new \PhpCsFixer\Config($ruleSetName))
             ->registerCustomFixers(new \PhpCsFixerCustomFixers\Fixers)
