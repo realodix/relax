@@ -62,6 +62,7 @@ final class Realodix extends AbstractRuleSet
             'no_empty_comment' => true,
             'no_superfluous_phpdoc_tags' => ['allow_mixed' => true, 'allow_unused_params' => true],
             'no_unneeded_import_alias' => true,
+            'no_useless_concat_operator' => true,
             'no_useless_else' => true,
             'no_useless_nullsafe_operator' => true,
             'phpdoc_trim_consecutive_blank_line_separation' => true,
