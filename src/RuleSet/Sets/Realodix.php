@@ -40,7 +40,8 @@ final class Realodix extends AbstractRuleSet
                     // https://github.com/FriendsOfPHP/PHP-CS-Fixer/blob/master/doc/rules/phpdoc/phpdoc_separation.rst
                     // Dengan perubahan `deprecated` & `since` digabungkan ke kolompok `package`.
                     ['category', 'package', 'subpackage', 'deprecated', 'since'], ['link', 'see'],
-                    ['property', 'property-read', 'property-write'], ['author', 'copyright', 'license'],
+                    // Add 'method' to 'property'
+                    ['method', 'property', 'property-read', 'property-write'], ['author', 'copyright', 'license'],
                     // https://phpunit.readthedocs.io/en/9.5/annotations.html
                     ['test', 'testWith', 'dataProvider', 'covers', 'group', 'uses'], ['runInSeparateProcess', 'preserveGlobalState'],
                     ['runTestsInSeparateProcesses', 'runClassInSeparateProcess'],
@@ -54,6 +55,8 @@ final class Realodix extends AbstractRuleSet
                         'phpstan-assert', 'phpstan-assert-if-true', 'phpstan-assert-if-false',
                         'phpstan-property', 'phpstan-property-read', 'phpstan-property-write',
                     ],
+                    // Mix
+                    ['var', 'phpstan-var', 'psalm-var'],
                 ],
             ],
 
