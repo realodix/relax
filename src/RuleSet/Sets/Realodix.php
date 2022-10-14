@@ -47,9 +47,13 @@ final class Realodix extends AbstractRuleSet
                     // https://psalm.dev/docs/annotating_code/supported_annotations/
                     ['psalm-param', 'psalm-return', 'psalm-suppress', 'psalm-pure', 'psalm-param-out', 'psalm-template',
                         'psalm-assert', 'psalm-assert-if-true', 'psalm-assert-if-false', 'psalm-if-this-is', 'psalm-this-out',
-                        'psalm-property', 'psalm-property-read', 'psalm-property-write', ],
+                        'psalm-property', 'psalm-property-read', 'psalm-property-write',
+                    ],
                     // PHPSatan
-                    ['phpstan-param', 'phpstan-return', 'phpstan-type', 'phpstan-import-type'],
+                    ['phpstan-param', 'phpstan-return', 'phpstan-pure', 'phpstan-template', 'phpstan-type', 'phpstan-import-type',
+                        'phpstan-assert', 'phpstan-assert-if-true', 'phpstan-assert-if-false',
+                        'phpstan-property', 'phpstan-property-read', 'phpstan-property-write',
+                    ],
                 ],
             ],
 
