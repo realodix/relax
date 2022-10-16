@@ -30,9 +30,9 @@ class ConfigTest extends TestCase
      * @test
      * @dataProvider invalidRuleSetInputProvider
      */
-    public function invalidRuleSetInput($ruleSet): void
+    public function invalidRuleSetInput($ruleSet, $expectException): void
     {
-        $this->expectException(\InvalidArgumentException::class);
+        $this->expectException($expectException);
 
         $this->assertInstanceOf(
             \PhpCsFixer\ConfigInterface::class,

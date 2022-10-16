@@ -2,61 +2,67 @@
 
 namespace Realodix\Relax\RuleSet;
 
-use PhpCsFixer\RuleSet\RuleSetDescriptionInterface;
+use PhpCsFixer\RuleSet\RuleSetDescriptionInterface as PhpCsFixerRuleSetInterface;
+use Realodix\Relax\RuleSet\RuleSetInterface as RelaxRuleSetInterface;
 
 final class RuleSet
 {
     private static string $ruleSetNameSpace = 'Realodix\\Relax\\RuleSet\\Sets\\';
 
     /**
-     * @var array|string|object
+     * @var array|string|RelaxRuleSetInterface|PhpCsFixerRuleSetInterface
      */
-    private $set;
+    private $ruleSet;
 
     /**
-     * @param array|string|RuleSetInterface $set
+     * @param array|string|RelaxRuleSetInterface $ruleSet
      *
      * @throws \InvalidArgumentException
      */
-    public function __construct($set)
+    public function __construct($ruleSet)
     {
-        if (! is_array($set) && ! is_string($set) && ! $set instanceof RuleSetInterface) {
+        if (! is_array($ruleSet) && ! is_string($ruleSet) && ! $ruleSet instanceof RelaxRuleSetInterface) {
             throw new \InvalidArgumentException(sprintf(
                 'The rule set must be of type %s, %s given.',
                 'array|string|'.self::$ruleSetNameSpace.'RuleSetInterface',
-                gettype($set)
+                gettype($ruleSet)
             ));
         }
 
-        $this->set = $this->getSetDefinitions($set);
+        $this->ruleSet = $ruleSet;
     }
 
+    /**
+     * @psalm-suppress InternalMethod
+     */
     public function getName(): string
     {
-        if (is_object($this->set)) {
-            return $this->set->getName();
+        $ruleSet = $this->getSetDefinitions($this->ruleSet);
+        if (is_object($ruleSet)) {
+            return $ruleSet->getName();
         }
 
         return 'Local rules';
     }
 
+    /**
+     * @psalm-suppress InternalMethod
+     */
     public function getRules(): array
     {
-        if (is_object($this->set)) {
-            return $this->set->getRules();
+        $ruleSet = $this->getSetDefinitions($this->ruleSet);
+        if (is_object($ruleSet)) {
+            return $ruleSet->getRules();
         }
 
-        return $this->set;
+        return $ruleSet;
     }
 
     /**
      * Resolve input set into group of rules.
      *
-     * - Relax: RuleSetInterface
-     * - PhpCsFixer: RuleSetDescriptionInterface
-     *
-     * @param  array|string|RuleSetInterface                      $ruleSet
-     * @return array|RuleSetInterface|RuleSetDescriptionInterface
+     * @param  array|string|RelaxRuleSetInterface|PhpCsFixerRuleSetInterface $ruleSet
+     * @return array|RelaxRuleSetInterface|PhpCsFixerRuleSetInterface
      *
      * @throws \InvalidArgumentException
      */
@@ -64,16 +70,14 @@ final class RuleSet
     {
         if (is_string($ruleSet)) {
             if (preg_match('/^@[A-Z]/', $ruleSet)) {
-                $localRuleSet = self::$ruleSetNameSpace.ltrim($ruleSet, '@');
-
-                if (is_subclass_of($localRuleSet, RuleSetInterface::class)) {
-                    return new $localRuleSet;
+                $relaxRuleSet = self::$ruleSetNameSpace.ltrim($ruleSet, '@');
+                if (class_exists($relaxRuleSet) && is_subclass_of($relaxRuleSet, RelaxRuleSetInterface::class)) {
+                    return new $relaxRuleSet;
                 }
 
-                $pcfNameSpace = 'PhpCsFixer\\RuleSet\\Sets\\';
-                $pcfRuleSet = $pcfNameSpace.ltrim(str_replace(':risky', 'Risky', $ruleSet), '@').'Set';
-
-                if (is_subclass_of($pcfRuleSet, RuleSetDescriptionInterface::class)) {
+                $pcfRuleSetClassName = ltrim(str_replace(':risky', 'Risky', $ruleSet), '@').'Set';
+                $pcfRuleSet = 'PhpCsFixer\\RuleSet\\Sets\\'.$pcfRuleSetClassName;
+                if (class_exists($pcfRuleSet) && is_subclass_of($pcfRuleSet, PhpCsFixerRuleSetInterface::class)) {
                     return new $pcfRuleSet;
                 }
             }

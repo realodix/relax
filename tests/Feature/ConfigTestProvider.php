@@ -21,9 +21,10 @@ trait ConfigTestProvider
     public function invalidRuleSetInputProvider()
     {
         return [
-            ['Realodix'],
-            ['@SetNeverExisted'],
-            [new PhpCsFixerSet],
+            ['Realodix', \InvalidArgumentException::class],
+            ['@SetNeverExisted', \InvalidArgumentException::class],
+            // If type is used, it should be \TypeError::class
+            [new PhpCsFixerSet, \InvalidArgumentException::class],
         ];
     }
 }

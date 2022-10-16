@@ -2,8 +2,6 @@
 
 namespace Realodix\Relax\RuleSet;
 
-use Realodix\Relax\Helper;
-
 abstract class AbstractRuleSet implements RuleSetInterface
 {
     protected string $name = '';
@@ -16,11 +14,21 @@ abstract class AbstractRuleSet implements RuleSetInterface
             return $this->name;
         }
 
-        return '@'.Helper::classBasename($this);
+        return '@'.self::classBasename($this);
     }
 
     public function getRules(): array
     {
         return $this->rules();
+    }
+
+    /**
+     * Get the class basename.
+     */
+    private static function classBasename(object $class): string
+    {
+        $class = get_class($class);
+
+        return basename(str_replace('\\', '/', $class));
     }
 }
