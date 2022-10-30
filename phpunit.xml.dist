@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:noNamespaceSchemaLocation="./vendor/phpunit/phpunit/phpunit.xsd"
-         colors="true"
-         verbose="true"
+<phpunit
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="./vendor/phpunit/phpunit/phpunit.xsd"
+    cacheResultFile=".tmp/.phpunit.result.cache"
+    colors="true"
+    verbose="true"
 >
     <testsuites>
         <testsuite name="Unit">
@@ -13,7 +15,10 @@
         </testsuite>
     </testsuites>
 
-    <coverage processUncoveredFiles="true">
+    <coverage
+        cacheDirectory=".tmp/PHPUnit"
+        processUncoveredFiles="true"
+    >
         <include>
             <directory suffix=".php">src</directory>
         </include>
