@@ -7,11 +7,11 @@ use PhpCsFixer\Finder as PhpCsFixerFinder;
 class Finder
 {
     /**
-     * @param string|string[] $baseDir
+     * @param string|list<string>|null $baseDir
      */
-    public static function base($baseDir = ''): PhpCsFixerFinder
+    public static function base($baseDir = null): PhpCsFixerFinder
     {
-        ($baseDir === '') && ($baseDir = getcwd());
+        $baseDir = self::baseDir($baseDir);
 
         return PhpCsFixerFinder::create()
             ->in($baseDir)
@@ -29,9 +29,9 @@ class Finder
     }
 
     /**
-     * @param string|string[] $baseDir
+     * @param string|list<string>|null $baseDir
      */
-    public static function laravel($baseDir = ''): PhpCsFixerFinder
+    public static function laravel($baseDir = null): PhpCsFixerFinder
     {
         return self::base($baseDir)
             ->exclude([
@@ -40,5 +40,20 @@ class Finder
                 'resources',
                 'storage',
             ])->notName('*.blade.php');
+    }
+
+    /**
+     * @param string|list<string>|null $baseDir
+     * @return string|list<string>
+     */
+    private static function baseDir($baseDir)
+    {
+        $currentWorkingDir = getcwd() === false ? '' : getcwd();
+
+        if (is_null($baseDir)) {
+            $baseDir = $currentWorkingDir;
+        }
+
+        return $baseDir;
     }
 }
