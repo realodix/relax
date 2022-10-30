@@ -32,9 +32,6 @@ final class RuleSet
         $this->ruleSet = $ruleSet;
     }
 
-    /**
-     * @psalm-suppress InternalMethod
-     */
     public function getName(): string
     {
         $ruleSet = $this->getSetDefinitions($this->ruleSet);
@@ -45,9 +42,6 @@ final class RuleSet
         return 'Local rules';
     }
 
-    /**
-     * @psalm-suppress InternalMethod
-     */
     public function getRules(): array
     {
         $ruleSet = $this->getSetDefinitions($this->ruleSet);
@@ -61,7 +55,7 @@ final class RuleSet
     /**
      * Resolve input set into group of rules.
      *
-     * @param  array|string|RelaxRuleSetInterface|PhpCsFixerRuleSetInterface $ruleSet
+     * @param array|string|RelaxRuleSetInterface|PhpCsFixerRuleSetInterface $ruleSet
      * @return array|RelaxRuleSetInterface|PhpCsFixerRuleSetInterface
      *
      * @throws \InvalidArgumentException

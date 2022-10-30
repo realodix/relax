@@ -9,8 +9,6 @@ use Realodix\Relax\RuleSet\RuleSetInterface;
 class Config
 {
     /**
-     * @psalm-suppress MixedArgumentTypeCoercion
-     *
      * @param array|string|RuleSetInterface $rules
      */
     public static function create($rules, array $localRules = []): ConfigInterface
