@@ -11,7 +11,9 @@ class Finder
      */
     public static function base($baseDir = null): PhpCsFixerFinder
     {
-        $baseDir = self::baseDir($baseDir);
+        if ($baseDir === null) {
+            $baseDir = getcwd() === false ? '' : getcwd();
+        }
 
         return PhpCsFixerFinder::create()
             ->in($baseDir)
@@ -40,20 +42,5 @@ class Finder
                 'resources',
                 'storage',
             ])->notName('*.blade.php');
-    }
-
-    /**
-     * @param string|list<string>|null $baseDir
-     * @return string|list<string>
-     */
-    private static function baseDir($baseDir)
-    {
-        $currentWorkingDir = getcwd() === false ? '' : getcwd();
-
-        if (is_null($baseDir)) {
-            $baseDir = $currentWorkingDir;
-        }
-
-        return $baseDir;
     }
 }
