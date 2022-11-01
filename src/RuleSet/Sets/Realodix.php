@@ -35,7 +35,7 @@ final class Realodix extends AbstractRuleSet
             ],
             'phpdoc_separation' => [
                 'groups' => [
-                    ['param', 'param-out', 'return'],
+                    ['param', 'param-out', 'return'], ['var', 'readonly'],
                     ['template', 'extends', 'implements', 'template-extends', 'template-implements', 'template-covariant', 'template-use'],
                     // https://github.com/FriendsOfPHP/PHP-CS-Fixer/blob/master/doc/rules/phpdoc/phpdoc_separation.rst
                     // Dengan perubahan `deprecated` & `since` digabungkan ke kolompok `package`.
@@ -55,8 +55,6 @@ final class Realodix extends AbstractRuleSet
                         'phpstan-assert', 'phpstan-assert-if-true', 'phpstan-assert-if-false',
                         'phpstan-property', 'phpstan-property-read', 'phpstan-property-write',
                     ],
-                    // Mix
-                    ['var', 'phpstan-var', 'psalm-var'],
                 ],
             ],
 
