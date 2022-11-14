@@ -32,6 +32,7 @@ final class RealodixPlus extends AbstractRuleSet
 
             Fixer\CommentSurroundedBySpacesFixer::name() => true,
             Fixer\NoUselessCommentFixer::name() => true,
+            Fixer\PhpdocParamOrderFixer::name() => true,
         ];
 
         return array_merge($baseRules, $rules);

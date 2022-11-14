@@ -84,7 +84,6 @@ final class Realodix extends AbstractRuleSet
             Fixer\NoUselessDoctrineRepositoryCommentFixer::name() => true,
             Fixer\NoUselessParenthesisFixer::name() => true,
             Fixer\PhpdocNoSuperfluousParamFixer::name() => true,
-            Fixer\PhpdocParamOrderFixer::name() => true,
             Fixer\PhpdocParamTypeFixer::name() => true,
             Fixer\PhpdocSelfAccessorFixer::name() => true,
             Fixer\PhpdocTypesCommaSpacesFixer::name() => true,
