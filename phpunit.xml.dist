@@ -2,7 +2,7 @@
 <phpunit
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="./vendor/phpunit/phpunit/phpunit.xsd"
-    cacheResultFile=".tmp/.phpunit.result.cache"
+    cacheResultFile=".tmp/PHPUnit/.phpunit.result.cache"
     colors="true"
     verbose="true"
 >
