@@ -25,14 +25,7 @@ final class Realodix extends AbstractRuleSet
             'whitespace_after_comma_in_array' => ['ensure_single_space' => true],
             // Laravel/laravel_
             'Laravel/laravel_phpdoc_alignment' => false,
-            'Laravel/laravel_phpdoc_order' => false,
-            'Laravel/laravel_phpdoc_separation' => false,
             'phpdoc_align' => ['tags' => ['method', 'param', 'property', 'throws', 'type', 'var']],
-            'phpdoc_order' => [
-                'order' => [
-                    'param', 'return', 'throws',
-                ],
-            ],
             'phpdoc_separation' => [
                 'groups' => [
                     ['param', 'param-out', 'return'], ['var', 'readonly'],

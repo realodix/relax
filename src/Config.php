@@ -23,8 +23,6 @@ class Config
             ->registerCustomFixers(new \PhpCsFixerCustomFixers\Fixers)
             ->registerCustomFixers([
                 new Fixers\Laravel\LaravelPhpdocAlignmentFixer,
-                new Fixers\Laravel\LaravelPhpdocOrderFixer,
-                new Fixers\Laravel\LaravelPhpdocSeparationFixer,
             ])
             ->setRiskyAllowed(true)
             ->setRules(array_merge($ruleSet->getRules(), $localRules))

@@ -130,7 +130,19 @@ final class Laravel extends AbstractRuleSet
             'phpdoc_no_access' => true,
             'phpdoc_no_package' => true,
             'phpdoc_no_useless_inheritdoc' => true,
+            'phpdoc_order' => [
+                'order' => ['param', 'return', 'throws'],
+            ],
             'phpdoc_scalar' => true,
+            'phpdoc_separation' => [
+                'groups' => [
+                    ['deprecated', 'link', 'see', 'since'],
+                    ['author', 'copyright', 'license'],
+                    ['category', 'package', 'subpackage'],
+                    ['property', 'property-read', 'property-write'],
+                    ['param', 'return'],
+                ],
+            ],
             'phpdoc_single_line_var_spacing' => true,
             'phpdoc_tag_type' => ['tags' => ['inheritdoc' => 'inline']],
             'phpdoc_trim' => true,
@@ -159,8 +171,6 @@ final class Laravel extends AbstractRuleSet
 
             // Laravel
             'Laravel/laravel_phpdoc_alignment' => true,
-            'Laravel/laravel_phpdoc_order' => true,
-            'Laravel/laravel_phpdoc_separation' => true,
         ];
     }
 }

@@ -54,8 +54,6 @@ Rule set defines a set of rules that can be used to fix code style issues in you
 #### Custom Fixers
 
 - [`Laravel/laravel_phpdoc_alignment`][`fx_laravel_phpdoc_alignment`]
-- [`Laravel/laravel_phpdoc_order`][`fx_laravel_phpdoc_order`]
-- [`Laravel/laravel_phpdoc_separation`][`fx_laravel_phpdoc_separation`]
 - [kubawerlos/php-cs-fixer-custom-fixers][fx_kubawerlos_custom-fixers]
 
 :bulb: They're all registered, so you don't need to re-register via `registerCustomFixers()`.
@@ -183,8 +181,6 @@ This package is licensed under the [MIT License](/LICENSE).
 [rs_realodix]: src/RuleSet/Realodix.php
 [rs_spatie]: src/RuleSet/Spatie.php
 [`fx_laravel_phpdoc_alignment`]: src/Fixers/Laravel/LaravelPhpdocAlignmentFixer.php
-[`fx_laravel_phpdoc_order`]: src/Fixers/Laravel/LaravelPhpdocOrderFixer.php
-[`fx_laravel_phpdoc_separation`]: src/Fixers/Laravel/LaravelPhpdocSeparationFixer.php
 [fx_kubawerlos_custom-fixers]: https://github.com/kubawerlos/php-cs-fixer-custom-fixers
 
 [php-cs-fixer]: https://github.com/FriendsOfPHP/PHP-CS-Fixer
