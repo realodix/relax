@@ -58,7 +58,6 @@ final class Realodix extends AbstractRuleSet
             'combine_consecutive_unsets' => true,
             'new_with_braces' => ['named_class' => false, 'anonymous_class' => false],
             'no_empty_comment' => true,
-            'no_superfluous_phpdoc_tags' => ['allow_mixed' => true, 'allow_unused_params' => true],
             'no_unneeded_import_alias' => true,
             'no_useless_concat_operator' => true,
             'no_useless_else' => true,
