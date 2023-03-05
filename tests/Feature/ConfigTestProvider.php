@@ -7,7 +7,7 @@ use Realodix\Relax\Tests\Fixtures\RuleSetFile;
 
 trait ConfigTestProvider
 {
-    public function validRuleSetInputProvider()
+    public static function validRuleSetInputProvider()
     {
         return [
             [new RuleSetFile],
@@ -18,7 +18,7 @@ trait ConfigTestProvider
         ];
     }
 
-    public function invalidRuleSetInputProvider()
+    public static function invalidRuleSetInputProvider()
     {
         return [
             ['Realodix', \InvalidArgumentException::class],
