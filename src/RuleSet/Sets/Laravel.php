@@ -153,6 +153,7 @@ final class Laravel extends AbstractRuleSet
             'phpdoc_types' => true,
             'phpdoc_var_without_name' => true,
             'return_type_declaration' => ['space_before' => 'none'],
+            'self_static_accessor' => true,
             'short_scalar_cast' => true,
             'single_blank_line_at_eof' => true,
             'single_blank_line_before_namespace' => true,
