@@ -54,6 +54,7 @@ final class Realodix extends AbstractRuleSet
             /*
              * Addition
              */
+            'align_multiline_comment' => true,
             'class_reference_name_casing' => true,
             'combine_consecutive_unsets' => true,
             'new_with_braces' => ['named_class' => false, 'anonymous_class' => false],
