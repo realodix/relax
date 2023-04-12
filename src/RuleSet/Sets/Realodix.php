@@ -63,6 +63,9 @@ final class Realodix extends AbstractRuleSet
             'no_useless_concat_operator' => true,
             'no_useless_else' => true,
             'no_useless_nullsafe_operator' => true,
+            'operator_linebreak' => [
+                'only_booleans' => true,
+            ],
             'phpdoc_trim_consecutive_blank_line_separation' => true,
             'phpdoc_var_annotation_correct_order' => true,
             'simple_to_complex_string_variable' => true,
