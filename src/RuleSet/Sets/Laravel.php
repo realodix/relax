@@ -85,6 +85,7 @@ final class Laravel extends AbstractRuleSet
             'magic_constant_casing' => true,
             'magic_method_casing' => true,
             'method_argument_space' => ['on_multiline' => 'ignore'],
+            'method_chaining_indentation' => true,
             'multiline_whitespace_before_semicolons' => ['strategy' => 'no_multi_line'],
             'native_function_casing' => true,
             'native_function_type_declaration_casing' => true,
