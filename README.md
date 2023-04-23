@@ -1,6 +1,6 @@
 # Realodix Relax
 
-![PHPVersion](https://img.shields.io/badge/PHP-7.4%20|%208-777BB4.svg?style=flat-square)
+![PHPVersion](https://img.shields.io/badge/PHP-%208-777BB4.svg?style=flat-square)
 ![Build Status](../../actions/workflows/ci.yml/badge.svg)
 
 **Realodix Relax** is built on top of [`PHP-CS-Fixer`][php-cs-fixer] and makes it simple to to sharing identical PHP CS Fixer rules across all of your projects without copy-and-pasting configuration files.
