@@ -6,7 +6,7 @@
     "authors": [{"name": "Budi Hermawan", "role": "Developer"}],
     "homepage": "https://github.com/realodix/relax",
     "require": {
-        "php": "^7.4|^8.0",
+        "php": "^7.4 || ^8.0",
         "friendsofphp/php-cs-fixer": "^3.16",
         "kubawerlos/php-cs-fixer-custom-fixers": "^3.12",
         "symfony/console": "^5.4|^6.0"
