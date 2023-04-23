@@ -12,7 +12,7 @@ jobs:
       matrix:
         php-version: ['7.4', '8.0', '8.1', '8.2']
         include:
-          - php-version: '8.2'
+          - php-version: '8.3'
             flags: "--ignore-platform-req=php"
             stability: prefer-stable
 
