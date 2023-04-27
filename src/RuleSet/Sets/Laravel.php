@@ -22,7 +22,6 @@ final class Laravel extends AbstractRuleSet
             'phpdoc_summary' => false,
             'phpdoc_to_comment' => false,
             'simplified_null_return' => false,
-            'statement_indentation' => false,
 
             'array_indentation' => true,
             'array_syntax' => ['syntax' => 'short'],
@@ -165,6 +164,7 @@ final class Laravel extends AbstractRuleSet
             'single_space_around_construct' => true,
             'space_after_semicolon' => true,
             'standardize_not_equals' => true,
+            'statement_indentation' => true,
             'switch_case_semicolon_to_colon' => true,
             'switch_case_space' => true,
             'ternary_operator_spaces' => true,
