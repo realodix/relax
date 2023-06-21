@@ -29,6 +29,7 @@ final class Laravel extends AbstractRuleSet
             'blank_line_after_namespace' => true,
             'blank_line_after_opening_tag' => true,
             'blank_line_before_statement' => ['statements' => ['continue', 'return']],
+            'blank_lines_before_namespace' => true,
             'control_structure_braces' => true,
             'control_structure_continuation_position' => [
                 'position' => 'same_line',
@@ -155,7 +156,6 @@ final class Laravel extends AbstractRuleSet
             'self_static_accessor' => true,
             'short_scalar_cast' => true,
             'single_blank_line_at_eof' => true,
-            'single_blank_line_before_namespace' => true,
             'single_class_element_per_statement' => ['elements' => ['const', 'property']],
             'single_import_per_statement' => true,
             'single_line_after_imports' => true,
