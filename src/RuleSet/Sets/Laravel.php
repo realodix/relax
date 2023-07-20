@@ -68,7 +68,6 @@ final class Laravel extends AbstractRuleSet
             'full_opening_tag' => true,
             'fully_qualified_strict_types' => true,
             'function_declaration' => true,
-            'function_typehint_space' => true,
             'general_phpdoc_tag_rename' => true,
             'heredoc_to_nowdoc' => true,
             'include' => true,
