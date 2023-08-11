@@ -5,7 +5,7 @@ namespace Realodix\Relax\RuleSet\Sets;
 use Realodix\Relax\RuleSet\AbstractRuleSet;
 
 /**
- * Latest commit c598b68 on Jul 14, 2022
+ * Latest commit 989ff6d on Aug 11, 2023
  * https://github.com/laravel/pint/blob/main/resources/presets/laravel.php
  */
 final class Laravel extends AbstractRuleSet
@@ -29,6 +29,7 @@ final class Laravel extends AbstractRuleSet
             'blank_line_after_namespace' => true,
             'blank_line_after_opening_tag' => true,
             'blank_line_before_statement' => ['statements' => ['continue', 'return']],
+            'blank_line_between_import_groups' => true,
             'blank_lines_before_namespace' => true,
             'control_structure_braces' => true,
             'control_structure_continuation_position' => [
@@ -127,7 +128,7 @@ final class Laravel extends AbstractRuleSet
             'normalize_index_brace' => true,
             'not_operator_with_successor_space' => true,
             'object_operator_without_whitespace' => true,
-            'ordered_imports' => ['sort_algorithm' => 'alpha'],
+            'ordered_imports' => ['sort_algorithm' => 'alpha', 'imports_order' => ['const', 'class', 'function']],
             'phpdoc_indent' => true,
             'phpdoc_inline_tag_normalizer' => true,
             'phpdoc_no_access' => true,
