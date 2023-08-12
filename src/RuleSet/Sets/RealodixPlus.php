@@ -21,10 +21,10 @@ final class RealodixPlus extends AbstractRuleSet
             'no_superfluous_elseif' => true,
             'general_phpdoc_annotation_remove' => [
                 'annotations' => [
-                    // https://github.com/doctrine/coding-standard/blob/f86c16aedb/lib/Doctrine/Rules.xml#L192
+                    // https://github.com/doctrine/coding-standard/blob/3e88327/lib/Doctrine/ruleset.xml#L227
                     'api', 'author', 'category', 'copyright', 'created', 'license', 'package', 'since',
                     'subpackage', 'version',
-                    // https://github.com/laminas/laminas-coding-standard/blob/22068e0b91/src/LaminasCodingStandard/Rules.xml#L883
+                    // https://github.com/laminas/laminas-coding-standard/blob/9825280/src/LaminasCodingStandard/ruleset.xml#L883
                     'expectedException', 'expectedExceptionCode', 'expectedExceptionMessage', 'expectedExceptionMessageRegExp',
                 ],
             ],

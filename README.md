@@ -44,11 +44,11 @@ return Config::create('@Realodix');
 
 Rule set defines a set of rules that can be used to fix code style issues in your code.
 
-| Preset | Description |
-| -------- |-------------|
-| [`@Laravel`][rs_laravel] | The rule set by Laravel Pint |
+| Preset                     | Description |
+| -------------------------- |-------------|
+| [`@Laravel`][rs_laravel]   | The rule set by Laravel Pint |
 | [`@Realodix`][rs_realodix] | Inherits `@Laravel` with some tweaks |
-| [`@Spatie`][rs_spatie] | The rule set used by Spatie |
+| [`@Spatie`][rs_spatie]     | The rule set used by Spatie |
 
 :bulb: If you wish, you can also add the [PHP-CS-Fixer rule sets][pcf_doc_ruleset].
 

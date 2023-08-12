@@ -12,6 +12,7 @@ use PhpCsFixer\Tokenizer\Tokens;
 /**
  * Latest commit 8a99239 on Jul 4, 2022
  * https://github.com/laravel/pint/blob/main/app/Fixers/LaravelPhpdocAlignmentFixer.php
+ *
  * The MIT License (MIT), Copyright (c) Taylor Otwell
  *
  * Some code in this file is part of PHP CS Fixer and licensed under MIT license.
