@@ -152,6 +152,8 @@ final class Laravel extends AbstractRuleSet
             'phpdoc_trim' => true,
             'phpdoc_types' => true,
             'phpdoc_var_without_name' => true,
+            'ordered_interfaces' => true,
+            'ordered_traits' => true,
             'return_type_declaration' => ['space_before' => 'none'],
             'self_static_accessor' => true,
             'short_scalar_cast' => true,
