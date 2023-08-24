@@ -13,6 +13,10 @@ final class Laravel extends AbstractRuleSet
     protected function rules(): array
     {
         return [
+            // v3.23.0 - deprecated
+            // 'no_spaces_inside_parenthesis' => true,
+            'spaces_inside_parentheses' => true,
+
             // risky
             'self_accessor' => false,
             'psr_autoloading' => false,
@@ -108,7 +112,6 @@ final class Laravel extends AbstractRuleSet
             'no_space_around_double_colon' => true,
             'no_spaces_after_function_name' => true,
             'no_spaces_around_offset' => ['positions' => ['inside', 'outside']],
-            'no_spaces_inside_parenthesis' => true,
             'no_superfluous_phpdoc_tags' => [
                 'allow_mixed' => true,
                 'allow_unused_params' => true,
