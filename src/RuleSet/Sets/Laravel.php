@@ -17,12 +17,6 @@ final class Laravel extends AbstractRuleSet
             // 'no_spaces_inside_parenthesis' => true,
             'spaces_inside_parentheses' => true,
 
-            // risky
-            'self_accessor' => false,
-            'psr_autoloading' => false,
-            'no_alias_functions' => true,
-            'no_unreachable_default_argument_value' => true,
-
             'phpdoc_summary' => false,
             'phpdoc_to_comment' => false,
             'simplified_null_return' => false,
@@ -177,6 +171,12 @@ final class Laravel extends AbstractRuleSet
             'unary_operator_spaces' => true,
             'visibility_required' => ['elements' => ['method', 'property']],
             'whitespace_after_comma_in_array' => true,
+
+            // risky
+            'self_accessor' => false,
+            'psr_autoloading' => false,
+            'no_alias_functions' => true,
+            'no_unreachable_default_argument_value' => true,
 
             // Laravel
             'Laravel/laravel_phpdoc_alignment' => true,
