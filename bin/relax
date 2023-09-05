@@ -16,7 +16,7 @@
             }
         }
 
-        if (null === $file) {
+        if ($file === null) {
             throw new RuntimeException('Unable to locate autoload.php file.');
         }
 

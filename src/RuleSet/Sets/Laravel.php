@@ -173,6 +173,12 @@ final class Laravel extends AbstractRuleSet
             'unary_operator_spaces' => true,
             'visibility_required' => ['elements' => ['method', 'property']],
             'whitespace_after_comma_in_array' => true,
+            'yoda_style' => [
+                'always_move_variable' => true,
+                'equal' => false,
+                'identical' => false,
+                'less_and_greater' => false,
+            ],
 
             // risky
             'self_accessor' => false,
