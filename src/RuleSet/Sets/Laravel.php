@@ -5,7 +5,7 @@ namespace Realodix\Relax\RuleSet\Sets;
 use Realodix\Relax\RuleSet\AbstractRuleSet;
 
 /**
- * Latest commit 989ff6d on Aug 11, 2023
+ * Latest commit b6da337 on Sep 1, 2023
  * https://github.com/laravel/pint/blob/main/resources/presets/laravel.php
  */
 final class Laravel extends AbstractRuleSet
@@ -13,10 +13,6 @@ final class Laravel extends AbstractRuleSet
     protected function rules(): array
     {
         return [
-            // v3.23.0 - deprecated
-            // 'no_spaces_inside_parenthesis' => true,
-            'spaces_inside_parentheses' => true,
-
             'phpdoc_summary' => false,
             'phpdoc_to_comment' => false,
             'simplified_null_return' => false,
@@ -127,7 +123,6 @@ final class Laravel extends AbstractRuleSet
             'object_operator_without_whitespace' => true,
             'ordered_imports' => ['sort_algorithm' => 'alpha', 'imports_order' => ['const', 'class', 'function']],
             'ordered_interfaces' => true,
-            'ordered_traits' => true,
             'phpdoc_indent' => true,
             'phpdoc_inline_tag_normalizer' => true,
             'phpdoc_no_access' => true,
@@ -162,6 +157,7 @@ final class Laravel extends AbstractRuleSet
             'single_quote' => true,
             'single_space_around_construct' => true,
             'space_after_semicolon' => true,
+            'spaces_inside_parentheses' => true,
             'standardize_not_equals' => true,
             'statement_indentation' => true,
             'switch_case_semicolon_to_colon' => true,
@@ -185,6 +181,7 @@ final class Laravel extends AbstractRuleSet
             'psr_autoloading' => false,
             'no_alias_functions' => true,
             'no_unreachable_default_argument_value' => true,
+            'ordered_traits' => true,
 
             // Laravel
             'Laravel/laravel_phpdoc_alignment' => true,
