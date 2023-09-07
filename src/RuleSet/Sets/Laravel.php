@@ -5,7 +5,7 @@ namespace Realodix\Relax\RuleSet\Sets;
 use Realodix\Relax\RuleSet\AbstractRuleSet;
 
 /**
- * Latest commit b6da337 on Sep 1, 2023
+ * Latest commit 03431ca on Sep 6, 2023
  * https://github.com/laravel/pint/blob/main/resources/presets/laravel.php
  */
 final class Laravel extends AbstractRuleSet
@@ -170,7 +170,7 @@ final class Laravel extends AbstractRuleSet
             'visibility_required' => ['elements' => ['method', 'property']],
             'whitespace_after_comma_in_array' => true,
             'yoda_style' => [
-                'always_move_variable' => true,
+                'always_move_variable' => false,
                 'equal' => false,
                 'identical' => false,
                 'less_and_greater' => false,
