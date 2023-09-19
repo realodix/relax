@@ -15,4 +15,9 @@ final class Utils
 
         return $className;
     }
+
+    public static function resolvePcsfRuleSetClass(string $ruleSetName): string
+    {
+        return 'PhpCsFixer\\RuleSet\\Sets\\'.self::pcsfRuleSetNameToClassName($ruleSetName);
+    }
 }

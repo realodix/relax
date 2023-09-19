@@ -70,8 +70,7 @@ final class RuleSet
                     return new $relaxRuleSet;
                 }
 
-                $pcfRuleSetClassName = Utils::pcsfRuleSetNameToClassName($ruleSet);
-                $pcfRuleSet = 'PhpCsFixer\\RuleSet\\Sets\\'.$pcfRuleSetClassName;
+                $pcfRuleSet = Utils::resolvePcsfRuleSetClass($ruleSet);
                 if (class_exists($pcfRuleSet) && is_subclass_of($pcfRuleSet, PhpCsFixerRuleSetInterface::class)) {
                     return new $pcfRuleSet;
                 }
