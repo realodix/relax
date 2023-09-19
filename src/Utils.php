@@ -4,6 +4,11 @@ namespace Realodix\Relax;
 
 final class Utils
 {
+    public static function pcsfRuleSetClass(string $ruleSetName): string
+    {
+        return 'PhpCsFixer\\RuleSet\\Sets\\'.self::pcsfRuleSetNameToClassName($ruleSetName);
+    }
+
     public static function pcsfRuleSetNameToClassName(string $ruleSetName): string
     {
         $ruleSetNameWithoutAtSymbol = ltrim($ruleSetName, '@');
@@ -14,10 +19,5 @@ final class Utils
         ).'Set';
 
         return $className;
-    }
-
-    public static function resolvePcsfRuleSetClass(string $ruleSetName): string
-    {
-        return 'PhpCsFixer\\RuleSet\\Sets\\'.self::pcsfRuleSetNameToClassName($ruleSetName);
     }
 }
