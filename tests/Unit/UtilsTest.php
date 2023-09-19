@@ -9,23 +9,22 @@ class UtilsTest extends TestCase
 {
     /**
      * @test
-     * @dataProvider resolveClassNameProvider
+     * @dataProvider pcsfRuleSetNameToClassNameProvider
      */
-    public function resolveClassName($actual, $expected): void
+    public function pcsfRuleSetNameToClassName($actual, $expected): void
     {
-        $className = Utils::pcfRuleSetToClassName($actual);
+        $className = Utils::pcsfRuleSetNameToClassName($actual);
 
         $this->assertSame($expected, $className);
     }
 
-    public static function resolveClassNameProvider()
+    public static function pcsfRuleSetNameToClassNameProvider()
     {
         return [
-            ['@Realodix', 'RealodixSet'],
             ['@PSR1', 'PSR1Set'],
             ['@PhpCsFixer:risky', 'PhpCsFixerRiskySet'],
             ['@PER-CS1.0', 'PERCS1x0Set'],
-            ['@PER-CS2.0:risky', 'PERCS2x0RiskySet']
+            ['@PER-CS2.0:risky', 'PERCS2x0RiskySet'],
         ];
     }
 }

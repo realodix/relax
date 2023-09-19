@@ -4,6 +4,7 @@ namespace Realodix\Relax\RuleSet;
 
 use PhpCsFixer\RuleSet\RuleSetDescriptionInterface as PhpCsFixerRuleSetInterface;
 use Realodix\Relax\RuleSet\RuleSetInterface as RelaxRuleSetInterface;
+use Realodix\Relax\Utils;
 
 final class RuleSet
 {
@@ -69,7 +70,7 @@ final class RuleSet
                     return new $relaxRuleSet;
                 }
 
-                $pcfRuleSetClassName = ltrim(str_replace(':risky', 'Risky', $ruleSet), '@').'Set';
+                $pcfRuleSetClassName = Utils::pcsfRuleSetNameToClassName($ruleSet);
                 $pcfRuleSet = 'PhpCsFixer\\RuleSet\\Sets\\'.$pcfRuleSetClassName;
                 if (class_exists($pcfRuleSet) && is_subclass_of($pcfRuleSet, PhpCsFixerRuleSetInterface::class)) {
                     return new $pcfRuleSet;

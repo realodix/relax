@@ -4,9 +4,14 @@ namespace Realodix\Relax;
 
 final class Utils
 {
-    public static function pcfRuleSetToClassName(string $ruleSetName): string
+    public static function pcsfRuleSetNameToClassName(string $ruleSetName): string
     {
-        $className = ltrim(str_replace(':risky', 'Risky', $ruleSetName), '@').'Set';
+        $ruleSetNameWithoutAtSymbol = ltrim($ruleSetName, '@');
+        $className = str_replace(
+            ['-', '.', ':risky'],
+            ['', 'x', 'Risky'],
+            $ruleSetNameWithoutAtSymbol
+        ).'Set';
 
         return $className;
     }
