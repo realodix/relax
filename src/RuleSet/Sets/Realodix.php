@@ -52,7 +52,7 @@ final class Realodix extends AbstractRuleSet
             'phpdoc_summary' => false,
             'ternary_operator_spaces' => false,
             'unary_operator_spaces' => false,
-            'curly_braces_position' => [
+            'braces_position' => [
                 'anonymous_classes_opening_brace' => 'next_line_unless_newline_at_signature_end',
             ],
             'method_argument_space' => ['on_multiline' => 'ignore', 'after_heredoc' => true],
