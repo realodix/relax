@@ -12,8 +12,42 @@ final class Realodix extends AbstractRuleSet
         $baseRules = (new Laravel)->rules();
 
         $rules = [
+            'align_multiline_comment' => true,
+            'class_reference_name_casing' => true,
+            'combine_consecutive_unsets' => true,
+            'new_with_parentheses' => ['named_class' => false, 'anonymous_class' => false],
+            'no_empty_comment' => true,
+            'no_unneeded_import_alias' => true,
+            'no_useless_concat_operator' => true,
+            'no_useless_else' => true,
+            'no_useless_nullsafe_operator' => true,
+            'operator_linebreak' => [
+                'only_booleans' => true,
+            ],
+            'phpdoc_trim_consecutive_blank_line_separation' => true,
+            'phpdoc_var_annotation_correct_order' => true,
+            'simple_to_complex_string_variable' => true,
+            'single_line_comment_spacing' => true,
+
+            Fixer\MultilineCommentOpeningClosingAloneFixer::name() => true,
+            Fixer\MultilinePromotedPropertiesFixer::name() => true,
+            Fixer\NoDoctrineMigrationsGeneratedCommentFixer::name() => true,
+            Fixer\NoDuplicatedArrayKeyFixer::name() => true,
+            Fixer\NoDuplicatedImportsFixer::name() => true,
+            Fixer\NoImportFromGlobalNamespaceFixer::name() => true,
+            Fixer\NoPhpStormGeneratedCommentFixer::name() => true,
+            Fixer\NoUselessDoctrineRepositoryCommentFixer::name() => true,
+            Fixer\NoUselessParenthesisFixer::name() => true,
+            Fixer\PhpdocNoSuperfluousParamFixer::name() => true,
+            Fixer\PhpdocParamTypeFixer::name() => true,
+            Fixer\PhpdocSelfAccessorFixer::name() => true,
+            Fixer\PhpdocTypesCommaSpacesFixer::name() => true,
+            Fixer\PhpdocTypesTrimFixer::name() => true,
+            Fixer\SingleSpaceAfterStatementFixer::name() => ['allow_linebreak' => true],
+            Fixer\SingleSpaceBeforeStatementFixer::name() => true,
+
             /*
-             * Modify
+             * Laravel rules modification
              */
             'phpdoc_summary' => false,
             'ternary_operator_spaces' => false,
@@ -50,43 +84,6 @@ final class Realodix extends AbstractRuleSet
                     ],
                 ],
             ],
-
-            /*
-             * Addition
-             */
-            'align_multiline_comment' => true,
-            'class_reference_name_casing' => true,
-            'combine_consecutive_unsets' => true,
-            'new_with_parentheses' => ['named_class' => false, 'anonymous_class' => false],
-            'no_empty_comment' => true,
-            'no_unneeded_import_alias' => true,
-            'no_useless_concat_operator' => true,
-            'no_useless_else' => true,
-            'no_useless_nullsafe_operator' => true,
-            'operator_linebreak' => [
-                'only_booleans' => true,
-            ],
-            'phpdoc_trim_consecutive_blank_line_separation' => true,
-            'phpdoc_var_annotation_correct_order' => true,
-            'simple_to_complex_string_variable' => true,
-            'single_line_comment_spacing' => true,
-
-            Fixer\MultilineCommentOpeningClosingAloneFixer::name() => true,
-            Fixer\MultilinePromotedPropertiesFixer::name() => true,
-            Fixer\NoDoctrineMigrationsGeneratedCommentFixer::name() => true,
-            Fixer\NoDuplicatedArrayKeyFixer::name() => true,
-            Fixer\NoDuplicatedImportsFixer::name() => true,
-            Fixer\NoImportFromGlobalNamespaceFixer::name() => true,
-            Fixer\NoPhpStormGeneratedCommentFixer::name() => true,
-            Fixer\NoUselessDoctrineRepositoryCommentFixer::name() => true,
-            Fixer\NoUselessParenthesisFixer::name() => true,
-            Fixer\PhpdocNoSuperfluousParamFixer::name() => true,
-            Fixer\PhpdocParamTypeFixer::name() => true,
-            Fixer\PhpdocSelfAccessorFixer::name() => true,
-            Fixer\PhpdocTypesCommaSpacesFixer::name() => true,
-            Fixer\PhpdocTypesTrimFixer::name() => true,
-            Fixer\SingleSpaceAfterStatementFixer::name() => ['allow_linebreak' => true],
-            Fixer\SingleSpaceBeforeStatementFixer::name() => true,
         ];
 
         return array_merge($baseRules, $rules);
