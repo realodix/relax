@@ -5,7 +5,7 @@ namespace Realodix\Relax\RuleSet\Sets;
 use Realodix\Relax\RuleSet\AbstractRuleSet;
 
 /**
- * Latest commit 03431ca on Sep 6, 2023
+ * Latest commit 08eb981 on Oct 5, 2023
  * https://github.com/laravel/pint/blob/main/resources/presets/laravel.php
  */
 final class Laravel extends AbstractRuleSet
@@ -25,9 +25,14 @@ final class Laravel extends AbstractRuleSet
             'blank_line_before_statement' => ['statements' => ['continue', 'return']],
             'blank_line_between_import_groups' => true,
             'blank_lines_before_namespace' => true,
-            'control_structure_braces' => true,
-            'control_structure_continuation_position' => [
-                'position' => 'same_line',
+            'braces_position' => [
+                'control_structures_opening_brace' => 'same_line',
+                'functions_opening_brace' => 'next_line_unless_newline_at_signature_end',
+                'anonymous_functions_opening_brace' => 'same_line',
+                'classes_opening_brace' => 'next_line_unless_newline_at_signature_end',
+                'anonymous_classes_opening_brace' => 'next_line_unless_newline_at_signature_end',
+                'allow_single_line_empty_anonymous_classes' => false,
+                'allow_single_line_anonymous_functions' => false,
             ],
             'cast_spaces' => true,
             'class_attributes_separation' => [
@@ -44,17 +49,12 @@ final class Laravel extends AbstractRuleSet
                 'single_line' => true,
             ],
             'clean_namespace' => true,
-            'compact_nullable_typehint' => true,
+            'compact_nullable_type_declaration' => true,
             'concat_space' => ['spacing' => 'none'],
             'constant_case' => ['case' => 'lower'],
-            'curly_braces_position' => [
-                'control_structures_opening_brace' => 'same_line',
-                'functions_opening_brace' => 'next_line_unless_newline_at_signature_end',
-                'anonymous_functions_opening_brace' => 'same_line',
-                'classes_opening_brace' => 'next_line_unless_newline_at_signature_end',
-                'anonymous_classes_opening_brace' => 'next_line_unless_newline_at_signature_end',
-                'allow_single_line_empty_anonymous_classes' => false,
-                'allow_single_line_anonymous_functions' => false,
+            'control_structure_braces' => true,
+            'control_structure_continuation_position' => [
+                'position' => 'same_line',
             ],
             'declare_equal_normalize' => true,
             'declare_parentheses' => true,
@@ -82,7 +82,7 @@ final class Laravel extends AbstractRuleSet
             'method_chaining_indentation' => true,
             'multiline_whitespace_before_semicolons' => ['strategy' => 'no_multi_line'],
             'native_function_casing' => true,
-            'native_function_type_declaration_casing' => true,
+            'native_type_declaration_casing' => true,
             'no_alias_language_construct_call' => true,
             'no_alternative_syntax' => true,
             'no_binary_string' => true,
@@ -112,7 +112,7 @@ final class Laravel extends AbstractRuleSet
             'no_unneeded_control_parentheses' => [
                 'statements' => ['break', 'clone', 'continue', 'echo_print', 'return', 'switch_case', 'yield'],
             ],
-            'no_unneeded_curly_braces' => true,
+            'no_unneeded_braces' => true,
             'no_unset_cast' => true,
             'no_unused_imports' => true,
             'no_useless_return' => true,
