@@ -49,7 +49,6 @@ final class Realodix extends AbstractRuleSet
             /*
              * Laravel rules modification
              */
-            'phpdoc_summary' => false,
             'ternary_operator_spaces' => false,
             'unary_operator_spaces' => false,
             'braces_position' => [
