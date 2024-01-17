@@ -24,6 +24,7 @@ final class Realodix extends AbstractRuleSet
             'operator_linebreak' => [
                 'only_booleans' => true,
             ],
+            'phpdoc_param_order' => true,
             'phpdoc_trim_consecutive_blank_line_separation' => true,
             'phpdoc_var_annotation_correct_order' => true,
             'simple_to_complex_string_variable' => true,
