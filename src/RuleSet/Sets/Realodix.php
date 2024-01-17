@@ -57,8 +57,6 @@ final class Realodix extends AbstractRuleSet
             ],
             'method_argument_space' => ['on_multiline' => 'ignore', 'after_heredoc' => true],
             'whitespace_after_comma_in_array' => ['ensure_single_space' => true],
-            // Laravel/laravel_
-            'Laravel/laravel_phpdoc_alignment' => false,
             'phpdoc_align' => ['tags' => ['method', 'param', 'property', 'throws', 'type', 'var']],
             'phpdoc_separation' => [
                 'groups' => [

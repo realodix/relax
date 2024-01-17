@@ -21,9 +21,6 @@ class Config
 
         return (new \PhpCsFixer\Config($ruleSetName))
             ->registerCustomFixers(new \PhpCsFixerCustomFixers\Fixers)
-            ->registerCustomFixers([
-                new Fixers\Laravel\LaravelPhpdocAlignmentFixer,
-            ])
             ->setRiskyAllowed(true)
             ->setRules(array_merge($ruleSet->getRules(), $localRules))
             ->setFinder(Finder::base());

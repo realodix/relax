@@ -5,7 +5,7 @@ namespace Realodix\Relax\RuleSet\Sets;
 use Realodix\Relax\RuleSet\AbstractRuleSet;
 
 /**
- * Latest commit 08eb981
+ * Latest commit 07494e2
  * https://github.com/laravel/pint/blob/main/resources/presets/laravel.php
  */
 final class Laravel extends AbstractRuleSet
@@ -147,6 +147,12 @@ final class Laravel extends AbstractRuleSet
             'ordered_imports' => ['sort_algorithm' => 'alpha', 'imports_order' => ['const', 'class', 'function']],
             'ordered_interfaces' => true,
             'ordered_traits' => true,
+            'phpdoc_align' => [
+                'align' => 'left',
+                'spacing' => [
+                    'param' => 2,
+                ],
+            ],
             'phpdoc_indent' => true,
             'phpdoc_inline_tag_normalizer' => true,
             'phpdoc_no_access' => true,
@@ -215,9 +221,6 @@ final class Laravel extends AbstractRuleSet
                 'identical' => false,
                 'less_and_greater' => false,
             ],
-
-            // Laravel
-            'Laravel/laravel_phpdoc_alignment' => true,
         ];
     }
 }
