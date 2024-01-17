@@ -177,9 +177,9 @@ This package is licensed under the [MIT License](/LICENSE).
 [doc_f_laravel]: docs/finders.md#finderlaravel
 
 [rs_abstract]: src/RuleSet/AbstractRuleSet.php
-[rs_laravel]: src/RuleSet/Laravel.php
-[rs_realodix]: src/RuleSet/Realodix.php
-[rs_spatie]: src/RuleSet/Spatie.php
+[rs_laravel]: src/RuleSet/Sets/Laravel.php
+[rs_realodix]: src/RuleSet/Sets/Realodix.php
+[rs_spatie]: src/RuleSet/Sets/Spatie.php
 [fx_kubawerlos_custom-fixers]: https://github.com/kubawerlos/php-cs-fixer-custom-fixers
 
 [php-cs-fixer]: https://github.com/FriendsOfPHP/PHP-CS-Fixer
