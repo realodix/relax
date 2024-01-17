@@ -19,6 +19,9 @@ class GenerateConfigCommand extends Command
      */
     protected $input;
 
+    /**
+     * @var string
+     */
     protected static $defaultName = 'init';
 
     private const FILE_NAME = '.php-cs-fixer.php';
@@ -31,7 +34,7 @@ class GenerateConfigCommand extends Command
     /**
      * {@inheritdoc}
      */
-    public function execute(InputInterface $input, OutputInterface $output)
+    public function execute(InputInterface $input, OutputInterface $output): int
     {
         $filename = self::FILE_NAME;
 
