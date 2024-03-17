@@ -13,6 +13,7 @@ final class Realodix extends AbstractRuleSet
 
         $rules = [
             'align_multiline_comment' => true,
+            'attribute_empty_parentheses' => true,
             'class_reference_name_casing' => true,
             'combine_consecutive_unsets' => true,
             'new_with_parentheses' => ['named_class' => false, 'anonymous_class' => false],
