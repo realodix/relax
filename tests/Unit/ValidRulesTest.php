@@ -11,10 +11,8 @@ class ValidRulesTest extends TestCase
 {
     /**
      * @Realodix set returns a valid PhpCsFIxer rules.
-     *
-     * @test
      */
-    public function realodixReturnsAValidPhpCsFIxerRules(): void
+    public function testRealodixReturnsAValidPhpCsFIxerRules(): void
     {
         $rules = $this->getCleanedRules(new \Realodix\Relax\RuleSet\Sets\Realodix);
         $factory = (new FixerFactory)
@@ -26,10 +24,8 @@ class ValidRulesTest extends TestCase
 
     /**
      * @RealodixPlus set returns a valid PhpCsFIxer rules.
-     *
-     * @test
      */
-    public function realodixPlusReturnsAValidPhpCsFIxerRules(): void
+    public function testRealodixPlusReturnsAValidPhpCsFIxerRules(): void
     {
         $rules = $this->getCleanedRules(new \Realodix\Relax\RuleSet\Sets\RealodixPlus);
         $factory = (new FixerFactory)

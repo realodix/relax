@@ -8,10 +8,9 @@ use Realodix\Relax\Utils;
 class UtilsTest extends TestCase
 {
     /**
-     * @test
      * @dataProvider pcsfRuleSetClassExistsProvider
      */
-    public function pcsfRuleSetClassExists($ruleSetName): void
+    public function testPcsfRuleSetClassExists($ruleSetName): void
     {
         $class = Utils::pcsfRuleSetClass($ruleSetName);
 
@@ -31,10 +30,9 @@ class UtilsTest extends TestCase
     }
 
     /**
-     * @test
      * @dataProvider pcsfRuleSetNameToClassNameProvider
      */
-    public function pcsfRuleSetNameToClassName($actual, $expected): void
+    public function testPcsfRuleSetNameToClassName($actual, $expected): void
     {
         $className = Utils::pcsfRuleSetNameToClassName($actual);
 

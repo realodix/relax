@@ -16,10 +16,8 @@ class RuleSetTest extends TestCase
 
     /**
      * It implements only interface methods
-     *
-     * @test
      */
-    public function itImplementsOnlyInterfaceMethods(): void
+    public function testItImplementsOnlyInterfaceMethods(): void
     {
         $reflect = new \ReflectionClass(new RuleSetFile);
         $this->assertCount(1, $reflect->getMethods(\ReflectionMethod::IS_PROTECTED));
@@ -28,10 +26,8 @@ class RuleSetTest extends TestCase
 
     /**
      * Nama yang dikembalikan haruslah string yang diimput itu sendiri.
-     *
-     * @test
      */
-    public function ruleSetNameWithStringInput(): void
+    public function testRuleSetNameWithStringInput(): void
     {
         $actual = Config::create('@Realodix')->getName();
 
@@ -40,10 +36,8 @@ class RuleSetTest extends TestCase
 
     /**
      * Nama yang dikembalikan haruslah nama kelas itu sendiri dengan awalan `@`.
-     *
-     * @test
      */
-    public function ruleSetName(): void
+    public function testRuleSetName(): void
     {
         $expected = '@'.$this->getClassShortName(new RuleSetFile);
         $actual = (new RuleSetFile)->getName();
@@ -54,10 +48,8 @@ class RuleSetTest extends TestCase
     /**
      * Nama yang dikembalikan haruslah nama yang telah ditetapkan di dalam kelas
      * tersebut.
-     *
-     * @test
      */
-    public function ruleSetNameWithoutSetName(): void
+    public function testRuleSetNameWithoutSetName(): void
     {
         $expected = (new RuleSetWithSetNameFile)->name;
         $actual = (new RuleSetWithSetNameFile)->getName();
@@ -67,10 +59,8 @@ class RuleSetTest extends TestCase
 
     /**
      * Nama yang dikembalikan haruslah nama yang telah ditetapkan oleh Relax.
-     *
-     * @test
      */
-    public function nameReturnedByLocalRule(): void
+    public function testNameReturnedByLocalRule(): void
     {
         $actual = Config::create([])->getName();
 

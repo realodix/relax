@@ -10,10 +10,8 @@ class FinderTest extends TestCase
 {
     /**
      * It returns a PHP CS Fixer finder object
-     *
-     * @test
      */
-    public function baseFinderMustReturnsAPhpCsFinderObject(): void
+    public function testBaseFinderMustReturnsAPhpCsFinderObject(): void
     {
         $finder = Finder::base(__DIR__);
 
@@ -22,10 +20,8 @@ class FinderTest extends TestCase
 
     /**
      * It returns a PHP CS Fixer finder object
-     *
-     * @test
      */
-    public function laravelFinderMustReturnsAPhpCsFinderObject(): void
+    public function testLaravelFinderMustReturnsAPhpCsFinderObject(): void
     {
         $finder = Finder::laravel(__DIR__.'/../..');
 

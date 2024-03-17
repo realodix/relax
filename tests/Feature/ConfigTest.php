@@ -13,10 +13,9 @@ class ConfigTest extends TestCase
     /**
      * The input of rule set is valid
      *
-     * @test
      * @dataProvider validRuleSetInputProvider
      */
-    public function validRuleSetInput($ruleSet): void
+    public function testValidRuleSetInput($ruleSet): void
     {
         $this->assertInstanceOf(
             \PhpCsFixer\ConfigInterface::class,
@@ -27,10 +26,9 @@ class ConfigTest extends TestCase
     /**
      * The input of rule set is invalid
      *
-     * @test
      * @dataProvider invalidRuleSetInputProvider
      */
-    public function invalidRuleSetInput($ruleSet, $expectException): void
+    public function testInvalidRuleSetInput($ruleSet, $expectException): void
     {
         $this->expectException($expectException);
 
@@ -42,10 +40,8 @@ class ConfigTest extends TestCase
 
     /**
      * User dapat menambahkan/menonaktifkan rules
-     *
-     * @test
      */
-    public function userCanAddLocalRules(): void
+    public function testUserCanAddLocalRules(): void
     {
         $rules1 = Config::create(new RuleSetFile)->getRules();
         $rules2 = ['foo' => 'bar'];
@@ -59,10 +55,8 @@ class ConfigTest extends TestCase
 
     /**
      * Nama aturan ketika user menambahkan aturan lokal
-     *
-     * @test
      */
-    public function theNameOfTheRuleWhenTheUserAddsALocalRule(): void
+    public function testTheNameOfTheRuleWhenTheUserAddsALocalRule(): void
     {
         $this->assertSame(
             '@RuleSetFile (1 rules)',
