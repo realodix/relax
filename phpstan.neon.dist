@@ -1,13 +1,13 @@
 includes:
-  - phpstan-baseline.neon
+    - phpstan-baseline.neon
 
 parameters:
-  level: 7
-  paths:
-    - src
-  excludePaths:
-    - src/Fixers/Laravel
-  tmpDir: .tmp/PHPStan
-  checkMissingIterableValueType: false
-  checkGenericClassInNonGenericObjectType: false
-  treatPhpDocTypesAsCertain: false
+    level: 7
+    paths:
+        - src
+    excludePaths:
+        - src/Fixers/Laravel
+    tmpDir: .tmp/PHPStan
+    treatPhpDocTypesAsCertain: false
+    ignoreErrors:
+        - identifier: missingType.iterableValue
