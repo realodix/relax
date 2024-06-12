@@ -32,7 +32,7 @@ class UtilsTest extends TestCase
     /**
      * @dataProvider pcsfRuleSetNameToClassNameProvider
      */
-    public function testPcsfRuleSetNameToClassName($actual, $expected): void
+    public function testPcsfRuleSetNameToClassName($expected, $actual): void
     {
         $className = Utils::pcsfRuleSetNameToClassName($actual);
 
@@ -42,10 +42,10 @@ class UtilsTest extends TestCase
     public static function pcsfRuleSetNameToClassNameProvider()
     {
         return [
-            '@PSR1' => ['@PSR1', 'PSR1Set'],
-            '@PhpCsFixer:risky' => ['@PhpCsFixer:risky', 'PhpCsFixerRiskySet'],
-            '@PER-CS1.0' => ['@PER-CS1.0', 'PERCS1x0Set'],
-            '@PER-CS1.0:risky' => ['@PER-CS1.0:risky', 'PERCS1x0RiskySet'],
+            '@PSR1' => ['PSR1Set', '@PSR1'],
+            '@PhpCsFixer:risky' => ['PhpCsFixerRiskySet', '@PhpCsFixer:risky'],
+            '@PER-CS1.0' => ['PERCS1x0Set', '@PER-CS1.0'],
+            '@PER-CS1.0:risky' => ['PERCS1x0RiskySet', '@PER-CS1.0:risky'],
         ];
     }
 }
