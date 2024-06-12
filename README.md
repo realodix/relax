@@ -20,7 +20,7 @@ composer require --dev realodix/relax
 ./vendor/bin/php-cs-fixer fix
 ```
 
-For more details, see [PHP-CS-Fixer: Usage][pcf_doc_usage] documentation.
+For more details, see PHP-CS-Fixer [documentation](https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/blob/master/doc/usage.rst).
 
 ## Configuring Relax
 
@@ -50,11 +50,11 @@ Rule set defines a set of rules that can be used to fix code style issues in you
 | [`@Realodix`][rs_realodix] | Inherits `@Laravel` with some tweaks |
 | [`@Spatie`][rs_spatie]     | The rule set used by Spatie |
 
-:bulb: If you wish, you can also add the [PHP-CS-Fixer rule sets][pcf_doc_ruleset].
+:bulb: If you wish, you can also add the [PHP-CS-Fixer rule sets](https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/blob/master/doc/ruleSets/index.rst).
 
 #### Custom Fixers
 
-- [kubawerlos/php-cs-fixer-custom-fixers][fx_kubawerlos_custom-fixers]
+- [kubawerlos/php-cs-fixer-custom-fixers](https://github.com/kubawerlos/php-cs-fixer-custom-fixers)
 
 :bulb: They're all registered, so you don't need to re-register via `registerCustomFixers()`.
 
@@ -68,6 +68,12 @@ By default, Relax will inspect all `.php` files in your project except those in 
 | [`Finder::laravel()`][doc_f_laravel] | Inherits `Finder::base()` with some specific tweaks to Laravel |
 
 :bulb: By default, if finder is not set Relax will use `Finder::base()`.
+
+[rs_laravel]: src/RuleSet/Sets/Laravel.php
+[rs_realodix]: src/RuleSet/Sets/Realodix.php
+[rs_spatie]: src/RuleSet/Sets/Spatie.php
+[doc_f_base]: docs/finders.md#finderbase
+[doc_f_laravel]: docs/finders.md#finderlaravel
 
 ## Advanced Configuration
 
@@ -107,7 +113,7 @@ return Config::create('@PSR2', $localRules)
     ->registerCustomFixers(new \PhpCsFixerCustomFixers\CustomFixer());
 ```
 
-Relax is built on top of [`PHP-CS-Fixer`][php-cs-fixer]. Therefore, you may use any of its rules to fix code style issues in your project. For more details, see  [PHP-CS-Fixer: Config][pcf_doc_config] documentation and [MLocati: PHP-CS-Fixer Configurator][pcf_doc_config_mlocati].
+Relax is built on top of [`PHP-CS-Fixer`][php-cs-fixer]. Therefore, you may use any of its rules to fix code style issues in your project. For more details, see  [PHP-CS-Fixer: Config](https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/blob/master/doc/config.rst) documentation and [MLocati: PHP-CS-Fixer Configurator](https://mlocati.github.io/php-cs-fixer-configurator).
 
 If you wish to completely define rules locally without using existing rule sets, you can do that:
 
@@ -127,7 +133,7 @@ return Config::create($localRules);
 
 ## Custom Rule Set
 
-You can easily create your own rule set by extending the [`AbstractRuleSet`][rs_abstract]: class.
+You can easily create your own rule set by extending the [`AbstractRuleSet`](src/RuleSet/AbstractRuleSet.php): class.
 
 ```php
 <?php
@@ -173,17 +179,4 @@ Please report bugs to the [GitHub Issue Tracker](../../issues).
 
 This package is licensed under the [MIT License](/LICENSE).
 
-[doc_f_base]: docs/finders.md#finderbase
-[doc_f_laravel]: docs/finders.md#finderlaravel
-
-[rs_abstract]: src/RuleSet/AbstractRuleSet.php
-[rs_laravel]: src/RuleSet/Sets/Laravel.php
-[rs_realodix]: src/RuleSet/Sets/Realodix.php
-[rs_spatie]: src/RuleSet/Sets/Spatie.php
-[fx_kubawerlos_custom-fixers]: https://github.com/kubawerlos/php-cs-fixer-custom-fixers
-
-[php-cs-fixer]: https://github.com/FriendsOfPHP/PHP-CS-Fixer
-[pcf_doc_usage]: https://github.com/FriendsOfPHP/PHP-CS-Fixer/blob/master/doc/usage.rst
-[pcf_doc_config]: https://github.com/FriendsOfPHP/PHP-CS-Fixer/blob/master/doc/config.rst
-[pcf_doc_config_mlocati]: https://mlocati.github.io/php-cs-fixer-configurator
-[pcf_doc_ruleset]: https://github.com/FriendsOfPHP/PHP-CS-Fixer/blob/master/doc/ruleSets/index.rst
+[php-cs-fixer]: https://github.com/PHP-CS-Fixer/PHP-CS-Fixer
