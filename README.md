@@ -50,7 +50,6 @@ Rule set defines a set of rules that can be used to fix code style issues in you
 | [`@Realodix`][rs_realodix] | Inherits `@Laravel` with some tweaks |
 | [`@Spatie`][rs_spatie]     | The rule set used by Spatie |
 
-:bulb: If you wish, you can also add the [PHP-CS-Fixer rule sets](https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/blob/master/doc/ruleSets/index.rst).
 
 #### Custom Fixers
 

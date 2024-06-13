@@ -12,8 +12,6 @@ trait ConfigTestProvider
         return [
             [new RuleSetFile],
             ['@Realodix'],
-            ['@PSR2'],
-            ['@PhpCsFixer:risky'],
             [[]],
         ];
     }

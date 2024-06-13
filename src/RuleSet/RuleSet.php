@@ -2,27 +2,23 @@
 
 namespace Realodix\Relax\RuleSet;
 
-use PhpCsFixer\RuleSet\RuleSetDescriptionInterface as PhpCsFixerRuleSetInterface;
-use Realodix\Relax\RuleSet\RuleSetInterface as RelaxRuleSetInterface;
-use Realodix\Relax\Utils;
-
 final class RuleSet
 {
     private static string $ruleSetNameSpace = 'Realodix\\Relax\\RuleSet\\Sets\\';
 
     /**
-     * @var array|string|RelaxRuleSetInterface|PhpCsFixerRuleSetInterface
+     * @var array|string|RuleSetInterface
      */
     private $ruleSet;
 
     /**
-     * @param array|string|RelaxRuleSetInterface $ruleSet
+     * @param array|string|RuleSetInterface $ruleSet
      *
      * @throws \InvalidArgumentException
      */
     public function __construct($ruleSet)
     {
-        if (! is_array($ruleSet) && ! is_string($ruleSet) && ! $ruleSet instanceof RelaxRuleSetInterface) {
+        if (! is_array($ruleSet) && ! is_string($ruleSet) && ! $ruleSet instanceof RuleSetInterface) {
             throw new \InvalidArgumentException(sprintf(
                 'The rule set must be of type %s, %s given.',
                 'array|string|'.self::$ruleSetNameSpace.'RuleSetInterface',
@@ -56,8 +52,8 @@ final class RuleSet
     /**
      * Resolve input set into group of rules.
      *
-     * @param array|string|RelaxRuleSetInterface|PhpCsFixerRuleSetInterface $ruleSet
-     * @return array|RelaxRuleSetInterface|PhpCsFixerRuleSetInterface
+     * @param array|string|RuleSetInterface $ruleSet
+     * @return array|RuleSetInterface
      *
      * @throws \InvalidArgumentException
      */
@@ -66,14 +62,10 @@ final class RuleSet
         if (is_string($ruleSet)) {
             if (preg_match('/^@[A-Z]/', $ruleSet)) {
                 $relaxRuleSet = self::$ruleSetNameSpace.ltrim($ruleSet, '@');
-                if (class_exists($relaxRuleSet) && is_subclass_of($relaxRuleSet, RelaxRuleSetInterface::class)) {
+                if (class_exists($relaxRuleSet) && is_subclass_of($relaxRuleSet, RuleSetInterface::class)) {
                     return new $relaxRuleSet;
                 }
 
-                $pcsfRuleSet = Utils::pcsfRuleSetClass($ruleSet);
-                if (class_exists($pcsfRuleSet) && is_subclass_of($pcsfRuleSet, PhpCsFixerRuleSetInterface::class)) {
-                    return new $pcsfRuleSet;
-                }
             }
 
             throw new \InvalidArgumentException(sprintf('Set "%s" does not exist.', $ruleSet));
