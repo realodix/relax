@@ -46,7 +46,7 @@ Rule set defines a set of rules that can be used to fix code style issues in you
 
 | Preset                     | Description |
 | -------------------------- |-------------|
-| [`@Laravel`][rs_laravel]   | The rule set by Laravel Pint |
+| [`@Laravel`][rs_laravel]   | Rules that follow the official Laravel coding standards |
 | [`@Realodix`][rs_realodix] | Inherits `@Laravel` with some tweaks |
 | [`@Spatie`][rs_spatie]     | The rule set used by Spatie |
 
