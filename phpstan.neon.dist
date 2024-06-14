@@ -5,8 +5,6 @@ parameters:
     level: 6
     paths:
         - src
-    excludePaths:
-        - src/Fixers/Laravel
     tmpDir: .tmp/PHPStan
     treatPhpDocTypesAsCertain: false
     ignoreErrors:
