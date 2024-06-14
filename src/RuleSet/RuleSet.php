@@ -4,8 +4,6 @@ namespace Realodix\Relax\RuleSet;
 
 final class RuleSet
 {
-    private static string $ruleSetNameSpace = 'Realodix\\Relax\\RuleSet\\Sets\\';
-
     /**
      * @var array|string|RuleSetInterface
      */
@@ -21,7 +19,7 @@ final class RuleSet
         if (! is_array($ruleSet) && ! is_string($ruleSet) && ! $ruleSet instanceof RuleSetInterface) {
             throw new \InvalidArgumentException(sprintf(
                 'The rule set must be of type %s, %s given.',
-                'array|string|'.self::$ruleSetNameSpace.'RuleSetInterface',
+                'array|string|Realodix\\Relax\\RuleSet\\RuleSetInterface',
                 gettype($ruleSet)
             ));
         }
@@ -59,9 +57,11 @@ final class RuleSet
      */
     private function getSetDefinitions($ruleSet)
     {
+        $ruleSetNameSpace = 'Realodix\\Relax\\RuleSet\\Sets\\';
+
         if (is_string($ruleSet)) {
             if (preg_match('/^@[A-Z]/', $ruleSet)) {
-                $relaxRuleSet = self::$ruleSetNameSpace.ltrim($ruleSet, '@');
+                $relaxRuleSet = $ruleSetNameSpace.ltrim($ruleSet, '@');
                 if (class_exists($relaxRuleSet) && is_subclass_of($relaxRuleSet, RuleSetInterface::class)) {
                     return new $relaxRuleSet;
                 }
