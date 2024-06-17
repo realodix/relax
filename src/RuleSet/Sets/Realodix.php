@@ -32,7 +32,9 @@ final class Realodix extends AbstractRuleSet
             'single_line_comment_spacing' => true,
 
             Fixer\MultilineCommentOpeningClosingAloneFixer::name() => true,
-            Fixer\MultilinePromotedPropertiesFixer::name() => true,
+            Fixer\MultilinePromotedPropertiesFixer::name() => [
+                'minimum_number_of_parameters' => 2,
+            ],
             Fixer\NoDoctrineMigrationsGeneratedCommentFixer::name() => true,
             Fixer\NoDuplicatedArrayKeyFixer::name() => true,
             Fixer\NoDuplicatedImportsFixer::name() => true,
