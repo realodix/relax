@@ -8,8 +8,9 @@ class Finder
 {
     /**
      * @param string|list<string>|null $baseDir
+     * @return \PhpCsFixer\Finder
      */
-    public static function base($baseDir = null): PhpCsFixerFinder
+    public static function base($baseDir = null)
     {
         if ($baseDir === null) {
             $baseDir = getcwd() === false ? '' : getcwd();
@@ -32,8 +33,9 @@ class Finder
 
     /**
      * @param string|list<string>|null $baseDir
+     * @return \PhpCsFixer\Finder
      */
-    public static function laravel($baseDir = null): PhpCsFixerFinder
+    public static function laravel($baseDir = null)
     {
         return self::base($baseDir)
             ->exclude([
