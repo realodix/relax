@@ -7,10 +7,10 @@ interface RuleSetInterface
     /**
      * Returns the name of the rule set
      */
-    public function getName(): string;
+    public function name(): string;
 
     /**
      * Returns an array of rules along with their configuration
      */
-    public function getRules(): array;
+    public function rules(): array;
 }

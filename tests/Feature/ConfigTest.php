@@ -5,6 +5,7 @@ namespace Realodix\Relax\Tests\Feature;
 use PHPUnit\Framework\TestCase;
 use Realodix\Relax\Config;
 use Realodix\Relax\Tests\Fixtures\RuleSetFile;
+use Realodix\Relax\Tests\Fixtures\RuleSetWithSetNameFile;
 
 class ConfigTest extends TestCase
 {
@@ -61,6 +62,11 @@ class ConfigTest extends TestCase
         $this->assertSame(
             '@RuleSetFile (1 rules)',
             Config::create(new RuleSetFile)->getName()
+        );
+
+        $this->assertSame(
+            '@CustomRuleSetName (0 rules)',
+            Config::create(new RuleSetWithSetNameFile)->getName()
         );
 
         $this->assertSame(

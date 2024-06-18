@@ -4,16 +4,12 @@ namespace Realodix\Relax\Tests\Unit;
 
 use PHPUnit\Framework\TestCase;
 use Realodix\Relax\Config;
+use Realodix\Relax\RuleSet\RuleSet;
 use Realodix\Relax\Tests\Fixtures\RuleSetFile;
 use Realodix\Relax\Tests\Fixtures\RuleSetWithSetNameFile;
 
 class RuleSetTest extends TestCase
 {
-    protected function getClassShortName($ruleSet): string
-    {
-        return (new \ReflectionClass($ruleSet))->getShortName();
-    }
-
     /**
      * It implements only interface methods
      */
@@ -21,7 +17,7 @@ class RuleSetTest extends TestCase
     {
         $reflect = new \ReflectionClass(new RuleSetFile);
         $this->assertCount(0, $reflect->getMethods(\ReflectionMethod::IS_PROTECTED));
-        $this->assertCount(3, $reflect->getMethods(\ReflectionMethod::IS_PUBLIC));
+        $this->assertCount(2, $reflect->getMethods(\ReflectionMethod::IS_PUBLIC));
     }
 
     /**
@@ -39,8 +35,8 @@ class RuleSetTest extends TestCase
      */
     public function testRuleSetName(): void
     {
-        $expected = '@'.$this->getClassShortName(new RuleSetFile);
-        $actual = (new RuleSetFile)->getName();
+        $expected = '@'.(new \ReflectionClass(new RuleSetFile))->getShortName();
+        $actual = (new RuleSetFile)->name();
 
         $this->assertSame($expected, $actual);
     }
@@ -49,10 +45,10 @@ class RuleSetTest extends TestCase
      * Nama yang dikembalikan haruslah nama yang telah ditetapkan di dalam kelas
      * tersebut.
      */
-    public function testRuleSetNameWithoutSetName(): void
+    public function testRuleSetNameWithSetName(): void
     {
-        $expected = (new RuleSetWithSetNameFile)->name;
-        $actual = (new RuleSetWithSetNameFile)->getName();
+        $expected = '@CustomRuleSetName';
+        $actual = (new RuleSet(new RuleSetWithSetNameFile))->getName();
 
         $this->assertSame($expected, $actual);
     }
