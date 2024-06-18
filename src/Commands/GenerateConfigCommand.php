@@ -2,28 +2,15 @@
 
 namespace Realodix\Relax\Commands;
 
+use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 
+#[AsCommand(name: 'init')]
 class GenerateConfigCommand extends Command
 {
-    /**
-     * @var \Symfony\Component\Console\Output\OutputInterface
-     */
-    protected $output;
-
-    /**
-     * @var \Symfony\Component\Console\Input\InputInterface
-     */
-    protected $input;
-
-    /**
-     * @var string
-     */
-    protected static $defaultName = 'init';
-
     private const FILE_NAME = '.php-cs-fixer.php';
 
     public function configure(): void
@@ -31,9 +18,6 @@ class GenerateConfigCommand extends Command
         $this->setDescription('Generate PHP-CS-FIXER configuration file.');
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function execute(InputInterface $input, OutputInterface $output): int
     {
         $filename = self::FILE_NAME;
@@ -42,7 +26,7 @@ class GenerateConfigCommand extends Command
             return Command::FAILURE;
         }
 
-        if (! $this->generateAndSaveCode()) {
+        if (! $this->generateAndSaveCode($output)) {
             return Command::FAILURE;
         }
 
@@ -82,8 +66,10 @@ class GenerateConfigCommand extends Command
     /**
      * Generates the configuration file and tries to write the contents to file.
      * Returns true on success or false if the file could not be written.
+     *
+     * @param OutputInterface $output
      */
-    protected function generateAndSaveCode(): bool
+    protected function generateAndSaveCode($output): bool
     {
         $code = <<<'CODE'
             <?php
@@ -98,7 +84,7 @@ class GenerateConfigCommand extends Command
             CODE;
 
         if (file_put_contents($this->getOutputFilename(), $code) === false) {
-            $this->output->writeln('<comment>Failed to write to output file.</comment>');
+            $output->writeln('<comment>Failed to write to output file.</comment>');
 
             return false;
         }
