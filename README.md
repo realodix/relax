@@ -24,20 +24,15 @@ For more details, see PHP-CS-Fixer [documentation](https://github.com/PHP-CS-Fix
 
 ## Configuring Relax
 
-Run this command below:
-
-```sh
-./vendor/bin/relax init
-```
-
-or in your PHP CS Fixer configuration file, use the following contents:
+In your PHP CS Fixer configuration file, use the following contents:
 
 ```php
 <?php
 
 use Realodix\Relax\Config;
+use Realodix\Relax\RuleSet\Sets\Realodix;
 
-return Config::create('@Realodix');
+return Config::create(new Realodix);
 ```
 
 #### Rule Sets
@@ -46,9 +41,9 @@ Rule set defines a set of rules that can be used to fix code style issues in you
 
 | Preset                     | Description |
 | -------------------------- |-------------|
-| [`@Laravel`][rs_laravel]   | Rules that follow the official Laravel coding standards |
-| [`@Realodix`][rs_realodix] | Inherits `@Laravel` with some tweaks |
-| [`@Spatie`][rs_spatie]     | The rule set used by Spatie |
+| [`Laravel`][rs_laravel]   | Rules that follow the official Laravel coding standards |
+| [`Realodix`][rs_realodix] | Inherits `Laravel` with some tweaks |
+| [`Spatie`][rs_spatie]     | The rule set used by Spatie |
 
 
 #### Custom Fixers
