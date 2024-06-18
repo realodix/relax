@@ -6,7 +6,7 @@ use Realodix\Relax\RuleSet\AbstractRuleSet;
 
 final class RuleSetFile extends AbstractRuleSet
 {
-    protected function rules(): array
+    public function rules(): array
     {
         return [
             ['foo' => 'bar'],

@@ -6,7 +6,7 @@ abstract class AbstractRuleSet implements RuleSetInterface
 {
     protected string $name = '';
 
-    abstract protected function rules(): array;
+    abstract public function rules(): array;
 
     public function getName(): string
     {

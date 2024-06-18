@@ -8,7 +8,7 @@ final class RuleSetWithSetNameFile extends AbstractRuleSet
 {
     public string $name = 'valid-rule-set';
 
-    protected function rules(): array
+    public function rules(): array
     {
         return [];
     }

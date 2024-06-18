@@ -12,7 +12,7 @@ use Realodix\Relax\RuleSet\AbstractRuleSet;
  */
 final class Spatie extends AbstractRuleSet
 {
-    protected function rules(): array
+    public function rules(): array
     {
         return [
             '@PSR12' => true,

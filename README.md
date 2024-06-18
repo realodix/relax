@@ -146,7 +146,7 @@ final class MyRuleSet extends AbstractRuleSet
      */
     // public string $name = 'Personal CS';
 
-    protected function rules(): array
+    public function rules(): array
     {
         // ...
     }

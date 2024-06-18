@@ -7,7 +7,7 @@ use Realodix\Relax\RuleSet\AbstractRuleSet;
 
 final class Realodix extends AbstractRuleSet
 {
-    protected function rules(): array
+    public function rules(): array
     {
         $baseRules = (new Laravel)->rules();
 

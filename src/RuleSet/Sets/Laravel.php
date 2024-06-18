@@ -10,7 +10,7 @@ use Realodix\Relax\RuleSet\AbstractRuleSet;
  */
 final class Laravel extends AbstractRuleSet
 {
-    protected function rules(): array
+    public function rules(): array
     {
         return [
             'array_indentation' => true,

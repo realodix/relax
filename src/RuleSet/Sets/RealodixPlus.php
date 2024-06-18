@@ -12,7 +12,7 @@ use Realodix\Relax\RuleSet\AbstractRuleSet;
  */
 final class RealodixPlus extends AbstractRuleSet
 {
-    protected function rules(): array
+    public function rules(): array
     {
         $baseRules = (new Realodix)->rules();
 
