@@ -8,16 +8,8 @@ abstract class AbstractRuleSet implements RuleSetInterface
 
     public function name(): string
     {
-        return '@'.self::classBasename($this);
-    }
+        $name = substr(static::class, 1 + strrpos(static::class, '\\'));
 
-    /**
-     * Get the class basename.
-     */
-    private static function classBasename(object $class): string
-    {
-        $class = get_class($class);
-
-        return basename(str_replace('\\', '/', $class));
+        return '@'.$name;
     }
 }
