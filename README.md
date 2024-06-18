@@ -136,11 +136,6 @@ use Realodix\Relax\RuleSet\AbstractRuleSet;
 
 final class MyRuleSet extends AbstractRuleSet
 {
-    /**
-     * Optionally, set the rule set name.
-     */
-    // public string $name = 'Personal CS';
-
     public function rules(): array
     {
         // ...
