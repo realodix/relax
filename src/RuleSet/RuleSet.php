@@ -62,7 +62,7 @@ final class RuleSet
         if (is_string($ruleSet)) {
             if (preg_match('/^@[A-Z]/', $ruleSet)) {
                 $relaxRuleSet = $ruleSetNameSpace.ltrim($ruleSet, '@');
-                if (class_exists($relaxRuleSet) && is_subclass_of($relaxRuleSet, RuleSetInterface::class)) {
+                if (class_exists($relaxRuleSet) && new $relaxRuleSet instanceof RuleSetInterface) {
                     return new $relaxRuleSet;
                 }
             }
