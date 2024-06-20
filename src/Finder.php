@@ -7,7 +7,7 @@ use PhpCsFixer\Finder as PhpCsFixerFinder;
 class Finder
 {
     /**
-     * @param string|list<string>|null $baseDir
+     * @param null|string|list<string> $baseDir
      * @return \PhpCsFixer\Finder
      */
     public static function base($baseDir = null)
@@ -32,7 +32,7 @@ class Finder
     }
 
     /**
-     * @param string|list<string>|null $baseDir
+     * @param null|string|list<string> $baseDir
      * @return \PhpCsFixer\Finder
      */
     public static function laravel($baseDir = null)
