@@ -31,6 +31,7 @@ final class RealodixPlus extends AbstractRuleSet
             'php_unit_method_casing' => true,
 
             Fixer\CommentSurroundedBySpacesFixer::name() => true,
+            Fixer\NoDoctrineMigrationsGeneratedCommentFixer::name() => true,
             Fixer\NoUselessCommentFixer::name() => true,
         ];
 

@@ -36,9 +36,6 @@ final class Realodix extends AbstractRuleSet
             Fixer\MultilinePromotedPropertiesFixer::name() => [
                 'minimum_number_of_parameters' => 2,
             ],
-            Fixer\NoDoctrineMigrationsGeneratedCommentFixer::name() => true,
-            Fixer\NoDuplicatedArrayKeyFixer::name() => true,
-            Fixer\NoDuplicatedImportsFixer::name() => true,
             Fixer\NoImportFromGlobalNamespaceFixer::name() => true,
             Fixer\NoPhpStormGeneratedCommentFixer::name() => true,
             Fixer\NoUselessDoctrineRepositoryCommentFixer::name() => true,
