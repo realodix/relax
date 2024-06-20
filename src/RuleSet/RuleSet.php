@@ -65,7 +65,6 @@ final class RuleSet
                 if (class_exists($relaxRuleSet) && is_subclass_of($relaxRuleSet, RuleSetInterface::class)) {
                     return new $relaxRuleSet;
                 }
-
             }
 
             throw new \InvalidArgumentException(sprintf('Set "%s" does not exist.', $ruleSet));
