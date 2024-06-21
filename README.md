@@ -30,14 +30,14 @@ In your PHP CS Fixer configuration file, use the following contents:
 <?php
 
 use Realodix\Relax\Config;
-use Realodix\Relax\RuleSet\Sets\Realodix;
+use Realodix\Relax\RuleSet\Sets\Laravel;
 
-return Config::create(new Realodix);
+return Config::create(new Laravel);
 ```
 
-#### Rule Sets
+#### Presets
 
-Rule set defines a set of rules that can be used to fix code style issues in your code.
+Presets defines a set of rules that can be used to fix code style issues in your code. To use presets in your PHP code, you need to use the `Realodix\Relax\RuleSet\Sets\` namespace.
 
 | Preset                     | Description |
 | -------------------------- |-------------|
@@ -78,6 +78,7 @@ In case you only need some tweaks for specific projects, which won't deserve an 
 
 use Realodix\Relax\Config;
 use Realodix\Relax\Finder;
+use Realodix\Relax\RuleSet\Sets\Laravel;
 
 // You can add or override rule set
 $localRules = [
@@ -101,7 +102,7 @@ $finder = Finder::laravel(__DIR__.'Foo')
     ->notName('*.foo.php')
     ->append(['.php-cs-fixer.dist.php']);
 
-return Config::create('@PSR2', $localRules)
+return Config::create(new Laravel, $localRules)
     ->setFinder($finder)
     ->setRiskyAllowed(false)
     ->registerCustomFixers(new \PhpCsFixerCustomFixers\CustomFixer());
