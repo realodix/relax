@@ -16,28 +16,22 @@ final class Realodix extends AbstractRuleSet
             'attribute_empty_parentheses' => true,
             'class_reference_name_casing' => true,
             'combine_consecutive_unsets' => true,
+            // If the anonymous/named classes is followed by parentheses, then the parentheses will be removed
             'new_with_parentheses' => ['named_class' => false, 'anonymous_class' => false],
-            'no_empty_comment' => true,
             'no_unneeded_import_alias' => true,
             'no_useless_concat_operator' => true,
             'no_useless_else' => true,
             'no_useless_nullsafe_operator' => true,
-            'operator_linebreak' => [
-                'only_booleans' => true,
-            ],
+            'operator_linebreak' => ['only_booleans' => true],
             'phpdoc_param_order' => true,
             'phpdoc_trim_consecutive_blank_line_separation' => true,
+            'phpdoc_types_order' => ['sort_algorithm' => 'none'],
             'phpdoc_var_annotation_correct_order' => true,
             'simple_to_complex_string_variable' => true,
             'single_line_comment_spacing' => true,
 
             Fixer\MultilineCommentOpeningClosingAloneFixer::name() => true,
-            Fixer\MultilinePromotedPropertiesFixer::name() => [
-                'minimum_number_of_parameters' => 2,
-            ],
-            Fixer\NoDoctrineMigrationsGeneratedCommentFixer::name() => true,
-            Fixer\NoDuplicatedArrayKeyFixer::name() => true,
-            Fixer\NoDuplicatedImportsFixer::name() => true,
+            Fixer\MultilinePromotedPropertiesFixer::name() => ['minimum_number_of_parameters' => 2],
             Fixer\NoImportFromGlobalNamespaceFixer::name() => true,
             Fixer\NoPhpStormGeneratedCommentFixer::name() => true,
             Fixer\NoUselessDoctrineRepositoryCommentFixer::name() => true,
@@ -55,19 +49,20 @@ final class Realodix extends AbstractRuleSet
              */
             'ternary_operator_spaces' => false,
             'unary_operator_spaces' => false,
-            'braces_position' => [
-                'anonymous_classes_opening_brace' => 'next_line_unless_newline_at_signature_end',
+            'binary_operator_spaces' => [
+                'default' => 'single_space',
+                'operators' => ['=>' => 'at_least_single_space'],
             ],
+            'braces_position' => ['anonymous_classes_opening_brace' => 'next_line_unless_newline_at_signature_end'],
+            'function_declaration' => ['closure_fn_spacing' => 'none'],
             'method_argument_space' => ['on_multiline' => 'ignore', 'after_heredoc' => true],
-            'whitespace_after_comma_in_array' => ['ensure_single_space' => true],
             'no_extra_blank_lines' => [
                 'tokens' => [
-                    'attribute',
-                    'extra',
-                    'throw',
-                    'use',
+                    'attribute', 'extra', 'throw', 'use', 'case', 'continue', 'curly_brace_block',
+                    'default', 'parenthesis_brace_block', 'square_brace_block', 'switch',
                 ],
             ],
+            'whitespace_after_comma_in_array' => ['ensure_single_space' => true],
             'phpdoc_align' => ['tags' => ['method', 'param', 'property', 'throws', 'type', 'var']],
             'phpdoc_separation' => [
                 'groups' => [
