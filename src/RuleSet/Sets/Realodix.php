@@ -67,7 +67,6 @@ final class Realodix extends AbstractRuleSet
                 ],
             ],
             'whitespace_after_comma_in_array' => ['ensure_single_space' => true],
-
             'phpdoc_align' => ['tags' => ['method', 'param', 'property', 'throws', 'type', 'var']],
             'phpdoc_separation' => [
                 'groups' => [
