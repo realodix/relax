@@ -5,18 +5,19 @@ namespace Realodix\Relax;
 use PhpCsFixer\Config as PhpCsFixerConfig;
 use PhpCsFixer\ConfigInterface;
 use Realodix\Relax\RuleSet\RuleSetInterface;
-use Realodix\Relax\RuleSet\Sets\Realodix;
 
 class Config extends PhpCsFixerConfig
 {
-    private RuleSetInterface $ruleSet;
+    const LOCAL_RULES_NAME = 'Local Rules';
 
-    public function __construct(?RuleSetInterface $preset = null)
+    private ?RuleSetInterface $ruleSet;
+
+    public function __construct(?RuleSetInterface $ruleSet)
     {
-        $this->ruleSet = $preset ?: new Realodix;
+        $this->ruleSet = $ruleSet;
+        $name = $this->ruleSet ? $this->ruleSet->name() : self::LOCAL_RULES_NAME;
 
-        parent::__construct($this->ruleSet->name());
-
+        parent::__construct($name);
         $this->registerCustomFixers(new \PhpCsFixerCustomFixers\Fixers);
         $this->setFinder(Finder::base());
         $this->setRiskyAllowed(true);
@@ -24,10 +25,14 @@ class Config extends PhpCsFixerConfig
 
     public function setRules(array $rules = []): ConfigInterface
     {
-        return parent::setRules(array_merge($this->ruleSet->rules(), $rules));
+        $ruleSet = $this->ruleSet ? $this->ruleSet->rules() : [];
+
+        return parent::setRules(array_merge($ruleSet, $rules));
     }
 
     /**
+     * Create a new config instance
+     *
      * @return self
      */
     public static function create(?RuleSetInterface $ruleSet = null)

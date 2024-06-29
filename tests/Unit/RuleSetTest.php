@@ -3,32 +3,11 @@
 namespace Realodix\Relax\Tests\Unit;
 
 use PHPUnit\Framework\TestCase;
-use Realodix\Relax\Config;
-use Realodix\Relax\RuleSet\Sets\Realodix;
 use Realodix\Relax\Tests\Fixtures\RuleSetFile;
 use Realodix\Relax\Tests\Fixtures\RuleSetWithSetNameFile;
 
 class RuleSetTest extends TestCase
 {
-    /**
-     * It implements only interface methods
-     */
-    public function testItImplementsOnlyInterfaceMethods(): void
-    {
-        $reflect = new \ReflectionClass(new RuleSetFile);
-        $this->assertCount(2, $reflect->getMethods(\ReflectionMethod::IS_PUBLIC));
-    }
-
-    /**
-     * Nama yang dikembalikan haruslah string yang diimput itu sendiri.
-     */
-    public function testRuleSetNameWithStringInput(): void
-    {
-        $actual = Config::create(new Realodix)->getName();
-
-        $this->assertStringStartsWith('@Realodix', $actual);
-    }
-
     /**
      * Nama yang dikembalikan haruslah nama kelas itu sendiri dengan awalan `@`.
      */

@@ -2,6 +2,7 @@
 
 use Realodix\Relax\Config;
 use Realodix\Relax\Finder;
+use Realodix\Relax\RuleSet\Sets\Realodix;
 
 $localRules = [
     'binary_operator_spaces' => true,
@@ -10,7 +11,7 @@ $localRules = [
 $finder = Finder::base()
     ->append(['.php-cs-fixer.dist.php', 'bin/relax']);
 
-return Config::create()
+return Config::create(new Realodix)
     ->setRules($localRules)
     ->setFinder($finder)
     ->setParallelConfig(\PhpCsFixer\Runner\Parallel\ParallelConfigFactory::detect())

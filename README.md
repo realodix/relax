@@ -129,7 +129,8 @@ $localRules = [
     'ordered_imports' => ['sort_algorithm' => 'alpha'],
 ];
 
-return Config::create($localRules);
+return Config::create()
+    ->setRules($localRules);
 ```
 
 ## Custom Rule Set
