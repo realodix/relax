@@ -9,33 +9,14 @@ use Realodix\Relax\Tests\Fixtures\RuleSetWithSetNameFile;
 
 class ConfigTest extends TestCase
 {
-    use ConfigTestProvider;
-
     /**
      * The input of rule set is valid
-     *
-     * @dataProvider validRuleSetInputProvider
      */
-    public function testValidRuleSetInput($ruleSet): void
+    public function testValidRuleSetInput(): void
     {
         $this->assertInstanceOf(
             \PhpCsFixer\ConfigInterface::class,
-            Config::create($ruleSet)
-        );
-    }
-
-    /**
-     * The input of rule set is invalid
-     *
-     * @dataProvider invalidRuleSetInputProvider
-     */
-    public function testInvalidRuleSetInput($ruleSet, $expectException): void
-    {
-        $this->expectException($expectException);
-
-        $this->assertInstanceOf(
-            \PhpCsFixer\ConfigInterface::class,
-            Config::create($ruleSet)
+            Config::create(new RuleSetFile)
         );
     }
 
@@ -50,7 +31,10 @@ class ConfigTest extends TestCase
 
         $this->assertSame(
             $total,
-            count(Config::create(new RuleSetFile, $rules2)->getRules())
+            count(
+                Config::create(new RuleSetFile)
+                    ->setRules($rules2)->getRules()
+            )
         );
     }
 
@@ -60,18 +44,13 @@ class ConfigTest extends TestCase
     public function testTheNameOfTheRuleWhenTheUserAddsALocalRule(): void
     {
         $this->assertSame(
-            '@RuleSetFile (1 rules)',
+            '@RuleSetFile',
             Config::create(new RuleSetFile)->getName()
         );
 
         $this->assertSame(
-            '@CustomRuleSetName (0 rules)',
+            '@CustomRuleSetName',
             Config::create(new RuleSetWithSetNameFile)->getName()
-        );
-
-        $this->assertSame(
-            '@RuleSetFile (1 + 1 rules)',
-            Config::create(new RuleSetFile, ['foo' => 'bar'])->getName()
         );
     }
 }

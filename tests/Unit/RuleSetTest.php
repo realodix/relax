@@ -4,7 +4,7 @@ namespace Realodix\Relax\Tests\Unit;
 
 use PHPUnit\Framework\TestCase;
 use Realodix\Relax\Config;
-use Realodix\Relax\RuleSet\RuleSet;
+use Realodix\Relax\RuleSet\Sets\Realodix;
 use Realodix\Relax\Tests\Fixtures\RuleSetFile;
 use Realodix\Relax\Tests\Fixtures\RuleSetWithSetNameFile;
 
@@ -16,7 +16,6 @@ class RuleSetTest extends TestCase
     public function testItImplementsOnlyInterfaceMethods(): void
     {
         $reflect = new \ReflectionClass(new RuleSetFile);
-        $this->assertCount(0, $reflect->getMethods(\ReflectionMethod::IS_PROTECTED));
         $this->assertCount(2, $reflect->getMethods(\ReflectionMethod::IS_PUBLIC));
     }
 
@@ -25,7 +24,7 @@ class RuleSetTest extends TestCase
      */
     public function testRuleSetNameWithStringInput(): void
     {
-        $actual = Config::create('@Realodix')->getName();
+        $actual = Config::create(new Realodix)->getName();
 
         $this->assertStringStartsWith('@Realodix', $actual);
     }
@@ -48,18 +47,8 @@ class RuleSetTest extends TestCase
     public function testRuleSetNameWithSetName(): void
     {
         $expected = '@CustomRuleSetName';
-        $actual = (new RuleSet(new RuleSetWithSetNameFile))->getName();
+        $actual = (new RuleSetWithSetNameFile)->name();
 
         $this->assertSame($expected, $actual);
-    }
-
-    /**
-     * Nama yang dikembalikan haruslah nama yang telah ditetapkan oleh Relax.
-     */
-    public function testNameReturnedByLocalRule(): void
-    {
-        $actual = Config::create([])->getName();
-
-        $this->assertStringContainsString('Local', $actual);
     }
 }

@@ -32,7 +32,12 @@ In your PHP CS Fixer configuration file, use the following contents:
 use Realodix\Relax\Config;
 use Realodix\Relax\RuleSet\Sets\Laravel;
 
-return Config::create(new Laravel);
+$localRules = [
+    // ...
+];
+
+return Config::create(new Laravel)
+    ->setRules($localRules);
 ```
 
 #### Presets
@@ -102,7 +107,8 @@ $finder = Finder::laravel(__DIR__.'Foo')
     ->notName('*.foo.php')
     ->append(['.php-cs-fixer.dist.php']);
 
-return Config::create(new Laravel, $localRules)
+return Config::create(new Laravel)
+    ->setRules($localRules)
     ->setFinder($finder)
     ->setRiskyAllowed(false)
     ->registerCustomFixers(new \PhpCsFixerCustomFixers\CustomFixer());
@@ -156,7 +162,8 @@ $localRules = [
     // ...
 ];
 
-return Config::create(new MyRuleSet(), $localRules);
+return Config::create(new MyRuleSet())
+    ->setRules($localRules);
 ```
 
 ## Troubleshooting
