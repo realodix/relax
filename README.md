@@ -32,15 +32,20 @@ In your PHP CS Fixer configuration file, use the following contents:
 use Realodix\Relax\Config;
 use Realodix\Relax\RuleSet\Sets\Laravel;
 
-return Config::create(new Laravel);
+$localRules = [
+    // ...
+];
+
+return Config::create(new Laravel)
+    ->setRules($localRules);
 ```
 
-#### Presets
+#### Rulesets
 
-Presets defines a set of rules that can be used to fix code style issues in your code. To use presets in your PHP code, you need to use the `Realodix\Relax\RuleSet\Sets\` namespace.
+Rulesets defines a set of rules that can be used to fix code style issues in your code. To use rulesets in your PHP code, you need to use the `Realodix\Relax\RuleSet\Sets\` namespace.
 
-| Preset                     | Description |
-| -------------------------- |-------------|
+| Rulesets                  | Description |
+| ------------------------- |-------------|
 | [`Laravel`][rs_laravel]   | Rules that follow the official Laravel coding standards |
 | [`Realodix`][rs_realodix] | Inherits `Laravel` with some tweaks |
 | [`Spatie`][rs_spatie]     | The rule set used by Spatie |
@@ -102,7 +107,8 @@ $finder = Finder::laravel(__DIR__.'Foo')
     ->notName('*.foo.php')
     ->append(['.php-cs-fixer.dist.php']);
 
-return Config::create(new Laravel, $localRules)
+return Config::create(new Laravel)
+    ->setRules($localRules)
     ->setFinder($finder)
     ->setRiskyAllowed(false)
     ->registerCustomFixers(new \PhpCsFixerCustomFixers\CustomFixer());
@@ -123,7 +129,8 @@ $localRules = [
     'ordered_imports' => ['sort_algorithm' => 'alpha'],
 ];
 
-return Config::create($localRules);
+return Config::create()
+    ->setRules($localRules);
 ```
 
 ## Custom Rule Set
@@ -156,7 +163,8 @@ $localRules = [
     // ...
 ];
 
-return Config::create(new MyRuleSet(), $localRules);
+return Config::create(new MyRuleSet())
+    ->setRules($localRules);
 ```
 
 ## Troubleshooting

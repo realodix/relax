@@ -11,6 +11,8 @@ $localRules = [
 $finder = Finder::base()
     ->append(['.php-cs-fixer.dist.php', 'bin/relax']);
 
-return Config::create(new Realodix, $localRules)
+return Config::create(new Realodix)
+    ->setRules($localRules)
     ->setFinder($finder)
+    ->setParallelConfig(\PhpCsFixer\Runner\Parallel\ParallelConfigFactory::detect())
     ->setCacheFile(__DIR__.'/.tmp/.php-cs-fixer.cache');

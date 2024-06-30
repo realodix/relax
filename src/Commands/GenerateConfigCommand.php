@@ -74,13 +74,13 @@ class GenerateConfigCommand extends Command
         $code = <<<'CODE'
             <?php
             use Realodix\Relax\Config;
-            use Realodix\Relax\RuleSet\Sets\Realodix;
 
             $localRules = [
                 // ...
             ];
 
-            return Config::create(new Realodix, $localRules);
+            return Config::create()
+                ->setRules($localRules);
             CODE;
 
         if (file_put_contents($this->getOutputFilename(), $code) === false) {
