@@ -75,7 +75,7 @@ By default, Relax will inspect all `.php` files in your project except those in 
 
 ## Advanced Configuration
 
-In case you only need some tweaks for specific projects, which won't deserve an own rule set - you may enable or disable specific rules.
+Relax is built on top of [`PHP-CS-Fixer`][php-cs-fixer]. Therefore, you can make configurations just like you can do in PHP-CS-Fixer. For more details, see  [PHP-CS-Fixer: Config](https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/blob/master/doc/config.rst) documentation and [MLocati: PHP-CS-Fixer Configurator](https://mlocati.github.io/php-cs-fixer-configurator).
 
 ```php
 <?php
@@ -112,8 +112,6 @@ return Config::create('Laravel')
     ->setRiskyAllowed(false)
     ->registerCustomFixers(new \PhpCsFixerCustomFixers\CustomFixer());
 ```
-
-Relax is built on top of [`PHP-CS-Fixer`][php-cs-fixer]. Therefore, you may use any of its rules to fix code style issues in your project. For more details, see  [PHP-CS-Fixer: Config](https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/blob/master/doc/config.rst) documentation and [MLocati: PHP-CS-Fixer Configurator](https://mlocati.github.io/php-cs-fixer-configurator).
 
 If you wish to completely define rules locally without using existing rule sets, you can do that:
 
