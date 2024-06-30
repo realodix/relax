@@ -66,6 +66,7 @@ class Config extends PhpCsFixerConfig
                 throw new RulesetNotFoundException($ruleSet);
             }
 
+            /** @var RuleSetInterface $ruleSet */
             return new $relaxRuleset;
         }
 
