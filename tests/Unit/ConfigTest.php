@@ -13,6 +13,11 @@ class ConfigTest extends TestCase
         $this->assertSame('@RuleSetFile', Config::create(new RuleSetFile)->getName());
     }
 
+    public function testSetRulesetWithStringInput(): void
+    {
+        $this->assertSame('@Realodix', Config::create('Realodix')->getName());
+    }
+
     public function testAddLocalRules(): void
     {
         $rules1 = (new RuleSetFile)->rules();
