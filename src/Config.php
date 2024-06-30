@@ -43,6 +43,7 @@ class Config extends PhpCsFixerConfig
         if (is_string($ruleSet)) {
             $relaxRuleset = 'Realodix\\Relax\\RuleSet\\Sets\\'.$ruleSet;
 
+            /** @var RuleSetInterface $ruleSet */
             $ruleSet = new $relaxRuleset;
         }
 
