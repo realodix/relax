@@ -52,7 +52,7 @@ class Config extends PhpCsFixerConfig
      * Resolves a rule set by checking if it's a string and creating a new instance of the
      * corresponding class. If the rule set is not a string, it is returned as is.
      *
-     * @param mixed $ruleSet The rule set to resolve.
+     * @param null|RuleSetInterface|string $ruleSet The rule set to resolve.
      * @return null|RuleSetInterface The resolved rule set.
      *
      * @throws RulesetNotFoundException
