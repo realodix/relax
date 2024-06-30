@@ -15,14 +15,14 @@ class ConfigTest extends TestCase
 
     public function testSetRulesetWithStringInput(): void
     {
-        $this->expectException(\Realodix\Relax\Exceptions\RulesetNotFoundException::class);
-
-        Config::create('wrong-rule-set')->getName();
+        $this->assertSame('@Realodix', Config::create('Realodix')->getName());
     }
 
     public function testSetRulesetWithInvalidStringInput(): void
     {
-        $this->assertSame('@Realodix', Config::create('Realodix')->getName());
+        $this->expectException(\Realodix\Relax\Exceptions\RulesetNotFoundException::class);
+
+        Config::create('wrong-rule-set')->getName();
     }
 
     public function testAddLocalRules(): void
