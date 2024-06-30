@@ -30,13 +30,12 @@ In your PHP CS Fixer configuration file, use the following contents:
 <?php
 
 use Realodix\Relax\Config;
-use Realodix\Relax\RuleSet\Sets\Laravel;
 
 $localRules = [
     // ...
 ];
 
-return Config::create(new Laravel)
+return Config::create('Laravel')
     ->setRules($localRules);
 ```
 
@@ -83,7 +82,6 @@ In case you only need some tweaks for specific projects, which won't deserve an 
 
 use Realodix\Relax\Config;
 use Realodix\Relax\Finder;
-use Realodix\Relax\RuleSet\Sets\Laravel;
 
 // You can add or override rule set
 $localRules = [
@@ -107,7 +105,7 @@ $finder = Finder::laravel(__DIR__.'Foo')
     ->notName('*.foo.php')
     ->append(['.php-cs-fixer.dist.php']);
 
-return Config::create(new Laravel)
+return Config::create('Laravel')
     ->setRules($localRules)
     ->setFinder($finder)
     ->setRiskyAllowed(false)

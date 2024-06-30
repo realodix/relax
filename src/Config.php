@@ -35,8 +35,14 @@ class Config extends PhpCsFixerConfig
      *
      * @return self
      */
-    public static function create(?RuleSetInterface $ruleSet = null)
+    public static function create(RuleSetInterface|string|null $ruleSet = null)
     {
+        if (is_string($ruleSet)) {
+            $relaxRuleset = 'Realodix\\Relax\\RuleSet\\Sets\\'.$ruleSet;
+
+            $ruleSet = new $relaxRuleset;
+        }
+
         return new self($ruleSet);
     }
 }
