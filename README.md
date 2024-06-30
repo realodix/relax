@@ -40,12 +40,12 @@ return Config::create(new Laravel)
     ->setRules($localRules);
 ```
 
-#### Presets
+#### Rulesets
 
-Presets defines a set of rules that can be used to fix code style issues in your code. To use presets in your PHP code, you need to use the `Realodix\Relax\RuleSet\Sets\` namespace.
+Rulesets defines a set of rules that can be used to fix code style issues in your code. To use rulesets in your PHP code, you need to use the `Realodix\Relax\RuleSet\Sets\` namespace.
 
-| Preset                     | Description |
-| -------------------------- |-------------|
+| Rulesets                  | Description |
+| ------------------------- |-------------|
 | [`Laravel`][rs_laravel]   | Rules that follow the official Laravel coding standards |
 | [`Realodix`][rs_realodix] | Inherits `Laravel` with some tweaks |
 | [`Spatie`][rs_spatie]     | The rule set used by Spatie |
