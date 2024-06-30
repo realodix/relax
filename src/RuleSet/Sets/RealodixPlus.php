@@ -8,7 +8,7 @@ use Realodix\Relax\RuleSet\AbstractRuleSet;
 /**
  * Inherits Realodix preset
  *
- * @see Realodix\Relax\RuleSet\Realodix
+ * @see Realodix\Relax\RuleSet\Sets\Realodix
  */
 final class RealodixPlus extends AbstractRuleSet
 {

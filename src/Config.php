@@ -35,8 +35,9 @@ class Config extends PhpCsFixerConfig
     }
 
     /**
-     * Create a new config
+     * Create a new config.
      *
+     * @param null|RuleSetInterface|string $ruleSet The ruleset to use.
      * @return self
      *
      * @throws RulesetNotFoundException If the rule set does not exist.

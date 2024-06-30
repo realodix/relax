@@ -5,7 +5,7 @@ namespace Realodix\Relax\Tests\Unit;
 use PhpCsFixer\FixerFactory;
 use PhpCsFixer\RuleSet\RuleSet as PhpCsFixerRuleSet;
 use PHPUnit\Framework\TestCase;
-use Realodix\Relax\Config;
+use Realodix\Relax\RuleSet\RuleSetInterface;
 
 class ValidRulesTest extends TestCase
 {
@@ -38,9 +38,9 @@ class ValidRulesTest extends TestCase
     /**
      * Remove PHP-CS-Fixer rule sets (@...) and custom fixer.
      */
-    protected function resolveRules($ruleSet): array
+    protected function resolveRules(RuleSetInterface $ruleSet): array
     {
-        $rules = Config::create($ruleSet)->getRules();
+        $rules = $ruleSet->rules();
 
         foreach ($rules as $key => $value) {
             if (preg_match('/^(@|[a-zA-Z0-9]+\/)/', $key)) {
