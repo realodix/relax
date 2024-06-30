@@ -4,7 +4,7 @@ namespace Realodix\Relax;
 
 use PhpCsFixer\Finder as PhpCsFixerFinder;
 
-class Finder
+class Finder extends PhpCsFixerFinder
 {
     /**
      * @param null|string|list<string> $baseDir

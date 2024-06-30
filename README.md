@@ -99,7 +99,8 @@ $localRules = [
     'CustomFixer/rule_2' => true,
 ];
 
-$finder = Finder::laravel(__DIR__.'Foo')
+$finder = Finder::create()
+    ->in(__DIR__)
     ->ignoreDotFiles(false)
     ->exclude(['Bar'])
     ->notName('*.foo.php')

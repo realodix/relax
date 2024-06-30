@@ -11,6 +11,15 @@ class FinderTest extends TestCase
     /**
      * It returns a PHP CS Fixer finder object
      */
+    public function testFinderMustReturnsAPhpCsFinderObject(): void
+    {
+        $this->assertInstanceOf(PhpCsFixerFinder::class, new Finder);
+        $this->assertInstanceOf(PhpCsFixerFinder::class, Finder::create());
+    }
+
+    /**
+     * It returns a PHP CS Fixer finder object
+     */
     public function testBaseFinderMustReturnsAPhpCsFinderObject(): void
     {
         $finder = Finder::base(__DIR__);
