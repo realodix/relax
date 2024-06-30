@@ -4,6 +4,7 @@ namespace Realodix\Relax;
 
 use PhpCsFixer\Config as PhpCsFixerConfig;
 use PhpCsFixer\ConfigInterface;
+use Realodix\Relax\Exceptions\RulesetNotFoundException;
 use Realodix\Relax\RuleSet\RuleSetInterface;
 
 class Config extends PhpCsFixerConfig
@@ -37,16 +38,38 @@ class Config extends PhpCsFixerConfig
      * Create a new config
      *
      * @return self
+     *
+     * @throws RulesetNotFoundException If the rule set does not exist.
      */
     public static function create(RuleSetInterface|string|null $ruleSet = null)
+    {
+        $ruleSet = self::resolveRuleSet($ruleSet);
+
+        return new self($ruleSet);
+    }
+
+    /**
+     * Resolves a rule set by checking if it's a string and creating a new instance of the
+     * corresponding class. If the rule set is not a string, it is returned as is.
+     *
+     * @param null|RuleSetInterface|string $ruleSet The rule set to resolve.
+     * @return null|RuleSetInterface The resolved rule set.
+     *
+     * @throws RulesetNotFoundException
+     */
+    private static function resolveRuleSet($ruleSet)
     {
         if (is_string($ruleSet)) {
             $relaxRuleset = 'Realodix\\Relax\\RuleSet\\Sets\\'.$ruleSet;
 
-            /** @var RuleSetInterface $ruleSet */
-            $ruleSet = new $relaxRuleset;
+            if (! class_exists($relaxRuleset)) {
+                throw new RulesetNotFoundException($ruleSet);
+            }
+
+            /** @var RuleSetInterface */
+            return new $relaxRuleset;
         }
 
-        return new self($ruleSet);
+        return $ruleSet;
     }
 }

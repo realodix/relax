@@ -18,6 +18,13 @@ class ConfigTest extends TestCase
         $this->assertSame('@Realodix', Config::create('Realodix')->getName());
     }
 
+    public function testSetRulesetWithInvalidStringInput(): void
+    {
+        $this->expectException(\Realodix\Relax\Exceptions\RulesetNotFoundException::class);
+
+        Config::create('wrong-rule-set')->getName();
+    }
+
     public function testAddLocalRules(): void
     {
         $rules1 = (new RuleSetFile)->rules();
