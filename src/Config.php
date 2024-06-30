@@ -53,7 +53,7 @@ class Config extends PhpCsFixerConfig
      * corresponding class. If the rule set is not a string, it is returned as is.
      *
      * @param mixed $ruleSet The rule set to resolve.
-     * @return null|RuleSetInterface|string The resolved rule set.
+     * @return null|RuleSetInterface The resolved rule set.
      *
      * @throws RulesetNotFoundException
      */
@@ -66,7 +66,7 @@ class Config extends PhpCsFixerConfig
                 throw new RulesetNotFoundException($ruleSet);
             }
 
-            /** @var RuleSetInterface $ruleSet */
+            /** @var RuleSetInterface */
             return new $relaxRuleset;
         }
 
