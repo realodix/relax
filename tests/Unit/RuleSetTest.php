@@ -9,7 +9,7 @@ use Realodix\Relax\Tests\Fixtures\RuleSetWithSetNameFile;
 class RuleSetTest extends TestCase
 {
     /**
-     * Nama yang dikembalikan haruslah nama kelas itu sendiri dengan awalan `@`.
+     * The name must be the name of the class itself with an `@` prefix.
      */
     public function testRuleSetName(): void
     {
@@ -20,8 +20,7 @@ class RuleSetTest extends TestCase
     }
 
     /**
-     * Nama yang dikembalikan haruslah nama yang telah ditetapkan di dalam kelas
-     * tersebut.
+     * The name must be the name defined in the class.
      */
     public function testRuleSetNameWithSetName(): void
     {

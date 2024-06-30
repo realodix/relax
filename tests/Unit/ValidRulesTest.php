@@ -14,7 +14,7 @@ class ValidRulesTest extends TestCase
      */
     public function testRealodixReturnsAValidPhpCsFIxerRules(): void
     {
-        $rules = $this->getCleanedRules(new \Realodix\Relax\RuleSet\Sets\Realodix);
+        $rules = $this->resolveRules(new \Realodix\Relax\RuleSet\Sets\Realodix);
         $factory = (new FixerFactory)
             ->registerBuiltInFixers()
             ->useRuleSet(new PhpCsFixerRuleSet($rules));
@@ -27,7 +27,7 @@ class ValidRulesTest extends TestCase
      */
     public function testRealodixPlusReturnsAValidPhpCsFIxerRules(): void
     {
-        $rules = $this->getCleanedRules(new \Realodix\Relax\RuleSet\Sets\RealodixPlus);
+        $rules = $this->resolveRules(new \Realodix\Relax\RuleSet\Sets\RealodixPlus);
         $factory = (new FixerFactory)
             ->registerBuiltInFixers()
             ->useRuleSet(new PhpCsFixerRuleSet($rules));
@@ -38,7 +38,7 @@ class ValidRulesTest extends TestCase
     /**
      * Remove PHP-CS-Fixer rule sets (@...) and custom fixer.
      */
-    protected function getCleanedRules($ruleSet): array
+    protected function resolveRules($ruleSet): array
     {
         $rules = Config::create($ruleSet)->getRules();
 

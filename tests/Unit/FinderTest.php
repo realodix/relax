@@ -8,18 +8,12 @@ use Realodix\Relax\Finder;
 
 class FinderTest extends TestCase
 {
-    /**
-     * It returns a PHP CS Fixer finder object
-     */
     public function testFinderMustReturnsAPhpCsFinderObject(): void
     {
         $this->assertInstanceOf(PhpCsFixerFinder::class, new Finder);
         $this->assertInstanceOf(PhpCsFixerFinder::class, Finder::create());
     }
 
-    /**
-     * It returns a PHP CS Fixer finder object
-     */
     public function testBaseFinderMustReturnsAPhpCsFinderObject(): void
     {
         $finder = Finder::base(__DIR__);
@@ -27,9 +21,6 @@ class FinderTest extends TestCase
         $this->assertInstanceOf(PhpCsFixerFinder::class, $finder);
     }
 
-    /**
-     * It returns a PHP CS Fixer finder object
-     */
     public function testLaravelFinderMustReturnsAPhpCsFinderObject(): void
     {
         $finder = Finder::laravel(__DIR__.'/../..');

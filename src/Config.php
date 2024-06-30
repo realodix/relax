@@ -23,6 +23,9 @@ class Config extends PhpCsFixerConfig
         $this->setRiskyAllowed(true);
     }
 
+    /**
+     * Sets the rules for the configuration.
+     */
     public function setRules(array $rules = []): ConfigInterface
     {
         $ruleSet = $this->ruleSet ? $this->ruleSet->rules() : [];
@@ -31,7 +34,7 @@ class Config extends PhpCsFixerConfig
     }
 
     /**
-     * Create a new config instance
+     * Create a new config
      *
      * @return self
      */
