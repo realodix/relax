@@ -2,8 +2,6 @@
 
 namespace Realodix\Relax\Tests\Unit;
 
-use PhpCsFixer\FixerFactory;
-use PhpCsFixer\RuleSet\RuleSet as PhpCsFixerRuleSet;
 use PHPUnit\Framework\TestCase;
 use Realodix\Relax\Tests\Utils;
 
@@ -14,13 +12,11 @@ class ValidRulesTest extends TestCase
      */
     public function testValidFixerConfiguration($ruleSet): void
     {
-        $rules = Utils::nativeRules($ruleSet->rules());
+        $ruleSet = new \PhpCsFixer\RuleSet\RuleSet($ruleSet->rules());
+        $factory = Utils::fixerFactory()
+            ->useRuleSet($ruleSet);
 
-        $factory = (new FixerFactory)
-            ->registerBuiltInFixers()
-            ->useRuleSet(new PhpCsFixerRuleSet($rules));
-
-        $this->assertInstanceOf(FixerFactory::class, $factory);
+        $this->assertInstanceOf(\PhpCsFixer\FixerFactory::class, $factory);
     }
 
     public static function provideAllRelaxRulesets(): array

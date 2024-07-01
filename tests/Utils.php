@@ -17,6 +17,15 @@ class Utils
         ];
     }
 
+    public static function fixerFactory(): FixerFactory
+    {
+        $factory = new FixerFactory;
+        $factory->registerBuiltInFixers();
+        $factory->registerCustomFixers(new \PhpCsFixerCustomFixers\Fixers);
+
+        return $factory;
+    }
+
     /**
      * https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/blob/f391652/tests/Test/TestCaseUtils.php#L45
      */
@@ -25,8 +34,7 @@ class Utils
         static $fixers = null;
 
         if ($fixers === null) {
-            $factory = new FixerFactory;
-            $factory->registerBuiltInFixers();
+            $factory = self::fixerFactory();
 
             $fixers = [];
             foreach ($factory->getFixers() as $fixer) {
@@ -47,7 +55,7 @@ class Utils
     public static function nativeRules(array $rules): array
     {
         foreach ($rules as $key => $value) {
-            if (preg_match('/^(@|[a-zA-Z0-9]+\/)/', $key)) {
+            if (preg_match('/^(@)/', $key)) {
                 unset($rules[$key]);
             }
         }
