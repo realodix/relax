@@ -5,49 +5,67 @@ namespace Realodix\Relax\Tests\Unit;
 use PhpCsFixer\FixerFactory;
 use PhpCsFixer\RuleSet\RuleSet as PhpCsFixerRuleSet;
 use PHPUnit\Framework\TestCase;
-use Realodix\Relax\RuleSet\RuleSetInterface;
+use Realodix\Relax\Tests\Utils;
 
 class ValidRulesTest extends TestCase
 {
     /**
-     * @Realodix set returns a valid PhpCsFIxer rules.
+     * @dataProvider provideAllRelaxRulesets
      */
-    public function testRealodixReturnsAValidPhpCsFIxerRules(): void
+    public function testValidFixerConfiguration($ruleSet): void
     {
-        $rules = $this->resolveRules(new \Realodix\Relax\RuleSet\Sets\Realodix);
+        $rules = Utils::nativeRules($ruleSet->rules());
+
         $factory = (new FixerFactory)
             ->registerBuiltInFixers()
             ->useRuleSet(new PhpCsFixerRuleSet($rules));
 
-        $this->assertIsArray($factory->getFixers());
+        $this->assertInstanceOf(FixerFactory::class, $factory);
     }
 
-    /**
-     * @RealodixPlus set returns a valid PhpCsFIxer rules.
-     */
-    public function testRealodixPlusReturnsAValidPhpCsFIxerRules(): void
+    public static function provideAllRelaxRulesets(): array
     {
-        $rules = $this->resolveRules(new \Realodix\Relax\RuleSet\Sets\RealodixPlus);
-        $factory = (new FixerFactory)
-            ->registerBuiltInFixers()
-            ->useRuleSet(new PhpCsFixerRuleSet($rules));
-
-        $this->assertIsArray($factory->getFixers());
-    }
-
-    /**
-     * Remove PHP-CS-Fixer rule sets (@...) and custom fixer.
-     */
-    protected function resolveRules(RuleSetInterface $ruleSet): array
-    {
-        $rules = $ruleSet->rules();
-
-        foreach ($rules as $key => $value) {
-            if (preg_match('/^(@|[a-zA-Z0-9]+\/)/', $key)) {
-                unset($rules[$key]);
-            }
+        foreach (Utils::ruleSets() as $ruleSet) {
+            $nestedArray[] = [$ruleSet];
         }
 
-        return $rules;
+        return $nestedArray;
+    }
+
+    /**
+     * No Deprecated Fixers in the Ruleset.
+     *
+     * https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/blob/f391652/tests/RuleSet/RuleSetTest.php#L117
+     *
+     * @dataProvider provideAllRulesFromRulesets
+     */
+    public function testThatThereIsNoDeprecatedFixerInRuleSet($setName, $ruleName): void
+    {
+        $fixer = Utils::getFixerByName($ruleName);
+
+        $this->assertNotInstanceOf(
+            \PhpCsFixer\Fixer\DeprecatedFixerInterface::class,
+            $fixer,
+            \sprintf('RuleSet "%s" contains deprecated rule "%s".', $setName, $ruleName)
+        );
+    }
+
+    /**
+     * https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/blob/f391652/tests/RuleSet/RuleSetTest.php#L117
+     */
+    public static function provideAllRulesFromRulesets(): iterable
+    {
+        foreach (Utils::ruleSets() as $ruleSet) {
+            $setName = $ruleSet->name();
+            $rules = Utils::nativeRules($ruleSet->rules());
+
+            foreach ($rules as $rule => $config) {
+                yield $setName.':'.$rule => [
+                    $setName,
+                    $rule,
+                    $config,
+                ];
+            }
+        }
     }
 }
