@@ -141,6 +141,13 @@ use Realodix\Relax\RuleSet\AbstractRuleSet;
 
 final class MyRuleSet extends AbstractRuleSet
 {
+    // This method is optional. If not implemented, Relax will use
+    // the class name itself as the ruleset name.
+    public function name(): string
+    {
+        // ...
+    }
+
     public function rules(): array
     {
         // ...
