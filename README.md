@@ -139,7 +139,7 @@ You can easily create your own rule set by extending the [`AbstractRuleSet`](src
 
 use Realodix\Relax\RuleSet\AbstractRuleSet;
 
-final class MyRuleSet extends AbstractRuleSet
+class MyRuleSet extends AbstractRuleSet
 {
     // This method is optional. If not implemented, Relax will use
     // the class name itself as the ruleset name.

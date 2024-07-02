@@ -4,7 +4,7 @@ namespace Realodix\Relax\Tests\Fixtures;
 
 use Realodix\Relax\RuleSet\AbstractRuleSet;
 
-final class RuleSetWithSetNameFile extends AbstractRuleSet
+class RuleSetWithSetNameFile extends AbstractRuleSet
 {
     public function name(): string
     {
