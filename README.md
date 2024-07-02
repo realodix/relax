@@ -43,7 +43,7 @@ return Config::create('Laravel')
 
 A ruleset is a named list of rules that can be used to fix code style issues in your code. To use ruleset in your PHP code, you need to use the `Realodix\Relax\RuleSet\Sets\` namespace.
 
-| Rulesets                  | Description |
+| Ruleset                   | Description |
 | ------------------------- |-------------|
 | [`Laravel`][rs_laravel]   | Rules that follow the official Laravel coding standards |
 | [`Realodix`][rs_realodix] | Inherits `Laravel` with some tweaks |
