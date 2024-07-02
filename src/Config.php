@@ -51,22 +51,6 @@ class Config extends PhpCsFixerConfig
             );
         }
 
-        $ruleSet = self::resolveRuleSet($ruleSet);
-
-        return new self($ruleSet);
-    }
-
-    /**
-     * Resolves a rule set by checking if it's a string and creating a new instance of the
-     * corresponding class. If the rule set is not a string, it is returned as is.
-     *
-     * @param null|RuleSetInterface|string $ruleSet The rule set to resolve.
-     * @return null|RuleSetInterface The resolved rule set.
-     *
-     * @throws RulesetNotFoundException
-     */
-    private static function resolveRuleSet($ruleSet)
-    {
         if (is_string($ruleSet)) {
             $relaxRuleset = 'Realodix\\Relax\\RuleSet\\Sets\\'.$ruleSet;
 
@@ -75,9 +59,9 @@ class Config extends PhpCsFixerConfig
             }
 
             /** @var RuleSetInterface */
-            return new $relaxRuleset;
+            $ruleSet = new $relaxRuleset;
         }
 
-        return $ruleSet;
+        return new self($ruleSet);
     }
 }
