@@ -35,7 +35,7 @@ $localRules = [
     // ...
 ];
 
-return Config::create('Laravel')
+return Config::create('laravel')
     ->setRules($localRules);
 ```
 
@@ -45,9 +45,9 @@ A ruleset is a named list of rules that can be used to fix code style issues in 
 
 | Ruleset                   | Description |
 | ------------------------- |-------------|
-| [`Laravel`][rs_laravel]   | Rules that follow the official Laravel coding standards |
-| [`Realodix`][rs_realodix] | Inherits `Laravel` with some tweaks |
-| [`Spatie`][rs_spatie]     | The rule set used by Spatie |
+| [`laravel`][rs_laravel]   | Rules that follow the official Laravel coding standards |
+| [`realodix`][rs_realodix] | Inherits `laravel` with some tweaks |
+| [`spatie`][rs_spatie]     | The rule set used by Spatie |
 
 
 #### Custom Fixers
@@ -106,7 +106,7 @@ $finder = Finder::create()
     ->notName('*.foo.php')
     ->append(['.php-cs-fixer.dist.php']);
 
-return Config::create('Laravel')
+return Config::create('laravel')
     ->setRules($localRules)
     ->setFinder($finder)
     ->setRiskyAllowed(false)

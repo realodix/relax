@@ -15,7 +15,7 @@ class ConfigTest extends TestCase
 
     public function testSetRulesetWithStringInput(): void
     {
-        $this->assertSame('@Realodix', Config::create('Realodix')->getName());
+        $this->assertSame('@Realodix', Config::create('realodix')->getName());
     }
 
     public function testSetRulesetWithInvalidStringInput(): void

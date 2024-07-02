@@ -52,7 +52,7 @@ class Config extends PhpCsFixerConfig
         }
 
         if (is_string($ruleSet)) {
-            $relaxRuleset = 'Realodix\\Relax\\RuleSet\\Sets\\'.$ruleSet;
+            $relaxRuleset = 'Realodix\\Relax\\RuleSet\\Sets\\'.ucfirst($ruleSet);
 
             if (! class_exists($relaxRuleset)) {
                 throw new RulesetNotFoundException($ruleSet);
