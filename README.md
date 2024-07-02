@@ -1,6 +1,6 @@
 # Realodix Relax
 
-![PHPVersion](https://img.shields.io/badge/PHP-%208-777BB4.svg?style=flat-square)
+![PHPVersion](https://img.shields.io/badge/PHP-7.4%20|%20%5E8.0-777BB4.svg?style=flat-square)
 ![Packagist Version (custom server)](https://img.shields.io/packagist/v/realodix/relax)
 ![Build Status](../../actions/workflows/ci.yml/badge.svg)
 

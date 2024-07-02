@@ -40,10 +40,17 @@ class Config extends PhpCsFixerConfig
      * @param null|RuleSetInterface|string $ruleSet The ruleset to use.
      * @return self
      *
-     * @throws RulesetNotFoundException If the rule set does not exist.
+     * @throws \InvalidArgumentException
+     * @throws RulesetNotFoundException  If the rule set does not exist.
      */
-    public static function create(RuleSetInterface|string|null $ruleSet = null)
+    public static function create($ruleSet = null)
     {
+        if (! ($ruleSet instanceof RuleSetInterface) && ! is_string($ruleSet) && $ruleSet !== null) {
+            throw new \InvalidArgumentException(
+                'Ruleset must be of type Relax RuleSetInterface, a string or null'
+            );
+        }
+
         $ruleSet = self::resolveRuleSet($ruleSet);
 
         return new self($ruleSet);
