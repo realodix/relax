@@ -22,6 +22,7 @@ class Config extends PhpCsFixerConfig
         $this->registerCustomFixers(new \PhpCsFixerCustomFixers\Fixers);
         $this->setFinder(Finder::base());
         $this->setRiskyAllowed(true);
+        $this->setRules();
     }
 
     /**
