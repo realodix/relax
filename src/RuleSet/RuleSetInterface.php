@@ -11,6 +11,8 @@ interface RuleSetInterface
 
     /**
      * Returns an array of rules along with their configuration
+     *
+     * @return array<string, array<string, mixed>|bool>
      */
     public function rules(): array;
 }
