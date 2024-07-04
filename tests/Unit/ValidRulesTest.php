@@ -52,15 +52,11 @@ class ValidRulesTest extends TestCase
     public static function provideAllRulesFromRulesets(): iterable
     {
         foreach (Utils::ruleSets() as $ruleSet) {
-            $setName = $ruleSet->name();
-            $rules = Utils::nativeRules($ruleSet->rules());
+            $rulesetName = $ruleSet->name();
+            $rules = method_exists($ruleSet, 'mainRules') ? $ruleSet->mainRules() : $ruleSet->rules();
 
-            foreach ($rules as $rule => $config) {
-                yield $setName.':'.$rule => [
-                    $setName,
-                    $rule,
-                    $config,
-                ];
+            foreach (Utils::nativeRules($rules) as $rule => $config) {
+                yield $rulesetName.':'.$rule => [$rulesetName, $rule, $config];
             }
         }
     }

@@ -14,9 +14,17 @@ final class RealodixPlus extends AbstractRuleSet
 {
     public function rules(): array
     {
-        $baseRules = (new Realodix)->rules();
+        return array_merge((new Realodix)->rules(), $this->mainRules());
+    }
 
-        $rules = [
+    /**
+     * Returns the main rules
+     *
+     * @internal
+     */
+    public function mainRules(): array
+    {
+        return [
             'explicit_string_variable' => true,
             'no_superfluous_elseif' => true,
             'general_phpdoc_annotation_remove' => [
@@ -34,7 +42,5 @@ final class RealodixPlus extends AbstractRuleSet
             Fixer\NoDoctrineMigrationsGeneratedCommentFixer::name() => true,
             Fixer\NoUselessCommentFixer::name() => true,
         ];
-
-        return array_merge($baseRules, $rules);
     }
 }

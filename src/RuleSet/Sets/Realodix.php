@@ -9,9 +9,17 @@ final class Realodix extends AbstractRuleSet
 {
     public function rules(): array
     {
-        $baseRules = (new Laravel)->rules();
+        return array_merge((new Laravel)->rules(), $this->mainRules());
+    }
 
-        $rules = [
+    /**
+     * Returns the main rules
+     *
+     * @internal
+     */
+    public function mainRules(): array
+    {
+        return [
             'align_multiline_comment' => true,
             'attribute_empty_parentheses' => true,
             'class_reference_name_casing' => true,
@@ -90,7 +98,5 @@ final class Realodix extends AbstractRuleSet
                 ],
             ],
         ];
-
-        return array_merge($baseRules, $rules);
     }
 }
