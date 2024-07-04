@@ -5,13 +5,13 @@ namespace Realodix\Relax\RuleSet\Sets;
 use PhpCsFixerCustomFixers\Fixer;
 use Realodix\Relax\RuleSet\AbstractRuleSet;
 
-/**
- * Inherits Realodix preset
- *
- * @see Realodix\Relax\RuleSet\Sets\Realodix
- */
 final class RealodixPlus extends AbstractRuleSet
 {
+    /**
+     * Inherit the rules from Realodix
+     *
+     * @see \Realodix\Relax\RuleSet\Sets\Realodix
+     */
     public function rules(): array
     {
         return array_merge((new Realodix)->rules(), $this->mainRules());

@@ -163,12 +163,7 @@ And use it!
 use Realodix\Relax\Config;
 use Vendor\Package\MyRuleSet;
 
-$localRules = [
-    // ...
-];
-
-return Config::create(new MyRuleSet())
-    ->setRules($localRules);
+return Config::create(new MyRuleSet());
 ```
 
 ## Troubleshooting
