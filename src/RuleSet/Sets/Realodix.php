@@ -58,8 +58,8 @@ final class Realodix extends AbstractRuleSet
             'method_argument_space' => ['on_multiline' => 'ignore', 'after_heredoc' => true],
             'no_extra_blank_lines' => [
                 'tokens' => [
-                    'attribute', 'extra', 'throw', 'use', 'case', 'continue', 'curly_brace_block',
-                    'default', 'parenthesis_brace_block', 'square_brace_block', 'switch',
+                    'default', 'attribute', 'case', 'continue', 'extra', 'switch', 'throw', 'use',
+                    'curly_brace_block', 'parenthesis_brace_block', 'square_brace_block',
                 ],
             ],
             'space_after_semicolon' => ['remove_in_empty_for_expressions' => true],
