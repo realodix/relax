@@ -10,12 +10,32 @@ class ConfigTest extends TestCase
 {
     public function testSetRuleset(): void
     {
-        $this->assertSame('@RuleSetFile', Config::create(new RuleSetFile)->getName());
+        $ruleset = new \Realodix\Relax\RuleSet\Sets\Realodix;
+        $config = Config::create($ruleset);
+
+        $this->assertSame(count($ruleset->rules()), count($config->getRules()));
+
+        // With set local rules
+        $localRules = ['foo' => 'bar'];
+        $this->assertSame(
+            count($ruleset->rules()) + count($localRules),
+            count($config->setRules($localRules)->getRules())
+        );
     }
 
     public function testSetRulesetWithStringInput(): void
     {
-        $this->assertSame('@Realodix', Config::create('realodix')->getName());
+        $ruleset = new \Realodix\Relax\RuleSet\Sets\Realodix;
+        $config = Config::create('realodix');
+
+        $this->assertSame(count($ruleset->rules()), count($config->getRules()));
+
+        // With set local rules
+        $localRules = ['foo' => 'bar'];
+        $this->assertSame(
+            count($ruleset->rules()) + count($localRules),
+            count($config->setRules($localRules)->getRules())
+        );
     }
 
     public function testSetRulesetWithInvalidStringInput(): void
