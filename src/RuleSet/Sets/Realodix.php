@@ -61,7 +61,6 @@ final class Realodix extends AbstractRuleSet
              * Laravel rules modification
              */
             'ternary_operator_spaces' => false,
-            'unary_operator_spaces' => false,
             'binary_operator_spaces' => [
                 'default' => 'single_space',
                 'operators' => ['=>' => 'at_least_single_space'],
@@ -76,6 +75,7 @@ final class Realodix extends AbstractRuleSet
                 ],
             ],
             'space_after_semicolon' => ['remove_in_empty_for_expressions' => true],
+            'unary_operator_spaces' => ['only_dec_inc' => true],
             'whitespace_after_comma_in_array' => ['ensure_single_space' => true],
             'phpdoc_align' => ['tags' => ['method', 'param', 'property', 'throws', 'type', 'var']],
             'phpdoc_separation' => [
