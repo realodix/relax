@@ -60,7 +60,6 @@ final class Realodix extends AbstractRuleSet
             /*
              * Laravel rules modification
              */
-            'ternary_operator_spaces' => false,
             'binary_operator_spaces' => [
                 'default' => 'single_space',
                 'operators' => ['=>' => 'at_least_single_space'],
