@@ -6,6 +6,7 @@
 
 **Realodix Relax** is built on top of [`PHP-CS-Fixer`][php-cs-fixer] and makes it simple to to sharing identical PHP CS Fixer rules across all of your projects without copy-and-pasting configuration files.
 
+
 ## Installation
 
 You can install this package by using [composer](https://getcomposer.org/):
@@ -14,6 +15,7 @@ You can install this package by using [composer](https://getcomposer.org/):
 composer require --dev realodix/relax
 ```
 
+
 ## Running Relax
 
 ```sh
@@ -21,6 +23,7 @@ composer require --dev realodix/relax
 ```
 
 For more details, see PHP-CS-Fixer [documentation](https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/blob/master/doc/usage.rst).
+
 
 ## Configuring Relax
 
@@ -46,9 +49,12 @@ A ruleset is a named list of rules that can be used to fix code style issues in 
 | Ruleset                   | Description |
 | ------------------------- |-------------|
 | [`laravel`][rs_laravel]   | Rules that follow the official Laravel coding standards |
-| [`relax`][rs_relax] | Inherits `laravel` with some tweaks |
+| [`relax`][rs_relax]       | Inherits `laravel` with some tweaks |
 | [`spatie`][rs_spatie]     | The rule set used by Spatie |
 
+[rs_laravel]: src/RuleSet/Sets/Laravel.php
+[rs_relax]: src/RuleSet/Sets/Realodix.php
+[rs_spatie]: src/RuleSet/Sets/Spatie.php
 
 #### Custom Fixers
 
@@ -56,7 +62,7 @@ A ruleset is a named list of rules that can be used to fix code style issues in 
 
 :bulb: They're all registered, so you don't need to re-register via `registerCustomFixers()`.
 
-#### Finder Sets
+<!-- #### Finder Sets
 
 By default, Relax will inspect all `.php` files in your project except those in the `vendor` directory.
 
@@ -67,68 +73,12 @@ By default, Relax will inspect all `.php` files in your project except those in 
 
 :bulb: By default, if finder is not set Relax will use `Finder::base()`.
 
-[rs_laravel]: src/RuleSet/Sets/Laravel.php
-[rs_relax]: src/RuleSet/Sets/Realodix.php
-[rs_spatie]: src/RuleSet/Sets/Spatie.php
 [doc_f_base]: docs/finders.md#finderbase
-[doc_f_laravel]: docs/finders.md#finderlaravel
+[doc_f_laravel]: docs/finders.md#finderlaravel -->
 
 ## Advanced Configuration
+See [docs/advanced_configuration.md](docs/advanced_configuration.md) for more details.
 
-Relax is built on top of [`PHP-CS-Fixer`][php-cs-fixer]. Therefore, you can make configurations just like you can do in PHP-CS-Fixer. For more details, see  [PHP-CS-Fixer: Config](https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/blob/master/doc/config.rst) documentation and [MLocati: PHP-CS-Fixer Configurator](https://mlocati.github.io/php-cs-fixer-configurator).
-
-```php
-<?php
-
-use Realodix\Relax\Config;
-use Realodix\Relax\Finder;
-
-// You can add or override rule set
-$localRules = [
-    // Add rule
-    'array_syntax' => true,
-
-    // Add rule or override predefined rule
-    'visibility_required' => true,
-
-    // Override predefined rule
-    'braces' => false,
-
-    // Add custom fixers
-    'CustomFixer/rule_1' => true,
-    'CustomFixer/rule_2' => true,
-];
-
-$finder = Finder::create()
-    ->in(__DIR__)
-    ->ignoreDotFiles(false)
-    ->exclude(['Bar'])
-    ->notName('*.foo.php')
-    ->append(['.php-cs-fixer.dist.php']);
-
-return Config::create('laravel')
-    ->setRules($localRules)
-    ->setFinder($finder)
-    ->setRiskyAllowed(false)
-    ->registerCustomFixers(new \PhpCsFixerCustomFixers\CustomFixer());
-```
-
-If you wish to completely define rules locally without using existing rule sets, you can do that:
-
-```php
-<?php
-
-use Realodix\Relax\Config;
-
-$localRules = [
-    '@PSR2'           => true,
-    'array_syntax'    => ['syntax' => 'short'],
-    'ordered_imports' => ['sort_algorithm' => 'alpha'],
-];
-
-return Config::create()
-    ->setRules($localRules);
-```
 
 ## Custom Rule Set
 
@@ -163,14 +113,20 @@ And use it!
 use Realodix\Relax\Config;
 use Vendor\Package\MyRuleSet;
 
-return Config::create(new MyRuleSet());
+$finder = (new PhpCsFixer\Finder())
+    ->in(__DIR__);
+
+return Config::create(new MyRuleSet())
+    ->setFinder($finder);
 ```
+
 
 ## Troubleshooting
 
 For general help and support join our [GitHub Discussions](../../discussions).
 
 Please report bugs to the [GitHub Issue Tracker](../../issues).
+
 
 ## License
 

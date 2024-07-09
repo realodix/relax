@@ -79,13 +79,18 @@ class GenerateConfigCommand extends Command
         $code = <<<'CODE'
             <?php
             use Realodix\Relax\Config;
+            use Realodix\Relax\Finder;
 
             $localRules = [
                 // ...
             ];
 
+            $finder = Finder::create()
+                ->in(__DIR__)
+
             return Config::create('relax')
-                ->setRules($localRules);
+                ->setRules($localRules)
+                ->setFinder($finder);
             CODE;
 
         if (file_put_contents($this->getOutputFilename(), $code) === false) {
