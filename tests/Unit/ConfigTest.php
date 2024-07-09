@@ -10,7 +10,7 @@ class ConfigTest extends TestCase
 {
     public function testSetRuleset(): void
     {
-        $ruleset = new \Realodix\Relax\RuleSet\Sets\Realodix;
+        $ruleset = new \Realodix\Relax\RuleSet\Sets\Relax;
         $config = Config::create($ruleset);
 
         $this->assertSame(count($ruleset->rules()), count($config->getRules()));
@@ -25,7 +25,7 @@ class ConfigTest extends TestCase
 
     public function testSetRulesetWithStringInput(): void
     {
-        $ruleset = new \Realodix\Relax\RuleSet\Sets\Realodix;
+        $ruleset = new \Realodix\Relax\RuleSet\Sets\Relax;
         $config = Config::create('realodix');
 
         $this->assertSame(count($ruleset->rules()), count($config->getRules()));
