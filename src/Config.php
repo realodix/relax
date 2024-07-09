@@ -53,6 +53,11 @@ class Config extends PhpCsFixerConfig
         }
 
         if (is_string($ruleSet)) {
+            /** @TODO remove me */
+            if (ucfirst($ruleSet) == 'Realodix') {
+                $ruleSet = 'Relax';
+            }
+
             $relaxRuleset = 'Realodix\\Relax\\RuleSet\\Sets\\'.ucfirst($ruleSet);
 
             if (! class_exists($relaxRuleset)) {
