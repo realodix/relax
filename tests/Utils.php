@@ -11,8 +11,8 @@ class Utils
     {
         return [
             new \Realodix\Relax\RuleSet\Sets\Laravel,
-            new \Realodix\Relax\RuleSet\Sets\Realodix,
-            new \Realodix\Relax\RuleSet\Sets\RealodixPlus,
+            new \Realodix\Relax\RuleSet\Sets\Relax,
+            new \Realodix\Relax\RuleSet\Sets\RelaxPlus,
             new \Realodix\Relax\RuleSet\Sets\Spatie,
         ];
     }
