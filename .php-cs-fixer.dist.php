@@ -10,7 +10,7 @@ $localRules = [
 $finder = Finder::base()
     ->append(['.php-cs-fixer.dist.php', 'bin/relax']);
 
-return Config::create('realodix')
+return Config::create('relax')
     ->setRules($localRules)
     ->setFinder($finder)
     ->setParallelConfig(\PhpCsFixer\Runner\Parallel\ParallelConfigFactory::detect())
