@@ -46,7 +46,7 @@ A ruleset is a named list of rules that can be used to fix code style issues in 
 | Ruleset                   | Description |
 | ------------------------- |-------------|
 | [`laravel`][rs_laravel]   | Rules that follow the official Laravel coding standards |
-| [`realodix`][rs_realodix] | Inherits `laravel` with some tweaks |
+| [`relax`][rs_relax] | Inherits `laravel` with some tweaks |
 | [`spatie`][rs_spatie]     | The rule set used by Spatie |
 
 
@@ -68,7 +68,7 @@ By default, Relax will inspect all `.php` files in your project except those in 
 :bulb: By default, if finder is not set Relax will use `Finder::base()`.
 
 [rs_laravel]: src/RuleSet/Sets/Laravel.php
-[rs_realodix]: src/RuleSet/Sets/Realodix.php
+[rs_relax]: src/RuleSet/Sets/Realodix.php
 [rs_spatie]: src/RuleSet/Sets/Spatie.php
 [doc_f_base]: docs/finders.md#finderbase
 [doc_f_laravel]: docs/finders.md#finderlaravel
