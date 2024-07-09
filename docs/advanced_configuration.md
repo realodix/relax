@@ -11,6 +11,7 @@ You can find the full documentation on this page:
 
 use PhpCsFixer\Finder;
 use Realodix\Relax\Config;
+use Vendor\Package\MyRuleSet;
 
 // You can add or override rule set
 $localRules = [
@@ -35,26 +36,9 @@ $finder = Finder::create()
     ->notName('*.foo.php')
     ->append(['.php-cs-fixer.dist.php']);
 
-return Config::create('laravel')
+return Config::create(new MyRuleSet)
     ->setRules($localRules)
     ->setFinder($finder)
     ->setRiskyAllowed(false)
-    ->registerCustomFixers(new \PhpCsFixerCustomFixers\CustomFixer());
-```
-
-If you wish to completely define rules locally without using existing rule sets, you can do that:
-
-```php
-<?php
-
-use Realodix\Relax\Config;
-
-$localRules = [
-    '@PSR2'           => true,
-    'array_syntax'    => ['syntax' => 'short'],
-    'ordered_imports' => ['sort_algorithm' => 'alpha'],
-];
-
-return Config::create()
-    ->setRules($localRules);
+    ->registerCustomFixers(/* ... */);
 ```
