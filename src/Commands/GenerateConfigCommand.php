@@ -84,7 +84,7 @@ class GenerateConfigCommand extends Command
                 // ...
             ];
 
-            return Config::create('realodix')
+            return Config::create('relax')
                 ->setRules($localRules);
             CODE;
 
