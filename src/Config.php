@@ -20,7 +20,7 @@ class Config extends PhpCsFixerConfig
 
         parent::__construct($name);
         $this->registerCustomFixers(new \PhpCsFixerCustomFixers\Fixers);
-        $this->setFinder(Finder::base());
+        $this->setFinder(Finder::base()->in(getcwd()));
         $this->setRiskyAllowed(true);
         $this->setRules();
     }

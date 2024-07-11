@@ -2,22 +2,23 @@
 
 namespace Realodix\Relax;
 
-use PhpCsFixer\Finder as PhpCsFixerFinder;
+use PhpCsFixer\Finder as BaseFinder;
 
-class Finder extends PhpCsFixerFinder
+/**
+ * {@inheritDoc}
+ *
+ * @see https://symfony.com/doc/current/components/finder.html
+ * @see https://github.com/symfony/finder/blob/7.1/Finder.php
+ * @see https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/blob/master/src/Finder.php
+ */
+class Finder extends BaseFinder
 {
     /**
-     * @param null|string|list<string> $baseDir
      * @return \PhpCsFixer\Finder
      */
-    public static function base($baseDir = null)
+    public static function base()
     {
-        if ($baseDir === null) {
-            $baseDir = getcwd() === false ? '' : getcwd();
-        }
-
-        return PhpCsFixerFinder::create()
-            ->in($baseDir)
+        return self::create()
             ->ignoreVCS(true)
             ->ignoreDotFiles(true)
             ->notName([
@@ -26,18 +27,16 @@ class Finder extends PhpCsFixerFinder
                 '_ide_helper.php',
                 '.phpstorm.meta.php',
             ])->exclude([
-                'build',
                 'node_modules',
             ]);
     }
 
     /**
-     * @param null|string|list<string> $baseDir
      * @return \PhpCsFixer\Finder
      */
-    public static function laravel($baseDir = null)
+    public static function laravel()
     {
-        return self::base($baseDir)
+        return self::base()
             ->exclude([
                 'bootstrap/cache',
                 'public',

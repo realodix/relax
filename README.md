@@ -36,8 +36,7 @@ You can easily create your own rule set by extending the [`Realodix\Relax\RuleSe
 use Realodix\Relax\Config;
 use Vendor\Package\MyRuleSet;
 
-return Config::create(new MyRuleSet)
-    ->setFinder(/* ... */);
+return Config::create(new MyRuleSet);
 ```
 
 Sometimes for big dirty projects, you want to implement some local rules without implementing a ruleset, why not.
@@ -48,8 +47,7 @@ $localRules = [
 ];
 
 Config::create()
-    ->setRules($localRules)
-    ->setFinder(/* ... */);
+    ->setRules($localRules);
 ```
 
 For advanced configuration, see the [docs/advanced_configuration.md](docs/advanced_configuration.md)
@@ -71,6 +69,20 @@ Preset defines a built-in set of rules that are ready to be used to fix code sty
 ```php
 Config::create('laravel')
 ```
+
+#### Finder Sets
+
+By default, Relax will inspect all `.php` files in your project except those in the `vendor` directory.
+
+| Preset | Description |
+| -------- |-------------|
+| [`Finder::base()`][doc_f_base] | The basic finder setup should be perfect for most PHP projects |
+| [`Finder::laravel()`][doc_f_laravel] | Inherits `Finder::base()` with some specific tweaks to Laravel |
+
+:bulb: By default, if finder is not set Relax will use `Finder::base()`.
+
+[doc_f_base]: docs/finders.md#finderbase
+[doc_f_laravel]: docs/finders.md#finderlaravel
 
 
 ## Troubleshooting
