@@ -56,11 +56,11 @@ For advanced configuration, see the [docs/advanced_configuration.md](docs/advanc
 
 Preset defines a built-in set of rules that are ready to be used to fix code style issues in your code.
 
-| Ruleset                   | Description |
-| ------------------------- |-------------|
-| [`laravel`][rs_laravel]   | Rules that follow the official Laravel coding standards |
-| [`relax`][rs_relax]       | Inherits `laravel` with some tweaks |
-| [`spatie`][rs_spatie]     | The rule set used by Spatie |
+| Preset                  | Description |
+| ------------------------|-------------|
+| [`laravel`][rs_laravel] | Rules that follow the official Laravel coding standards |
+| [`relax`][rs_relax]     | Inherits `laravel` with some tweaks |
+| [`spatie`][rs_spatie]   | The rule set used by Spatie |
 
 [rs_laravel]: src/RuleSet/Sets/Laravel.php
 [rs_relax]: src/RuleSet/Sets/Realodix.php
@@ -74,8 +74,8 @@ Config::create('laravel')
 
 By default, Relax will inspect all `.php` files in your project except those in the `vendor` directory.
 
-| Preset | Description |
-| -------- |-------------|
+| Method    | Description |
+| --------- |-------------|
 | [`Finder::base()`][doc_f_base] | The basic finder setup should be perfect for most PHP projects |
 | [`Finder::laravel()`][doc_f_laravel] | Inherits `Finder::base()` with some specific tweaks to Laravel |
 
