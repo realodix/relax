@@ -2,8 +2,6 @@
 
 namespace Realodix\Relax;
 
-use PhpCsFixer\Finder as BaseFinder;
-
 /**
  * {@inheritDoc}
  *
@@ -11,7 +9,7 @@ use PhpCsFixer\Finder as BaseFinder;
  * @see https://github.com/symfony/finder/blob/7.1/Finder.php
  * @see https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/blob/master/src/Finder.php
  */
-class Finder extends BaseFinder
+class Finder extends \PhpCsFixer\Finder
 {
     /**
      * @return \PhpCsFixer\Finder

@@ -2,12 +2,11 @@
 
 namespace Realodix\Relax;
 
-use PhpCsFixer\Config as PhpCsFixerConfig;
 use PhpCsFixer\ConfigInterface;
 use Realodix\Relax\Exceptions\RulesetNotFoundException;
 use Realodix\Relax\RuleSet\RuleSetInterface;
 
-class Config extends PhpCsFixerConfig
+class Config extends \PhpCsFixer\Config
 {
     const LOCAL_RULES_NAME = 'Local Rules';
 
@@ -46,12 +45,13 @@ class Config extends PhpCsFixerConfig
      */
     public static function create($ruleSet = null)
     {
-        if (! ($ruleSet instanceof RuleSetInterface) && ! is_string($ruleSet) && $ruleSet !== null) {
+        if (! $ruleSet instanceof RuleSetInterface && ! is_string($ruleSet) && $ruleSet !== null) {
             throw new \InvalidArgumentException(
                 'Ruleset must be of type Relax RuleSetInterface, string or null'
             );
         }
 
+        // If the rule set is a string, we try to find it in the RuleSet namespace
         if (is_string($ruleSet)) {
             /** @TODO remove me */
             if (ucfirst($ruleSet) == 'Realodix') {
