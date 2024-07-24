@@ -29,8 +29,6 @@ final class Relax extends AbstractRuleSet
             'attribute_empty_parentheses' => true,
             'class_reference_name_casing' => true,
             'combine_consecutive_unsets' => true,
-            // If the anonymous/named classes is followed by parentheses, then the parentheses will be removed
-            'new_with_parentheses' => ['named_class' => false, 'anonymous_class' => false],
             'no_unneeded_import_alias' => true,
             'no_useless_concat_operator' => true,
             'no_useless_else' => true,

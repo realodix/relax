@@ -5,7 +5,7 @@ namespace Realodix\Relax\RuleSet\Sets;
 use Realodix\Relax\RuleSet\AbstractRuleSet;
 
 /**
- * Latest commit 5a75db5
+ * Latest commit 72f3117
  * https://github.com/laravel/pint/blob/main/resources/presets/laravel.php
  */
 final class Laravel extends AbstractRuleSet
@@ -92,6 +92,10 @@ final class Laravel extends AbstractRuleSet
             ],
             'native_function_casing' => true,
             'native_type_declaration_casing' => true,
+            'new_with_parentheses' => [
+                'named_class' => false,
+                'anonymous_class' => false,
+            ],
             'no_alias_functions' => true,
             'no_alias_language_construct_call' => true,
             'no_alternative_syntax' => true,
