@@ -10,6 +10,12 @@
             "problemMatcher": []
         },
         {
+            "label": "[Tests] PHPUnit (integration)",
+            "type": "shell",
+            "command": "./vendor/bin/phpunit -c phpunit.integration.xml",
+            "problemMatcher": []
+        },
+        {
             "label": "[Tests] PHPUnit (coverage-html)",
             "type": "shell",
             "command": "./vendor/bin/phpunit --coverage-html .tmp/logs/coverage-html",

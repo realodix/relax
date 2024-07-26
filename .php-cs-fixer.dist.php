@@ -9,7 +9,8 @@ $localRules = [
 
 $finder = Finder::base()
     ->in(__DIR__)
-    ->append(['.php-cs-fixer.dist.php', 'bin/relax']);
+    ->append(['.php-cs-fixer.dist.php', 'bin/relax'])
+    ->notName('*_actual.php');
 
 return Config::create('relax')
     ->setRules($localRules)
