@@ -4,7 +4,7 @@ use Realodix\Relax\Config;
 use Realodix\Relax\Finder;
 
 $localRules = [
-    'binary_operator_spaces' => true,
+    // ...
 ];
 
 $finder = Finder::base()
