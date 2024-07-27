@@ -5,6 +5,6 @@ use Realodix\Relax\Config;
 
 $finder = (new Finder)->in('./tests/Integration/tmp');
 
-return Config::create('relaxplus')
+return Config::create('relaxPlus')
     ->setFinder($finder)
     ->setUsingCache(false);
