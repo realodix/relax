@@ -18,4 +18,9 @@ class RelaxRulesetTest extends IntegrationTestCase
     {
         $this->testFixture('relax', 'deprecated');
     }
+
+    public function testRelaxPlusRuleset(): void
+    {
+        $this->testFixture('relaxplus');
+    }
 }
