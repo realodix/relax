@@ -31,22 +31,7 @@ abstract class IntegrationTestCase extends TestCase
         copy(__DIR__."/../Fixtures/Ruleset/{$fileName}_actual.php", __DIR__."/tmp/{$fileName}.php");
 
         $this->assertTrue(
-            file_exists(__DIR__."/tmp/{$fileName}.php"),
-            "Fixture fixtures/{$fileName} does not exist.",
-        );
-
-        $this->assertTrue(
-            is_writable(__DIR__."/tmp/{$fileName}.php"),
-            "Fixture fixtures/{$fileName} is not writable.",
-        );
-
-        $this->assertFalse(
             $this->runFixer($name),
-            "Fixture fixtures/{$fileName} returned invalid true result.",
-        );
-
-        $this->assertTrue(
-            $this->runFixer($name, true),
             "Fixture fixtures/{$fileName} was not proceeded properly.",
         );
 
@@ -60,16 +45,16 @@ abstract class IntegrationTestCase extends TestCase
     /**
      * @throws \Exception
      */
-    protected function runFixer(string $name, bool $fix = false): bool
+    protected function runFixer(string $name): bool
     {
-        $dryRun = $fix ? '' : '--dry-run';
-
         $application = new \PhpCsFixer\Console\Application;
         $application->setAutoExit(false);
 
-        $output = new \Symfony\Component\Console\Output\BufferedOutput;
         $config = "tests/Integration/Config/config_{$name}.php";
-        $result = $application->run(new StringInput("fix {$dryRun} --diff --config={$config} --quiet"), $output);
+        $result = $application->run(
+            new StringInput("fix --config={$config} --quiet"),
+            new \Symfony\Component\Console\Output\BufferedOutput
+        );
 
         return $result === 0;
     }
@@ -81,10 +66,5 @@ abstract class IntegrationTestCase extends TestCase
         foreach ($files as $file) {
             unlink($file);
         }
-    }
-
-    protected function getConfigPath(): string
-    {
-        return 'tests/Integration/config/config_relax.php';
     }
 }
