@@ -62,4 +62,4 @@ jobs:
               composer -V
               composer update --prefer-dist --no-interaction --no-progress ${{ matrix.flags }}
       - name: Execute tests
-        run: ./vendor/bin/phpunit -c phpunit.integration.xml
+        run: ./vendor/bin/phpunit -c tests/Integration/Config/phpunit.xml.dist

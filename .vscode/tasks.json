@@ -12,7 +12,7 @@
         {
             "label": "[Tests] PHPUnit (integration)",
             "type": "shell",
-            "command": "./vendor/bin/phpunit -c phpunit.integration.xml",
+            "command": "./vendor/bin/phpunit -c tests/Integration/Config/phpunit.xml.dist",
             "problemMatcher": []
         },
         {
