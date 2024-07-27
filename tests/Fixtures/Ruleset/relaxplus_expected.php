@@ -18,3 +18,11 @@ class relaxplus
         $a = "My name is {$name} !";
     }
 }
+
+class MyTest extends \PhpUnit\FrameWork\TestCase
+{
+    /**
+     * php_unit_method_casing
+     */
+    public function testMyCode() {}
+}
