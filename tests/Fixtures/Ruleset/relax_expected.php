@@ -169,6 +169,11 @@ class relax_actual extends Config
         $a = (string) $b;
     }
 
+    public function class_notation__ordered_types(null|string|int $foo): null|string|int
+    {
+        return null;
+    }
+
     public function class_notation__visibility_required() {}
 
     public function comment__single_line_comment_spacing()
@@ -273,9 +278,9 @@ class relax_actual extends Config
 
     public function function_notation__nullable_type_declaration_for_default_null_value(?string $str = null) {}
 
-    public function function_notation__nullable_type_declaration_for_default_null_value_2(string|int|null $str = null) {}
+    public function function_notation__nullable_type_declaration_for_default_null_value_2(null|string|int $str = null) {}
 
-    public function function_notation__nullable_type_declaration_for_default_null_value_3((\Foo&\Bar)|null $str = null) {}
+    public function function_notation__nullable_type_declaration_for_default_null_value_3(null|(\Foo&\Bar) $str = null) {}
 
     public function language_construct__nullable_type_declaration(?int $value, ?\Closure $callable): ?int
     {

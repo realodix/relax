@@ -170,6 +170,11 @@ class relax_actual extends Config
         $a = (binary) $b;
     }
 
+    public function class_notation__ordered_types(string|int|null $foo):string|int|null
+    {
+        return null;
+    }
+
     function class_notation__visibility_required() {}
 
     public function comment__single_line_comment_spacing()
@@ -467,8 +472,9 @@ with a line not prefixed with asterisk
 
     /**
      * @param string|int|\Foo|null $bar
+     * @param \RuntimeException|CacheException $e
      */
-    public function phpdoc__phpdoc_types_order($bar = null) {}
+    public function phpdoc__phpdoc_types_order($bar = null, $e) {}
 
     public function phpdoc__phpdoc_var_annotation_correct_order()
     {
