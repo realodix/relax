@@ -38,3 +38,28 @@ jobs:
               composer update --prefer-dist --no-interaction --no-progress ${{ matrix.flags }}
       - name: Execute tests
         run: ./vendor/bin/phpunit
+
+  integration:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+
+    name: integration
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          coverage: xdebug
+      - name: Install dependencies
+        uses: nick-fields/retry@v3
+        with:
+          timeout_minutes: 5
+          max_attempts: 5
+          command: |
+              composer -V
+              composer update --prefer-dist --no-interaction --no-progress ${{ matrix.flags }}
+      - name: Execute tests
+        run: ./vendor/bin/phpunit -c tests/Integration/Config/phpunit.xml.dist
