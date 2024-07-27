@@ -52,7 +52,6 @@ final class Relax extends AbstractRuleSet
             Fixer\PhpdocSelfAccessorFixer::name() => true,
             Fixer\PhpdocTypesCommaSpacesFixer::name() => true,
             Fixer\PhpdocTypesTrimFixer::name() => true,
-            Fixer\SingleSpaceAfterStatementFixer::name() => ['allow_linebreak' => true],
             Fixer\SingleSpaceBeforeStatementFixer::name() => true,
 
             /*

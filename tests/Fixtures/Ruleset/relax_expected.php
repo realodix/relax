@@ -292,6 +292,10 @@ class relax_actual extends Config
         $foo = new Foo;
         echo $foo->bar();
         throw new \Exception;
+        // line break
+        // menggantikan PhpCsFixerCustomFixers\Fixer\SingleSpaceAfterStatementFixer
+        $b = new Foo;
+        echo true;
     }
 
     public function list_notation__list_syntax()
