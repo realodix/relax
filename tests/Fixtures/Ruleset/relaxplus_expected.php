@@ -17,6 +17,13 @@ class relaxplus
         $name = 'foo';
         $a = "My name is {$name} !";
     }
+
+    public function customFixer__NoDoctrineMigrationsGeneratedCommentFixer()
+    {
+        $this->addSql('UPDATE t1 SET col1 = col1 + 1');
+
+        $this->addSql('UPDATE t1 SET col1 = col1 - 1');
+    }
 }
 
 class MyTest extends \PhpUnit\FrameWork\TestCase

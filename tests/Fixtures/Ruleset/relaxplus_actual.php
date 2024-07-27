@@ -16,6 +16,15 @@ class relaxplus
         $name = 'foo';
         $a = "My name is $name !";
     }
+
+    public function customFixer__NoDoctrineMigrationsGeneratedCommentFixer()
+    {
+        // this up() migration is auto-generated, please modify it to your needs
+        $this->addSql('UPDATE t1 SET col1 = col1 + 1');
+
+        // this down() migration is auto-generated, please modify it to your needs
+        $this->addSql('UPDATE t1 SET col1 = col1 - 1');
+    }
 }
 
 class MyTest extends \PhpUnit\FrameWork\TestCase
