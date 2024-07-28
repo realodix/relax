@@ -19,7 +19,7 @@ class ConfigTest extends TestCase
         $localRules = ['foo' => 'bar'];
         $this->assertSame(
             count($ruleset->rules()) + count($localRules),
-            count($config->setRules($localRules)->getRules())
+            count($config->setRules($localRules)->getRules()),
         );
     }
 
@@ -34,7 +34,7 @@ class ConfigTest extends TestCase
         $localRules = ['foo' => 'bar'];
         $this->assertSame(
             count($ruleset->rules()) + count($localRules),
-            count($config->setRules($localRules)->getRules())
+            count($config->setRules($localRules)->getRules()),
         );
     }
 
@@ -54,8 +54,8 @@ class ConfigTest extends TestCase
             count($rules1) + count($rules2),
             count(
                 Config::create(new RuleSetFile)
-                    ->setRules($rules2)->getRules()
-            )
+                    ->setRules($rules2)->getRules(),
+            ),
         );
     }
 

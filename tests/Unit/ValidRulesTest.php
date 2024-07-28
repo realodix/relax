@@ -42,7 +42,7 @@ class ValidRulesTest extends TestCase
         $this->assertNotInstanceOf(
             \PhpCsFixer\Fixer\DeprecatedFixerInterface::class,
             $fixer,
-            \sprintf('RuleSet "%s" contains deprecated rule "%s".', $setName, $ruleName)
+            \sprintf('RuleSet "%s" contains deprecated rule "%s".', $setName, $ruleName),
         );
     }
 

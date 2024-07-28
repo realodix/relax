@@ -53,7 +53,7 @@ abstract class IntegrationTestCase extends TestCase
         $config = "tests/Integration/Config/config_{$name}.php";
         $result = $application->run(
             new StringInput("fix --config={$config} --quiet"),
-            new \Symfony\Component\Console\Output\BufferedOutput
+            new \Symfony\Component\Console\Output\BufferedOutput,
         );
 
         return $result === 0;
