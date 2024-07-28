@@ -30,6 +30,12 @@ class ClassAttributesSeparation
 }
 
 /**
+ * ordered_interfaces
+ */
+final class ExampleA implements Gamma, Alpha, Beta {}
+interface ExampleB extends Gamma, Alpha, Beta {}
+
+/**
  * ordered_traits
  */
 class OrderedTraits
