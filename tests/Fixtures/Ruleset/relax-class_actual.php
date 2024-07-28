@@ -45,6 +45,21 @@ class OrderedTraits
 }
 
 /**
+ * single_line_empty_body
+ */
+class SingleLineEmptyBody
+{
+    public function __construct(
+        int $ruleSet
+    )
+    {}
+
+    public function basic__single_line_empty_body()
+    {
+    }
+}
+
+/**
  * type_declaration_spaces
  */
 class TypeDeclarationSpaces

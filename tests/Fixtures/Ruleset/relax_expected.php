@@ -3,16 +3,11 @@
 declare(strict_types=1);
 
 use PhpCsFixer\Config;
-use Realodix\Relax\RuleSet\RuleSetInterface;
 
 use function is_string;
 
 class relax_actual extends Config
 {
-    public function __construct(
-        ?RuleSetInterface $ruleSet
-    ) {}
-
     /**
      * magic_method_casing
      */
@@ -99,8 +94,6 @@ class relax_actual extends Config
 
         // use a\{ClassA, ClassB,};
     }
-
-    public function basic__single_line_empty_body() {}
 
     public function casing__class_reference_name_casing()
     {
