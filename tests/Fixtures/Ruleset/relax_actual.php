@@ -696,6 +696,12 @@ with a line not prefixed with asterisk
         ];
     }
 
+    public function whitespace__no_spaces_around_offset()
+    {
+        $b = ['a' => true, 'b' => false];
+        $sample = $b [ 'a' ] [ 'b' ];
+    }
+
     public function whitespace__spaces_inside_parentheses()
     {
         if ( true ) {
