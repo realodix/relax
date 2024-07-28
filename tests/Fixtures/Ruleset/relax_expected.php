@@ -396,6 +396,11 @@ class relax_actual extends Config
     public function phpdoc__phpdoc_align($a, $b) {}
 
     /**
+     * @internal
+     */
+    public function phpdoc__phpdoc_no_package() {}
+
+    /**
      * @param string $foo
      * @param bool   $bar Bar
      * @return int  Return the number of changes.

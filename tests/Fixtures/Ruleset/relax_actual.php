@@ -399,6 +399,14 @@ with a line not prefixed with asterisk
     public function phpdoc__phpdoc_align($a, $b) {}
 
     /**
+     * @internal
+     * @param int    $b
+     * @package Foo
+     * subpackage Bar
+     */
+    public function phpdoc__phpdoc_no_package() {}
+
+    /**
      * @throws \Exception|\RuntimeException foo
      * @return int  Return the number of changes.
      * @param string $foo
