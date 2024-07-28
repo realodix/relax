@@ -9,6 +9,11 @@ class RelaxRulesetTest extends IntegrationTestCase
         $this->testFixture('relax');
     }
 
+    public function testRelax2(): void
+    {
+        $this->testFixture('relax', 'class');
+    }
+
     public function testRelaxCustom(): void
     {
         $this->testFixture('relax', 'custom');
