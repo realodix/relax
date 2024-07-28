@@ -844,21 +844,5 @@ if ($foo == true) {
     }
 }
 
-class class_attributes_separation
-{
-    use trait_a;
-
-
-    use trait_b;
-    private $a;
-    private $b;
-    /** @var int */
-    const SECOND = 1;
-    /** @var int */
-    const MINUTE = 60;
-    protected function foo() {}
-    protected function bar() {}
-}
-
 // no_closing_tag
 ?>
