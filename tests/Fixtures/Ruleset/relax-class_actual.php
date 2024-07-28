@@ -30,6 +30,15 @@ class ClassAttributesSeparation
 }
 
 /**
+ * ordered_traits
+ */
+class OrderedTraits
+{
+    use Z;
+    use A;
+}
+
+/**
  * visibility_required
  */
 class VisibilityRequired
