@@ -556,6 +556,15 @@ with a line not prefixed with asterisk
         $b = "sample with 'single-quotes'";
     }
 
+    public function whitespace__array_indentation()
+    {
+        $foo = [
+            'bar' => [
+        'baz' => true,
+            ],
+        ];
+    }
+
     public function whitespace__compact_nullable_type_declaration(? string $str): ? string
     {
         return 'foo';
