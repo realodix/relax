@@ -471,6 +471,12 @@ with a line not prefixed with asterisk
     public function phpdoc__phpdoc_trim_consecutive_blank_line_separation($foo) {}
 
     /**
+     * @param STRING|String[] $bar
+     * @return inT[]
+     */
+    public function phpdoc__phpdoc_types($bar) {}
+
+    /**
      * @param string|int|\Foo|null $bar
      * @param \RuntimeException|CacheException $e
      */

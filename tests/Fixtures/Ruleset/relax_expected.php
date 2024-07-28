@@ -466,6 +466,12 @@ class relax_actual extends Config
     public function phpdoc__phpdoc_trim_consecutive_blank_line_separation($foo) {}
 
     /**
+     * @param string|string[] $bar
+     * @return int[]
+     */
+    public function phpdoc__phpdoc_types($bar) {}
+
+    /**
      * @param null|string|int|\Foo             $bar
      * @param \RuntimeException|CacheException $e
      */
