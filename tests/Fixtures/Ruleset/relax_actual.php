@@ -234,9 +234,9 @@ class relax_actual extends Config
     public function control_structure__switch_case_semicolon_to_colon()
     {
         switch (true) {
-            case 1:
+            case 1;
                 break;
-            default:
+            default;
                 break;
         }
     }
