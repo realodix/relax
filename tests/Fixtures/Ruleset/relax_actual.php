@@ -308,8 +308,8 @@ class relax_actual extends Config
         $a= 1  + 2^ 3 !==  4 or   5;
 
         $array = [
-            'foo'=>1,
-            'barr'=>    2,
+            'foo'   =>1,
+            'barr'=>  2,
             'bazzz'=> 3,
         ];
     }
