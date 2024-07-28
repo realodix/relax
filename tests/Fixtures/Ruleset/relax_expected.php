@@ -22,7 +22,7 @@ class relax_actual extends Config
     public function __invoke(array $type_declaration_spaces) {}
 
     public function __construct(
-        ?RuleSetInterface $ruleSet,
+        ?RuleSetInterface $ruleSet
     ) {}
 
     /**
@@ -703,23 +703,23 @@ class relax_actual extends Config
         );
 
         // parameters
-        bar(
-            1,
-            2,
-        );
+        function foo_trailing_comma_in_multiline(
+            $x,
+            $y
+        ) {}
 
         // match
         match (true) {
             1 => '1',
-            2 => '2',
+            2 => '2'
         };
 
-        // after_heredoc
+        // after_heredoc in array
         [
             'foo',
             <<<'EOD'
                 bar
-            EOD,
+            EOD
         ];
     }
 
@@ -744,7 +744,7 @@ class relax_actual extends Config
         function sample2(
             $a = 10,
             $b = 20,
-            $c = 30,
+            $c = 30
         ) {}
         sample2(
             1,

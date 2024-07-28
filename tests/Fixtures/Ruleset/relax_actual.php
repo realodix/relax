@@ -725,10 +725,10 @@ if ($foo == true) {
         );
 
         // parameters
-        bar(
-            1,
-            2
-        );
+        function foo_trailing_comma_in_multiline(
+            $x,
+            $y
+        ) {}
 
         // match
         match (true) {
@@ -736,7 +736,7 @@ if ($foo == true) {
             2 => '2'
         };
 
-        // after_heredoc
+        // after_heredoc in array
         [
             'foo',
             <<<'EOD'
