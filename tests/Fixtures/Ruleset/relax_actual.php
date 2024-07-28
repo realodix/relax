@@ -14,6 +14,7 @@ class relax_actual extends Config
     private bool   $type_declaration_spaces;
 
     var $visibility_required; // visibility_required
+
     static protected $visibility_required2; // visibility_required
 
     // type_declaration_spaces
@@ -844,6 +845,22 @@ if ($foo == true) {
         for ($i = 0; ; $i++) {
         }
     }
+}
+
+class class_attributes_separation
+{
+    use trait_a;
+
+
+    use trait_b;
+    private $a;
+    private $b;
+    /** @var int */
+    const SECOND = 1;
+    /** @var int */
+    const MINUTE = 60;
+    protected function foo() {}
+    protected function bar() {}
 }
 
 // no_closing_tag
