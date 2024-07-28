@@ -7,9 +7,6 @@ use PhpCsFixer\Config as Config;
     use function \is_string;
 class relax_actual extends Config
 {
-
-    // no_blank_lines_after_class_opening
-
     // type_declaration_spaces
     private bool   $type_declaration_spaces;
 
