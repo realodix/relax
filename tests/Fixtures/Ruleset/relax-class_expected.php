@@ -47,6 +47,18 @@ class OrderedTraits
 }
 
 /**
+ * type_declaration_spaces
+ */
+class TypeDeclarationSpaces
+{
+    private string $a;
+
+    private bool $b;
+
+    public function __invoke(array $c) {}
+}
+
+/**
  * visibility_required
  */
 class VisibilityRequired

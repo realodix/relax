@@ -9,12 +9,6 @@ use function is_string;
 
 class relax_actual extends Config
 {
-    // type_declaration_spaces
-    private bool $type_declaration_spaces;
-
-    // type_declaration_spaces
-    public function __invoke(array $type_declaration_spaces) {}
-
     public function __construct(
         ?RuleSetInterface $ruleSet
     ) {}
