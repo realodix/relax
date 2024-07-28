@@ -10,10 +10,6 @@ class relax_actual extends Config
     // type_declaration_spaces
     private bool   $type_declaration_spaces;
 
-    var $visibility_required; // visibility_required
-
-    static protected $visibility_required2; // visibility_required
-
     // type_declaration_spaces
     public function __invoke(array   $type_declaration_spaces) {}
 
@@ -172,8 +168,6 @@ class relax_actual extends Config
     {
         return null;
     }
-
-    function class_notation__visibility_required() {}
 
     public function comment__single_line_comment_spacing()
     {

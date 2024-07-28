@@ -28,3 +28,17 @@ class ClassAttributesSeparation
     protected function foo() {}
     protected function bar() {}
 }
+
+/**
+ * visibility_required
+ */
+class VisibilityRequired
+{
+    var $a;
+
+    static protected $var_foo2;
+
+    const SAMPLE = 1;
+
+    function A() {}
+}
