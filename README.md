@@ -59,7 +59,7 @@ Preset defines a built-in set of rules that are ready to be used to fix code sty
 | Preset                  | Description |
 | ------------------------|-------------|
 | [`laravel`][rs_laravel] | Rules that follow the official Laravel coding standards |
-| [`relax`][rs_relax]     | Inherits `laravel` with some tweaks |
+| [`relax`][rs_relax]     | Laravel based with a few tweaks |
 | [`spatie`][rs_spatie]   | The rule set used by Spatie |
 
 [rs_laravel]: src/RuleSet/Sets/Laravel.php
