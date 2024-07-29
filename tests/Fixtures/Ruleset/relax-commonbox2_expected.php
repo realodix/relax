@@ -1,6 +1,6 @@
 <?php
 
-// blank_line_after_opening_tag
+// linebreak_after_opening_tag, blank_line_after_opening_tag
 
 namespace OtherNamespace; // blank_lines_before_namespace
 
