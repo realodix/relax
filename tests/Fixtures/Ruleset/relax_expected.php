@@ -4,12 +4,11 @@
 declare(ticks=1);
 // declare_parentheses
 declare(strict_types=1);
-
-use PhpCsFixer\Config;
+use Realodix\Relax\no_unneeded_import_alias;
 
 use function is_string;
 
-class relax_actual extends Config
+class relax_actual extends no_unneeded_import_alias
 {
     /**
      * magic_method_casing
