@@ -53,6 +53,17 @@ class OrderedTraits
 }
 
 /**
+ * phpdoc_no_useless_inheritdoc
+ */
+class PhpdocNoUselessInheritdoc
+{
+    /**
+     * {@inheritdoc}
+     */
+    function func() {}
+}
+
+/**
  * single_line_empty_body
  */
 class SingleLineEmptyBody
