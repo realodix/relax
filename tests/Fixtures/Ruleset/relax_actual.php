@@ -85,6 +85,11 @@ class relax_actual extends no_unneeded_import_alias
         $foo = function () { return true; };
     }
 
+    public function basic__no_multiple_statements_per_line()
+    {
+        foo(); bar();
+    }
+
     public function basic__no_trailing_comma_in_singleline()
     {
         foo(true,);
