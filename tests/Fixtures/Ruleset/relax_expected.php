@@ -255,6 +255,16 @@ class relax_actual extends no_unneeded_import_alias
         }
     }
 
+    public function control_structure__switch_case_space()
+    {
+        switch (true) {
+            case 1:
+                break;
+            default:
+                break;
+        }
+    }
+
     public function control_structure__yoda_style()
     {
         $a = null;
