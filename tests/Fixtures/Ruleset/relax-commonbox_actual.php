@@ -64,6 +64,16 @@ class PhpdocNoUselessInheritdoc
 }
 
 /**
+ * single_class_element_per_statement
+ */
+class SingleClassElementPerStatement
+{
+    const FOO_1 = 1, FOO_2 = 2;
+
+    private static $bar1 = [1, 2, 3], $bar2 = [1, 2, 3];
+}
+
+/**
  * self_static_accessor
  */
 final class SelfStaticAccessor
