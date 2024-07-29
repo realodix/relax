@@ -1,32 +1,14 @@
-<?php declare ( strict_types = 1 );
+<?php
 
-use Realodix\Relax\NoUnusedImports;
-use \Realodix\Relax\RuleSet\RuleSetInterface;
+// declare_equal_normalize
+declare(ticks =  1);
+// declare_parentheses
+declare ( strict_types=1 );
+use Realodix\Relax\no_unneeded_import_alias as no_unneeded_import_alias;
+use Realodix\Relax\no_unused_imports;
 
-use PhpCsFixer\Config as Config;
-    use function \is_string;
-class relax_actual extends Config
+class relax_actual extends no_unneeded_import_alias
 {
-
-    // no_blank_lines_after_class_opening
-
-    // type_declaration_spaces
-    private bool   $type_declaration_spaces;
-
-    var $visibility_required; // visibility_required
-
-    static protected $visibility_required2; // visibility_required
-
-    // type_declaration_spaces
-    public function __invoke(array   $type_declaration_spaces) {}
-
-    public function __construct(
-        ?RuleSetInterface $ruleSet
-    )
-    {
-
-    }
-
     /**
      * magic_method_casing
      */
@@ -103,6 +85,11 @@ class relax_actual extends Config
         $foo = function () { return true; };
     }
 
+    public function basic__no_multiple_statements_per_line()
+    {
+        foo(); bar();
+    }
+
     public function basic__no_trailing_comma_in_singleline()
     {
         foo(true,);
@@ -112,10 +99,6 @@ class relax_actual extends Config
         [$foo, $bar,] = [];
 
         // use a\{ClassA, ClassB,};
-    }
-
-    public function basic__single_line_empty_body()
-    {
     }
 
     public function casing__class_reference_name_casing() {
@@ -176,8 +159,6 @@ class relax_actual extends Config
         return null;
     }
 
-    function class_notation__visibility_required() {}
-
     public function comment__single_line_comment_spacing()
     {
         //comment 1
@@ -185,9 +166,30 @@ class relax_actual extends Config
         /*comment 3*/
     }
 
+    public function comment__single_line_comment_style()
+    {
+        # hash comment
+
+        /* asterisk comment */
+
+        /*
+         * asterisk comment-single
+         */
+    }
+
     public function control_structure__control_structure_braces()
     {
         if (foo()) echo 'Hello!';
+    }
+
+    public function control_structure__control_structure_continuation_position()
+    {
+        if (true) {
+            echo 'foo';
+        }
+        else {
+            echo 'bar';
+        }
     }
 
     public function control_structure__elseif()
@@ -242,6 +244,16 @@ class relax_actual extends Config
         }
     }
 
+    public function control_structure__switch_case_space()
+    {
+        switch (true) {
+            case 1      :
+                break;
+            default     :
+                break;
+        }
+    }
+
     public function control_structure__yoda_style()
     {
         $a = null;
@@ -266,6 +278,11 @@ class relax_actual extends Config
         $foo = function() use ($bar) {};
     }
 
+    public function function_notation__no_spaces_after_function_name()
+    {
+        strlen  ('Hello World!');
+    }
+
     public function function_notation__no_unreachable_default_argument_value($foo = "two words", $bar) {}
 
     public function function_notation__nullable_type_declaration_for_default_null_value(string $str = null) {}
@@ -273,6 +290,8 @@ class relax_actual extends Config
     public function function_notation__nullable_type_declaration_for_default_null_value_2(string|int $str = null) {}
 
     public function function_notation__nullable_type_declaration_for_default_null_value_3(\Foo&\Bar $str = null) {}
+
+    public function function_notation__return_type_declaration() : void {}
 
     public function language_construct__nullable_type_declaration(null|int $value, null|\Closure $callable): ?int
     {
@@ -333,6 +352,11 @@ class relax_actual extends Config
         $x = new X();
     }
 
+    public function operator__no_space_around_double_colon()
+    {
+        echo Foo\Bar :: class;
+    }
+
     public function operator__no_useless_concat_operator()
     {
         $a = 'a'.'b';
@@ -360,6 +384,11 @@ class relax_actual extends Config
     {
         return true ||
             false;
+    }
+
+    public function operator__ternary_operator_spaces()
+    {
+        $a = true   ?1 :0;
     }
 
     #[Foo()]
@@ -398,6 +427,12 @@ with a line not prefixed with asterisk
      * @param  int  $b
      */
     public function phpdoc__phpdoc_align($a, $b) {}
+
+    /**
+     * @internal
+     * @access private
+     */
+    public function phpdoc__phpdoc_no_access() {}
 
     /**
      * @internal
@@ -846,22 +881,3 @@ if ($foo == true) {
         }
     }
 }
-
-class class_attributes_separation
-{
-    use trait_a;
-
-
-    use trait_b;
-    private $a;
-    private $b;
-    /** @var int */
-    const SECOND = 1;
-    /** @var int */
-    const MINUTE = 60;
-    protected function foo() {}
-    protected function bar() {}
-}
-
-// no_closing_tag
-?>
