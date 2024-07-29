@@ -798,12 +798,15 @@ if ($foo == true) {
     public function function_notation__function_declaration()
     {
         // closure_fn_spacing
-        $f = fn () => null;
-        $f = fn() => null;
+        $fn = fn () => null;
+        $fn = fn() => null;
 
         // closure_function_spacing
-        $f = function () {};
-        $f = function() {};
+        $func = function () {};
+        $func = function() {};
+
+        // trailing_comma_single_line
+        $funcTr = function ($fn, $func,) {};
     }
 
     public function function_notation__method_argument_space()
