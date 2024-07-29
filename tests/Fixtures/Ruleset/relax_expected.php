@@ -413,7 +413,7 @@ class relax_actual extends no_unneeded_import_alias
     /**
      * @param mixed $foo
      */
-    public function phpdoc__no_superfluous_phpdoc_tags($foo /* , $unusedParam = null */) {}
+    public function phpdoc__no_superfluous_phpdoc_tags($foo /* , $hidden_params = null */) {}
 
     /**
      * @param string $a

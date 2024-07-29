@@ -414,9 +414,10 @@ with a line not prefixed with asterisk
 
     /**
      * @param mixed $foo
-     * @param string|int|null $unusedParam
+     * @param string|int|null $hidden_params
+     * @param mixed $unused_params
      */
-    public function phpdoc__no_superfluous_phpdoc_tags($foo /*, $unusedParam = null */) {}
+    public function phpdoc__no_superfluous_phpdoc_tags($foo /*, $hidden_params = null */) {}
 
     /**
      * @param  string  $a
