@@ -377,6 +377,11 @@ class relax_actual extends no_unneeded_import_alias
     /**
      * @internal
      */
+    public function phpdoc__phpdoc_no_access() {}
+
+    /**
+     * @internal
+     */
     public function phpdoc__phpdoc_no_package() {}
 
     /**

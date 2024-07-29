@@ -377,6 +377,12 @@ with a line not prefixed with asterisk
 
     /**
      * @internal
+     * @access private
+     */
+    public function phpdoc__phpdoc_no_access() {}
+
+    /**
+     * @internal
      * @param int    $b
      * @package Foo
      * subpackage Bar
