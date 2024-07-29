@@ -268,6 +268,11 @@ class relax_actual extends no_unneeded_import_alias
         $foo = function() use ($bar) {};
     }
 
+    public function function_notation__no_spaces_after_function_name()
+    {
+        strlen  ('Hello World!');
+    }
+
     public function function_notation__no_unreachable_default_argument_value($foo = "two words", $bar) {}
 
     public function function_notation__nullable_type_declaration_for_default_null_value(string $str = null) {}
