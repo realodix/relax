@@ -381,6 +381,11 @@ class relax_actual extends no_unneeded_import_alias
             false;
     }
 
+    public function operator__ternary_operator_spaces()
+    {
+        $a = true   ?1 :0;
+    }
+
     #[Foo()]
     #[Bar(), Baz()]
     public function attribute_notation__attribute_empty_parentheses() {}
