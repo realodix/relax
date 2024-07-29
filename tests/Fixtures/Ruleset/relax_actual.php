@@ -7,8 +7,6 @@ declare ( strict_types=1 );
 use Realodix\Relax\no_unneeded_import_alias as no_unneeded_import_alias;
 use Realodix\Relax\no_unused_imports;
 
-
-    use function \is_string;
 class relax_actual extends no_unneeded_import_alias
 {
     /**

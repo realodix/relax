@@ -6,8 +6,6 @@ declare(ticks=1);
 declare(strict_types=1);
 use Realodix\Relax\no_unneeded_import_alias;
 
-use function is_string;
-
 class relax_actual extends no_unneeded_import_alias
 {
     /**
