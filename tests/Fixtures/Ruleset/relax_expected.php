@@ -785,22 +785,26 @@ class relax_actual extends no_unneeded_import_alias
 
     public function function_notation__method_argument_space()
     {
-        // 'on_multiline' => 'ignore'
-        function sample($a = 10,
+        // ---
+        // on_multiline
+        // 'on_multiline' => 'ensure_fully_multiline'
+        function om_ensure_fully_multiline($a = 10,
             $b = 20, $c = 30) {}
         sample(1,
             2);
-        function sample2(
+        // 'on_multiline' => 'ensure_single_line'
+        function om_ensure_single_line(
             $a = 10,
             $b = 20,
             $c = 30
         ) {}
-        sample2(
+        sample(
             1,
             2,
         );
 
-        // 'after_heredoc' => true
+        // ---
+        // after_heredoc
         sample(
             <<<'EOD'
         foo
@@ -808,10 +812,16 @@ class relax_actual extends no_unneeded_import_alias
             'bar',
         );
 
-        // Default value
-        // 'keep_multiple_spaces_after_comma' => false
-        function sample3($a = 10, $b = 20, $c = 30) {}
-        sample3(1, 2);
+        // ---
+        // attribute_placement
+        function attribute_placement(#[Foo] #[Bar] $a = 10,
+            $b = 20, $c = 30) {}
+        sample(1, 2);
+
+        // ---
+        // keep_multiple_spaces_after_comma
+        sample('foo', 'foobarbaz', 'baz');
+        sample('foobar', 'bar', 'baz');
     }
 
     public function operator__unary_operator_spaces($a, ...   $b)
