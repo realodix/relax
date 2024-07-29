@@ -30,6 +30,14 @@ class ClassAttributesSeparation
 }
 
 /**
+ * class_definition
+ */
+class  ClassDefinition  extends  Bar  implements  Baz,  BarBaz  {}
+final  class  ClassDefinitionFinal  extends  Bar  implements  Baz,  BarBaz  {}
+trait  ClassDefinitionTrait  {}
+$foo = new  class  extends  Bar  implements  Baz,  BarBaz {};
+
+/**
  * ordered_interfaces
  */
 final class ExampleA implements Gamma, Alpha, Beta {}
