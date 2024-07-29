@@ -360,6 +360,11 @@ class relax_actual extends no_unneeded_import_alias
         $x = new X;
     }
 
+    public function operator__no_space_around_double_colon()
+    {
+        echo Foo\Bar::class;
+    }
+
     public function operator__no_useless_concat_operator()
     {
         $a = 'ab';
