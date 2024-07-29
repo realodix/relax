@@ -11,14 +11,14 @@ const BBB = "";
 use const OtherNamespace\BBB;
 use const OtherNamespace\AAAA;
 use OtherNamespace\Acme;
-use OtherNamespace\AAC;
-use OtherNamespace\Bar;
+use OtherNamespace\Bar, OtherNamespace\AAC;
 use function DDD;
 use function CCC\AA;
 
 /**
  * ordered_imports
  * blank_line_between_import_groups
+ * single_import_per_statement
  */
 class Commonbox2
 {

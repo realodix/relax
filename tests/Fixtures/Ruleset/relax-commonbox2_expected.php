@@ -24,6 +24,7 @@ use function DDD;
 /**
  * ordered_imports
  * blank_line_between_import_groups
+ * single_import_per_statement
  */
 class Commonbox2
 {
