@@ -24,6 +24,11 @@ class RelaxCustom
 
     public function noPhpStormGeneratedCommentFixer() {}
 
+    public function noUselessParenthesisFixer()
+    {
+        is_bool(true);
+    }
+
     public function phpdocNoSuperfluousParamFixer() {}
 
     /**

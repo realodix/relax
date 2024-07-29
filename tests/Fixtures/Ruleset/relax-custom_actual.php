@@ -35,6 +35,11 @@ class RelaxCustom
      */
     public function noPhpStormGeneratedCommentFixer() {}
 
+    public function noUselessParenthesisFixer()
+    {
+        is_bool((true));
+    }
+
     /**
      * @param bool   $b
      * @param int    $i
