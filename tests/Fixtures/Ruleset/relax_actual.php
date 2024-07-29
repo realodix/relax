@@ -1,4 +1,9 @@
-<?php declare ( strict_types = 1 );
+<?php
+
+// declare_equal_normalize
+declare(ticks =  1);
+// declare_parentheses
+declare ( strict_types=1 );
 
 use Realodix\Relax\NoUnusedImports;
 
