@@ -17,6 +17,7 @@ use const OtherNamespace\BBB;
 use OtherNamespace\AAC;
 use OtherNamespace\Acme;
 use OtherNamespace\Bar;
+use OtherNamespace\no_leading_import_slash;
 
 use function CCC\AA;
 use function DDD;
@@ -34,6 +35,7 @@ class Commonbox2
         new AAC;
         new Acme;
         new Bar;
+        new no_leading_import_slash;
     }
 
     public function funcFunction()
