@@ -5,6 +5,9 @@
  */
 class NoBlankLinesAfterClassOpening
 {
+
+
+
     protected function foo()
     {
     }
