@@ -47,6 +47,11 @@ class relax_actual extends no_unneeded_import_alias
         exit;
     }
 
+    public function alias__no_mixed_echo_print()
+    {
+        echo 'example';
+    }
+
     public function array_notation__array_syntax()
     {
         return [];
