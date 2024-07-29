@@ -161,6 +161,17 @@ class relax_actual extends no_unneeded_import_alias
         /*comment 3*/
     }
 
+    public function comment__single_line_comment_style()
+    {
+        # hash comment
+
+        /* asterisk comment */
+
+        /*
+         * asterisk comment-single
+         */
+    }
+
     public function control_structure__control_structure_braces()
     {
         if (foo()) echo 'Hello!';
