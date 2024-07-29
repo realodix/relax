@@ -802,5 +802,3 @@ class relax_actual extends Config
         }
     }
 }
-
-// no_closing_tag

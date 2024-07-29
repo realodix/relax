@@ -824,6 +824,3 @@ if ($foo == true) {
         }
     }
 }
-
-// no_closing_tag
-?>
