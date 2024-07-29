@@ -180,6 +180,15 @@ class relax_actual extends no_unneeded_import_alias
         }
     }
 
+    public function control_structure__control_structure_continuation_position()
+    {
+        if (true) {
+            echo 'foo';
+        } else {
+            echo 'bar';
+        }
+    }
+
     public function control_structure__elseif()
     {
         if (true) {
