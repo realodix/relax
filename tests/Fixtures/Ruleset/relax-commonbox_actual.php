@@ -64,6 +64,19 @@ class PhpdocNoUselessInheritdoc
 }
 
 /**
+ * self_static_accessor
+ */
+final class SelfStaticAccessor
+{
+    private static $A = 1;
+
+    public function getBar()
+    {
+        return static::class.static::test().static::$A;
+    }
+}
+
+/**
  * single_line_empty_body
  */
 class SingleLineEmptyBody
