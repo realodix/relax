@@ -1,7 +1,6 @@
 <?php declare ( strict_types = 1 );
 
 use Realodix\Relax\NoUnusedImports;
-use \Realodix\Relax\RuleSet\RuleSetInterface;
 
 use PhpCsFixer\Config as Config;
     use function \is_string;
