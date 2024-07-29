@@ -281,6 +281,8 @@ class relax_actual extends no_unneeded_import_alias
 
     public function function_notation__nullable_type_declaration_for_default_null_value_3(\Foo&\Bar $str = null) {}
 
+    public function function_notation__return_type_declaration() : void {}
+
     public function language_construct__nullable_type_declaration(null|int $value, null|\Closure $callable): ?int
     {
         return 1;
