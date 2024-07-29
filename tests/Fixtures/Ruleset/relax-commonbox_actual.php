@@ -14,6 +14,39 @@ class NoBlankLinesAfterClassOpening
 }
 
 /**
+ * braces_position
+ */
+class BracesPosition {
+    public function basic__braces_position()
+    {
+        // allow_single_line_anonymous_functions
+        $foo = function () { return true; };
+
+        // allow_single_line_empty_anonymous_classes
+        $foo = new class { };
+        $bar = new class { private $baz; };
+
+        // anonymous_classes_opening_brace
+        $foo = new class {
+            // functions_opening_brace
+            public function bar() {
+                return 1;
+            }
+        };
+
+        // anonymous_functions_opening_brace
+        $foo = function () {
+        };
+
+        // control_structures_opening_brace
+        if (foo())
+        {
+            bar();
+        }
+    }
+}
+
+/**
  * class_attributes_separation
  */
 class ClassAttributesSeparation

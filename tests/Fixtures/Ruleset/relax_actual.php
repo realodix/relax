@@ -76,20 +76,6 @@ class relax_actual extends no_unneeded_import_alias
         $sample = [ 'a', 'b' ];
     }
 
-    public function basic__braces_position()
-    {
-        // anonymous_classes_opening_brace
-        // functions_opening_brace
-        $foo = new class {
-            public function bar() {
-                return 1;
-            }
-        };
-
-        // allow_single_line_anonymous_functions
-        $foo = function () { return true; };
-    }
-
     public function basic__no_multiple_statements_per_line()
     {
         foo(); bar();
