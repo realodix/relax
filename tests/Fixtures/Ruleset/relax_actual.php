@@ -92,6 +92,17 @@ class relax_actual extends no_unneeded_import_alias
         // use a\{ClassA, ClassB,};
     }
 
+    public function basic__numeric_literal_separator()
+    {
+        $integer = 12345678;
+        $octal = 0123456;
+        $binary = 0b0010010011011010;
+        $hexadecimal = 0x3D458F4F;
+
+        // override_existing
+        echo 1234_5678;
+    }
+
     public function casing__class_reference_name_casing() {
         new StdClass;
         throw new \exception();

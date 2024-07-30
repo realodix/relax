@@ -2,6 +2,17 @@
 
 class relaxplus
 {
+    public function basic__numeric_literal_separator()
+    {
+        $integer = 12_345_678;
+        $octal = 0123_456;
+        $binary = 0b00100100_11011010;
+        $hexadecimal = 0x3D_45_8F_4F;
+
+        // override_existing
+        echo 12_345_678;
+    }
+
     public function control_structure__no_superfluous_elseif()
     {
         if (true) {
