@@ -13,6 +13,11 @@ class relaxplus
         echo 1234_5678;
     }
 
+    /******
+     * Multiline comment with arbitrary asterisks count
+     ******/
+    public function comment__multiline_comment_opening_closing() {}
+
     public function control_structure__no_superfluous_elseif()
     {
         if (true) {
