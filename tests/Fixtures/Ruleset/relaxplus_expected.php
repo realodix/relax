@@ -40,11 +40,6 @@ class relaxplus
 class MyTest extends \PhpUnit\FrameWork\TestCase
 {
     /**
-     * php_unit_method_casing
-     */
-    public function testMyCode() {}
-
-    /**
      * @covers \Project\NameSpace\Something
      *
      * @coversDefaultClass \Project\Default

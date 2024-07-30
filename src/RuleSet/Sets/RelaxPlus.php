@@ -28,7 +28,6 @@ final class RelaxPlus extends AbstractRuleSet
             'explicit_string_variable' => true,
             'no_superfluous_elseif' => true,
             'php_unit_fqcn_annotation' => true,
-            'php_unit_method_casing' => true,
             'string_implicit_backslashes' => true,
             'general_phpdoc_annotation_remove' => [
                 'annotations' => [
