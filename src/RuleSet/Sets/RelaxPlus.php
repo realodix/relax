@@ -25,6 +25,7 @@ final class RelaxPlus extends AbstractRuleSet
     public function mainRules(): array
     {
         return [
+            'assign_null_coalescing_to_coalesce_equal' => true,
             'explicit_string_variable' => true,
             'no_superfluous_elseif' => true,
             'numeric_literal_separator' => ['override_existing' => true],

@@ -22,6 +22,11 @@ class relaxplus
         }
     }
 
+    public function operator__assign_null_coalescing_to_coalesce_equal()
+    {
+        $foo = $foo ?? 1;
+    }
+
     public function operator__ternary_to_null_coalescing()
     {
         $a = true;
