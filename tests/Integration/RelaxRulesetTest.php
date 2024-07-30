@@ -33,4 +33,9 @@ class RelaxRulesetTest extends IntegrationTestCase
     {
         $this->testFixture('relaxplus');
     }
+
+    public function testRealodixSpec(): void
+    {
+        $this->testFixture('realodixspec');
+    }
 }
