@@ -17,6 +17,15 @@ class relaxplus
         echo "My name is $name !";
     }
 
+    public function string_notation__string_implicit_backslashes()
+    {
+        $singleQuoted = 'String with \\" and My\Prefix\\';
+        $doubleQuoted = "Interpret my \n but not my \a";
+        $hereDoc = <<<HEREDOC
+        Interpret my \100 but not my \999
+        HEREDOC;
+    }
+
     public function customFixer__NoDoctrineMigrationsGeneratedCommentFixer()
     {
         // this up() migration is auto-generated, please modify it to your needs
