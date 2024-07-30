@@ -490,7 +490,7 @@ class relax_actual extends no_unneeded_import_alias
         $foo = true;
 
         // ignored_tags
-        /** @todo This should be a PHPDoc as the tag is on "ignored_tags" list */
+        // TODO: This should be a PHPDoc as the tag is on "ignored_tags" list
         $bar = true;
 
         // allow_before_return_statement

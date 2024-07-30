@@ -25,14 +25,19 @@ final class RelaxPlus extends AbstractRuleSet
     public function mainRules(): array
     {
         return [
+            // Migration
             'assign_null_coalescing_to_coalesce_equal' => true,
             'explicit_string_variable' => true,
             'multiline_comment_opening_closing' => true,
-            'no_superfluous_elseif' => true,
             'numeric_literal_separator' => ['override_existing' => true],
             'php_unit_fqcn_annotation' => true,
             'string_implicit_backslashes' => true,
             'ternary_to_null_coalescing' => true,
+
+            // Control Structure
+            'no_superfluous_elseif' => true,
+
+            // Cleanup
             'general_phpdoc_annotation_remove' => [
                 'annotations' => [
                     // https://github.com/doctrine/coding-standard/blob/3e88327/lib/Doctrine/ruleset.xml#L227
@@ -43,7 +48,6 @@ final class RelaxPlus extends AbstractRuleSet
                     'expectedExceptionMessageRegExp',
                 ],
             ],
-
             Fixer\NoDoctrineMigrationsGeneratedCommentFixer::name() => true,
             Fixer\NoPhpStormGeneratedCommentFixer::name() => true,
             Fixer\NoUselessDoctrineRepositoryCommentFixer::name() => true,

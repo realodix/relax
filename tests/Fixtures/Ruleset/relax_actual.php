@@ -497,7 +497,7 @@ with a line not prefixed with asterisk
         $foo = true;
 
         // ignored_tags
-        /** @todo This should be a PHPDoc as the tag is on "ignored_tags" list */
+        // TODO: This should be a PHPDoc as the tag is on "ignored_tags" list
         $bar = true;
 
         // allow_before_return_statement

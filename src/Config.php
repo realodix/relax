@@ -53,7 +53,7 @@ class Config extends \PhpCsFixer\Config
 
         // If the rule set is a string, we try to find it in the RuleSet namespace
         if (is_string($ruleSet)) {
-            /** @todo remove me */
+            // TODO: remove me
             if (ucfirst($ruleSet) == 'Realodix') {
                 $ruleSet = 'Relax';
             }
