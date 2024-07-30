@@ -49,6 +49,13 @@ class MyTest extends \PhpUnit\FrameWork\TestCase
      * php_unit_method_casing
      */
     public function test_my_code() {}
+
+    /**
+     * @covers Project\NameSpace\Something
+     * @coversDefaultClass Project\Default
+     * @uses Project\Test\Util
+     */
+    public function testPhpUnitFqcnAnnotation() {}
 }
 
 /**
