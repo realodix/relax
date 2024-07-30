@@ -28,13 +28,6 @@ class RelaxCustom
 
     public function noImportFromGlobalNamespaceFixer(DateTime $dateTime) {}
 
-    /**
-     * Created by PhpStorm.
-     * User: root * Date: 01.01.70
-     * Time: 12:00
-     */
-    public function noPhpStormGeneratedCommentFixer() {}
-
     public function noUselessParenthesisFixer()
     {
         is_bool((true));

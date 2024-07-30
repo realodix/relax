@@ -24,6 +24,8 @@ class relaxplus
 
         $this->addSql('UPDATE t1 SET col1 = col1 - 1');
     }
+
+    public function customFixer__NoPhpStormGeneratedCommentFixer() {}
 }
 
 class MyTest extends \PhpUnit\FrameWork\TestCase

@@ -45,7 +45,6 @@ final class Relax extends AbstractRuleSet
             Fixer\MultilineCommentOpeningClosingAloneFixer::name() => true,
             Fixer\MultilinePromotedPropertiesFixer::name() => ['minimum_number_of_parameters' => 2],
             Fixer\NoImportFromGlobalNamespaceFixer::name() => true,
-            Fixer\NoPhpStormGeneratedCommentFixer::name() => true,
             Fixer\NoUselessDoctrineRepositoryCommentFixer::name() => true,
             Fixer\NoUselessParenthesisFixer::name() => true,
             Fixer\PhpdocNoSuperfluousParamFixer::name() => true,

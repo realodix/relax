@@ -25,6 +25,13 @@ class relaxplus
         // this down() migration is auto-generated, please modify it to your needs
         $this->addSql('UPDATE t1 SET col1 = col1 - 1');
     }
+
+    /**
+     * Created by PhpStorm.
+     * User: root * Date: 01.01.70
+     * Time: 12:00
+     */
+    public function customFixer__NoPhpStormGeneratedCommentFixer() {}
 }
 
 class MyTest extends \PhpUnit\FrameWork\TestCase

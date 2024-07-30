@@ -39,6 +39,7 @@ final class RelaxPlus extends AbstractRuleSet
             'php_unit_method_casing' => true,
 
             Fixer\NoDoctrineMigrationsGeneratedCommentFixer::name() => true,
+            Fixer\NoPhpStormGeneratedCommentFixer::name() => true,
         ];
     }
 }

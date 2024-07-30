@@ -22,8 +22,6 @@ class RelaxCustom
 
     public function noImportFromGlobalNamespaceFixer(\DateTime $dateTime) {}
 
-    public function noPhpStormGeneratedCommentFixer() {}
-
     public function noUselessParenthesisFixer()
     {
         is_bool(true);
