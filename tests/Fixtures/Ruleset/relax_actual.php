@@ -578,6 +578,11 @@ with a line not prefixed with asterisk
         }
     }
 
+    public function semicolon__no_singleline_whitespace_before_semicolons()
+    {
+        $this->foo() ;
+    }
+
     public function string_notation__heredoc_to_nowdoc()
     {
         $a = <<<"TEST"

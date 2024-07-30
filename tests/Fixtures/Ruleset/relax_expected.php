@@ -564,6 +564,11 @@ class relax_actual extends no_unneeded_import_alias
         }
     }
 
+    public function semicolon__no_singleline_whitespace_before_semicolons()
+    {
+        $this->foo();
+    }
+
     public function string_notation__heredoc_to_nowdoc()
     {
         $a = <<<'TEST'
