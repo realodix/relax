@@ -40,6 +40,7 @@ final class RelaxPlus extends AbstractRuleSet
 
             Fixer\NoDoctrineMigrationsGeneratedCommentFixer::name() => true,
             Fixer\NoPhpStormGeneratedCommentFixer::name() => true,
+            Fixer\NoUselessDoctrineRepositoryCommentFixer::name() => true,
         ];
     }
 }

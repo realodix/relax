@@ -35,3 +35,5 @@ class MyTest extends \PhpUnit\FrameWork\TestCase
      */
     public function testMyCode() {}
 }
+
+class NoUselessDoctrineRepositoryCommentFixer {}
