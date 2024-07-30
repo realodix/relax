@@ -27,6 +27,7 @@ final class RelaxPlus extends AbstractRuleSet
         return [
             'explicit_string_variable' => true,
             'no_superfluous_elseif' => true,
+            'php_unit_method_casing' => true,
             'general_phpdoc_annotation_remove' => [
                 'annotations' => [
                     // https://github.com/doctrine/coding-standard/blob/3e88327/lib/Doctrine/ruleset.xml#L227
@@ -36,7 +37,6 @@ final class RelaxPlus extends AbstractRuleSet
                     'expectedException', 'expectedExceptionCode', 'expectedExceptionMessage', 'expectedExceptionMessageRegExp',
                 ],
             ],
-            'php_unit_method_casing' => true,
 
             Fixer\NoDoctrineMigrationsGeneratedCommentFixer::name() => true,
             Fixer\NoPhpStormGeneratedCommentFixer::name() => true,
