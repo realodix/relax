@@ -22,6 +22,14 @@ class relaxplus
         }
     }
 
+    public function operator__ternary_to_null_coalescing()
+    {
+        $a = true;
+        $b = true;
+
+        $sample = isset($a) ? $a : $b;
+    }
+
     public function string_notation__explicit_string_variable()
     {
         $name = 'foo';

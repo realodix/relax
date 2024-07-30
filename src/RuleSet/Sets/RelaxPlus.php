@@ -30,6 +30,7 @@ final class RelaxPlus extends AbstractRuleSet
             'numeric_literal_separator' => ['override_existing' => true],
             'php_unit_fqcn_annotation' => true,
             'string_implicit_backslashes' => true,
+            'ternary_to_null_coalescing' => true,
             'general_phpdoc_annotation_remove' => [
                 'annotations' => [
                     // https://github.com/doctrine/coding-standard/blob/3e88327/lib/Doctrine/ruleset.xml#L227
