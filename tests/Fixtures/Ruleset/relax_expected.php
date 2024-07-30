@@ -607,7 +607,7 @@ class relax_actual extends no_unneeded_import_alias
         if (true) {
             $foo = true;
         }
-        $a = 9000;
+        $a = 100;
         switch ($a) {
             case 42:
                 break;
@@ -680,14 +680,14 @@ class relax_actual extends no_unneeded_import_alias
         }
 
         // 'continue'
-        for ($i = 0; $i < 9000; $i++) {
+        for ($i = 0; $i < 100; $i++) {
             if (true) {
                 continue;
             }
         }
 
         // curly_brace_block
-        for ($i = 0; $i < 9000; $i++) {
+        for ($i = 0; $i < 100; $i++) {
             echo $i;
         }
 

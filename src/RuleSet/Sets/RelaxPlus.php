@@ -35,8 +35,9 @@ final class RelaxPlus extends AbstractRuleSet
                     // https://github.com/doctrine/coding-standard/blob/3e88327/lib/Doctrine/ruleset.xml#L227
                     'api', 'author', 'category', 'copyright', 'created', 'license', 'package', 'since',
                     'subpackage', 'version',
-                    // https://github.com/laminas/laminas-coding-standard/blob/9825280/src/LaminasCodingStandard/ruleset.xml#L883
-                    'expectedException', 'expectedExceptionCode', 'expectedExceptionMessage', 'expectedExceptionMessageRegExp',
+                    // https://github.com/laminas/laminas-coding-standard/blob/2ddabf7/src/LaminasCodingStandard/ruleset.xml#L885
+                    'expectedException', 'expectedExceptionCode', 'expectedExceptionMessage',
+                    'expectedExceptionMessageRegExp',
                 ],
             ],
 
