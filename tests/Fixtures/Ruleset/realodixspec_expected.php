@@ -1,5 +1,8 @@
 <?php
 
+use PhpCsFixer\Fixer\Basic\{BracesFixer, EncodingFixer};
+use PhpCsFixer\Fixer\PhpTag\NoClosingTagFixer;
+
 use function is_array;
 use function is_int;
 
@@ -35,7 +38,7 @@ class RealodixSpec
     public function exampleMethod(null|string|boll $a = null): null|string|boll
     {
         $a = null;
-        if ($a === null) {
+        if ($a === null || ! $a === true) {
             echo 'null';
         }
 
@@ -69,7 +72,7 @@ class RealodixSpec
 
     public function realodixSpec()
     {
-        $array = is_array(null);
-        $int = is_int(null);
+        $func = [is_array(null), is_int(null)];
+        $class = [new EncodingFixer, new BracesFixer, new NoClosingTagFixer];
     }
 }
