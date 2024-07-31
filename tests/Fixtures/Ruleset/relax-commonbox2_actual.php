@@ -8,13 +8,13 @@ const BBB = "";
 
     namespace Realodix\Relax; // no_leading_namespace_whitespace
 
-use const OtherNamespace\BBB;
-use const OtherNamespace\AAAA;
 use OtherNamespace\Acme;
 use OtherNamespace\Bar, OtherNamespace\AAC;
 use \OtherNamespace\no_leading_import_slash;
 use function DDD;
 use function CCC\AA;
+use const OtherNamespace\BBB;
+use const OtherNamespace\AAAA;
 /**
  * ordered_imports
  * blank_line_between_import_groups
