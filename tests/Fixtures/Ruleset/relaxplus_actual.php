@@ -40,6 +40,15 @@ class relaxplus
         $sample = isset($a) ? $a : $b;
     }
 
+    /**
+     * @link https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/blob/master/doc/rules/phpdoc/phpdoc_no_alias_tag.rst
+     */
+    public function phpdoc__phpdoc_no_alias_tag()
+    {
+        /** @type string */
+        $foo = 'https://github.com/PHP-CS-Fixer/PHP-CS-Fixer';
+    }
+
     public function string_notation__explicit_string_variable()
     {
         $name = 'foo';
