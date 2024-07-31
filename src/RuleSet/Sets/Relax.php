@@ -29,6 +29,7 @@ final class Relax extends AbstractRuleSet
             'attribute_empty_parentheses' => true,
             'class_reference_name_casing' => true,
             'combine_consecutive_unsets' => true,
+            'no_break_comment' => true,
             'no_unneeded_import_alias' => true,
             'no_useless_concat_operator' => true,
             'no_useless_else' => true,

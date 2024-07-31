@@ -179,6 +179,20 @@ class relax_actual extends no_unneeded_import_alias
          */
     }
 
+    public function control_structure__no_break_comment()
+    {
+        switch (true) {
+            case 1:
+                foo();
+                // no break
+            case 2:
+                bar();
+                break;
+            case 3:
+                baz();
+        }
+    }
+
     public function control_structure__control_structure_braces()
     {
         if (foo()) {
