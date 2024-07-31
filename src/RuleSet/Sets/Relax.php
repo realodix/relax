@@ -47,6 +47,7 @@ final class Relax extends AbstractRuleSet
             Fixer\MultilinePromotedPropertiesFixer::name() => ['minimum_number_of_parameters' => 2],
             Fixer\NoImportFromGlobalNamespaceFixer::name() => true,
             Fixer\NoUselessParenthesisFixer::name() => true,
+            // This makes Laravel `no_superfluous_phpdoc_tags['allow_unused_params']` not work
             Fixer\PhpdocNoSuperfluousParamFixer::name() => true,
             Fixer\PhpdocParamTypeFixer::name() => true,
             Fixer\PhpdocSelfAccessorFixer::name() => true,
@@ -70,7 +71,7 @@ final class Relax extends AbstractRuleSet
                 ],
             ],
             'space_after_semicolon' => ['remove_in_empty_for_expressions' => true],
-            // TODO:: Add 'match' & 'parameters' when PHP 8.0+ is required
+            // TODO: Add 'match' & 'parameters' when PHP 8.0+ is required
             'trailing_comma_in_multiline' => ['elements' => ['arrays', 'arguments']],
             'unary_operator_spaces' => ['only_dec_inc' => true],
             'whitespace_after_comma_in_array' => ['ensure_single_space' => true],

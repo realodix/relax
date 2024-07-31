@@ -356,7 +356,12 @@ class relax_actual extends no_unneeded_import_alias
 
     public function operator__new_with_parentheses()
     {
+        // anonymous_class
+        // If the anonymous class has no arguments, the () after class MUST be omitted.
+        // https://github.com/php-fig/per-coding-style/blob/2.0.0/spec.md#8-anonymous-classes
         $y = new class {};
+
+        // named_class
         $x = new X;
     }
 
@@ -422,9 +427,9 @@ class relax_actual extends no_unneeded_import_alias
     public function phpdoc__no_empty_phpdoc() {}
 
     /**
-     * @param mixed $foo
+     * @param mixed $allow_mixed
      */
-    public function phpdoc__no_superfluous_phpdoc_tags($foo /* , $hidden_params = null */) {}
+    public function phpdoc__no_superfluous_phpdoc_tags($allow_mixed /* , $hidden_params = null */) {}
 
     /**
      * @internal
@@ -787,6 +792,7 @@ class relax_actual extends no_unneeded_import_alias
     public function function_notation__function_declaration()
     {
         // closure_fn_spacing
+        // https://github.com/php-fig/per-coding-style/blob/2.0.0/spec.md#71-short-closures
         $fn = fn() => null;
         $fn = fn() => null;
 
