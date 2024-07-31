@@ -4,9 +4,9 @@ use function is_array;
 use function is_int;
 
 /**
- * @property int $a
- * @property-read null|int       $b
- * @property-write string         $c
+ * @property       int      $a
+ * @property-read  null|int $b
+ * @property-write string   $c
  */
 class RealodixSpec
 {
