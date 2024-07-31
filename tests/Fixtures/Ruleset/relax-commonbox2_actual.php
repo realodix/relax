@@ -11,6 +11,8 @@ const BBB = "";
 use OtherNamespace\Acme;
 use OtherNamespace\Bar, OtherNamespace\AAC;
 use \OtherNamespace\no_leading_import_slash;
+use SingleImportPerStatement\{SIPSA, SIPSAA};
+use SingleImportPerStatement\SIPSB;use SingleImportPerStatement\SIPSC;
 use function DDD;
 use function CCC\AA;
 use const OtherNamespace\BBB;
@@ -29,6 +31,8 @@ class Commonbox2
         new Acme;
         new Bar;
         new no_leading_import_slash;
+
+        [new SIPSA, new SIPSAA, new SIPSB, new SIPSC];
     }
 
     public function funcFunction()
