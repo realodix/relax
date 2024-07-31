@@ -427,12 +427,6 @@ class relax_actual extends no_unneeded_import_alias
     public function phpdoc__no_superfluous_phpdoc_tags($foo /* , $hidden_params = null */) {}
 
     /**
-     * @param string $a
-     * @param int    $b
-     */
-    public function phpdoc__phpdoc_align($a, $b) {}
-
-    /**
      * @internal
      */
     public function phpdoc__phpdoc_no_access() {}

@@ -431,12 +431,6 @@ with a line not prefixed with asterisk
     public function phpdoc__no_superfluous_phpdoc_tags($foo /*, $hidden_params = null */) {}
 
     /**
-     * @param  string  $a
-     * @param  int  $b
-     */
-    public function phpdoc__phpdoc_align($a, $b) {}
-
-    /**
      * @internal
      * @access private
      */

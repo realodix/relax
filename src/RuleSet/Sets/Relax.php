@@ -74,7 +74,9 @@ final class Relax extends AbstractRuleSet
             'trailing_comma_in_multiline' => ['elements' => ['arrays', 'arguments']],
             'unary_operator_spaces' => ['only_dec_inc' => true],
             'whitespace_after_comma_in_array' => ['ensure_single_space' => true],
-            'phpdoc_align' => ['tags' => ['method', 'param', 'property', 'throws', 'type', 'var']],
+            'phpdoc_align' => [
+                'tags' => ['method', 'param', 'property', 'property-read', 'property-write', 'throws', 'type', 'var'],
+            ],
             'phpdoc_separation' => [
                 'groups' => [
                     ['param', 'param-out', 'return'], ['var', 'readonly'],

@@ -14,6 +14,22 @@ class NoBlankLinesAfterClassOpening
 }
 
 /**
+ * phpdoc_align
+ *
+ * @property int $a
+ * @property-read null|int       $b
+ * @property-write string         $c
+ */
+class PhpdocAlign
+{
+    /**
+     * @param   string  $a
+     * @param int  $b
+     */
+    public function phpdoc__phpdoc_align($a, $b) {}
+}
+
+/**
  * braces_position
  */
 class BracesPosition {
