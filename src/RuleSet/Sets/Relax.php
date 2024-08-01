@@ -36,6 +36,7 @@ final class Relax extends AbstractRuleSet
             'no_useless_nullsafe_operator' => true,
             'numeric_literal_separator' => true,
             'operator_linebreak' => ['only_booleans' => true],
+            'ordered_class_elements' => ['order' => ['use_trait']],
             'ordered_types' => ['sort_algorithm' => 'none'],
             'phpdoc_param_order' => true,
             'phpdoc_trim_consecutive_blank_line_separation' => true,
