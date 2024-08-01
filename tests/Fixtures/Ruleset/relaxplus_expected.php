@@ -75,6 +75,73 @@ class relaxplus
     public function customFixer__NoPhpStormGeneratedCommentFixer() {}
 }
 
+/**
+ * class_definition
+ */
+class ClassDefinition extends Bar implements BarBaz, Baz {}
+final class ClassDefinitionFinal extends Bar implements BarBaz, Baz {}
+trait ClassDefinitionTrait {}
+interface Bar extends Bar, BarBaz, FooBarBaz {}
+$space_before_parenthesis = new class {};
+$inline_constructor_arguments = new class ($bar, $baz) {};
+
+/**
+ * ordered_class_elements
+ */
+final class OrderedClassElements
+{
+    use TraiA;
+    use TraiB;
+
+    const C1 = 1;
+
+    const C2 = 2;
+
+    protected static $protStatProp;
+
+    public static $pubStatProp1;
+
+    public $pubProp1;
+
+    protected $protProp;
+
+    public $pubProp2;
+
+    private static $privStatProp;
+
+    private $privProp;
+
+    public static $pubStatProp2;
+
+    public $pubProp3;
+
+    protected function __construct() {}
+
+    private static function privStatFunc() {}
+
+    public function pubFunc1() {}
+
+    public function __toString() {}
+
+    protected function protFunc() {}
+
+    public function pubFunc2() {}
+
+    public static function pubStatFunc1() {}
+
+    public function pubFunc3() {}
+
+    public static function pubStatFunc2() {}
+
+    private function privFunc() {}
+
+    public static function pubStatFunc3() {}
+
+    protected static function protStatFunc() {}
+
+    public function __destruct() {}
+}
+
 class MyTest extends \PhpUnit\FrameWork\TestCase
 {
     /**

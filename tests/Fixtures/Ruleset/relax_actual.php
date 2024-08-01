@@ -179,6 +179,20 @@ class relax_actual extends no_unneeded_import_alias
          */
     }
 
+    public function control_structure__no_break_comment()
+    {
+        switch (true) {
+            case 1:
+                foo();
+            case 2:
+                bar();
+                // no break
+                break;
+            case 3:
+                baz();
+        }
+    }
+
     public function control_structure__control_structure_braces()
     {
         if (foo()) echo 'Hello!';
@@ -350,7 +364,12 @@ class relax_actual extends no_unneeded_import_alias
 
     public function operator__new_with_parentheses()
     {
+        // anonymous_class
+        // If the anonymous class has no arguments, the () after class MUST be omitted.
+        // https://github.com/php-fig/per-coding-style/blob/2.0.0/spec.md#8-anonymous-classes
         $y = new class() {};
+
+        // named_class
         $x = new X();
     }
 
@@ -424,11 +443,11 @@ with a line not prefixed with asterisk
     }
 
     /**
-     * @param mixed $foo
+     * @param mixed $allow_mixed
      * @param string|int|null $hidden_params
      * @param mixed $unused_params
      */
-    public function phpdoc__no_superfluous_phpdoc_tags($foo /*, $hidden_params = null */) {}
+    public function phpdoc__no_superfluous_phpdoc_tags($allow_mixed /*, $hidden_params = null */) {}
 
     /**
      * @internal
@@ -814,8 +833,9 @@ if ($foo == true) {
     public function function_notation__function_declaration()
     {
         // closure_fn_spacing
+        // https://github.com/php-fig/per-coding-style/blob/2.0.0/spec.md#71-short-closures
         $fn = fn () => null;
-        $fn = fn() => null;
+        $fn = fn()=>null;
 
         // closure_function_spacing
         $func = function () {};
