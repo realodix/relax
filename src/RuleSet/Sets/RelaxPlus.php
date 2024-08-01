@@ -35,6 +35,7 @@ final class RelaxPlus extends AbstractRuleSet
             'ternary_to_null_coalescing' => true,
 
             // Control Structure
+            'class_definition' => ['single_line' => true, 'space_before_parenthesis' => true],
             'no_superfluous_elseif' => true,
 
             // Cleanup

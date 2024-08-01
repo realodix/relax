@@ -87,7 +87,13 @@ class ClassAttributesSeparation
 class  ClassDefinition  extends  Bar  implements  Baz,  BarBaz  {}
 final  class  ClassDefinitionFinal  extends  Bar  implements  Baz,  BarBaz  {}
 trait  ClassDefinitionTrait  {}
-$foo = new  class  extends  Bar  implements  Baz,  BarBaz {};
+interface Bar extends
+    Bar, BarBaz, FooBarBaz {}
+$space_before_parenthesis = new class{};
+$inline_constructor_arguments= new class(
+    $bar,
+    $baz
+) {};
 
 /**
  * ordered_interfaces

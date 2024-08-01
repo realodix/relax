@@ -75,6 +75,16 @@ class relaxplus
     public function customFixer__NoPhpStormGeneratedCommentFixer() {}
 }
 
+/**
+ * class_definition
+ */
+class ClassDefinition extends Bar implements BarBaz, Baz {}
+final class ClassDefinitionFinal extends Bar implements BarBaz, Baz {}
+trait ClassDefinitionTrait {}
+interface Bar extends Bar, BarBaz, FooBarBaz {}
+$space_before_parenthesis = new class {};
+$inline_constructor_arguments = new class ($bar, $baz) {};
+
 class MyTest extends \PhpUnit\FrameWork\TestCase
 {
     /**
