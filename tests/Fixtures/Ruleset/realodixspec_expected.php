@@ -24,9 +24,6 @@ class RealodixSpec
     /** @var int */
     const C1 = 1;
 
-    /** @var int */
-    protected static $protStatProp;
-
     /**
      * @var int
      */
@@ -34,17 +31,20 @@ class RealodixSpec
 
     public $pubProp1;
 
-    protected $protProp;
-
     public $pubProp2;
-
-    private static $privStatProp;
-
-    private $privProp;
 
     public static $pubStatProp2;
 
     public $pubProp3;
+
+    /** @var int */
+    protected static $protStatProp;
+
+    protected $protProp;
+
+    private static $privStatProp;
+
+    private $privProp;
 
     public function __construct(
         public int $a,

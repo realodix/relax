@@ -97,31 +97,33 @@ final class OrderedClassElements
 
     const C2 = 2;
 
-    protected static $protStatProp;
-
     public static $pubStatProp1;
 
     public $pubProp1;
 
-    protected $protProp;
-
     public $pubProp2;
-
-    private static $privStatProp;
-
-    private $privProp;
 
     public static $pubStatProp2;
 
     public $pubProp3;
 
+    protected static $protStatProp;
+
+    protected $protProp;
+
+    private static $privStatProp;
+
+    private $privProp;
+
     protected function __construct() {}
+
+    public function __destruct() {}
+
+    public function __toString() {}
 
     private static function privStatFunc() {}
 
     public function pubFunc1() {}
-
-    public function __toString() {}
 
     protected function protFunc() {}
 
@@ -138,8 +140,6 @@ final class OrderedClassElements
     public static function pubStatFunc3() {}
 
     protected static function protStatFunc() {}
-
-    public function __destruct() {}
 }
 
 class MyTest extends \PhpUnit\FrameWork\TestCase
