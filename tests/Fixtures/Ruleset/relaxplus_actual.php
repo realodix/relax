@@ -95,6 +95,39 @@ $inline_constructor_arguments= new class(
     $baz
 ) {};
 
+/**
+ * ordered_class_elements
+ */
+final class OrderedClassElements
+{
+    use TraiB;
+    use TraiA;
+    protected static $protStatProp;
+    const C1 = 1;
+    const C2 = 2;
+    public static $pubStatProp1;
+    public $pubProp1;
+    protected $protProp;
+    var $pubProp2;
+    private static $privStatProp;
+    private $privProp;
+    public static $pubStatProp2;
+    public $pubProp3;
+    protected function __construct() {}
+    private static function privStatFunc() {}
+    public function pubFunc1() {}
+    public function __toString() {}
+    protected function protFunc() {}
+    function pubFunc2() {}
+    public static function pubStatFunc1() {}
+    public function pubFunc3() {}
+    static function pubStatFunc2() {}
+    private function privFunc() {}
+    public static function pubStatFunc3() {}
+    protected static function protStatFunc() {}
+    public function __destruct() {}
+}
+
 class MyTest extends \PhpUnit\FrameWork\TestCase
 {
     /**

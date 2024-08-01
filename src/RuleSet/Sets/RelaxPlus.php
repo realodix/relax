@@ -37,6 +37,7 @@ final class RelaxPlus extends AbstractRuleSet
             // Control Structure
             'class_definition' => ['single_line' => true, 'space_before_parenthesis' => true],
             'no_superfluous_elseif' => true,
+            'ordered_class_elements' => ['order' => ['use_trait', 'constant']],
 
             // Cleanup
             'phpdoc_no_alias_tag' => ['replacements' => ['type' => 'var', 'link' => 'see']],
