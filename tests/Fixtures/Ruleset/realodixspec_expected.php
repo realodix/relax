@@ -13,6 +13,39 @@ use function is_int;
  */
 class RealodixSpec
 {
+    use Trait1;
+    use Trait2, Trait3;
+
+    /**
+     * @var int
+     */
+    const C2 = 2;
+
+    /** @var int */
+    const C1 = 1;
+
+    /** @var int */
+    protected static $protStatProp;
+
+    /**
+     * @var int
+     */
+    public static $pubStatProp1;
+
+    public $pubProp1;
+
+    protected $protProp;
+
+    public $pubProp2;
+
+    private static $privStatProp;
+
+    private $privProp;
+
+    public static $pubStatProp2;
+
+    public $pubProp3;
+
     public function __construct(
         public int $a,
         public ?int $b,
@@ -69,6 +102,15 @@ class RealodixSpec
             '@Symfony:risky'  => true,
         ];
     }
+
+    /** @test */
+    public function test_a(): void {}
+
+    /**
+     * @test
+     * @dataProvider validTypesProvider
+     */
+    public function test_b(?int $a): void {}
 
     public function realodixSpec()
     {
