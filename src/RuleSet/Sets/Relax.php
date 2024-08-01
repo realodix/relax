@@ -90,7 +90,7 @@ final class Relax extends AbstractRuleSet
                     ['category', 'package', 'subpackage', 'deprecated', 'since'], ['link', 'see'],
                     // Add 'method' to 'property'
                     ['method', 'property', 'property-read', 'property-write'], ['author', 'copyright', 'license'],
-                    // https://phpunit.readthedocs.io/en/9.5/annotations.html
+                    // https://github.com/sebastianbergmann/phpunit-documentation-english/blob/main/src/annotations.rst
                     ['test', 'testWith', 'dataProvider', 'covers', 'group', 'uses'], ['runInSeparateProcess', 'preserveGlobalState'],
                     ['runTestsInSeparateProcesses', 'runClassInSeparateProcess'],
                     // https://psalm.dev/docs/annotating_code/supported_annotations/
@@ -98,7 +98,7 @@ final class Relax extends AbstractRuleSet
                         'psalm-assert', 'psalm-assert-if-true', 'psalm-assert-if-false', 'psalm-if-this-is', 'psalm-this-out',
                         'psalm-property', 'psalm-property-read', 'psalm-property-write',
                     ],
-                    // PHPSatan
+                    // https://phpstan.org/writing-php-code/phpdocs-basics
                     ['phpstan-param', 'phpstan-return', 'phpstan-pure', 'phpstan-template', 'phpstan-type', 'phpstan-import-type',
                         'phpstan-assert', 'phpstan-assert-if-true', 'phpstan-assert-if-false',
                         'phpstan-property', 'phpstan-property-read', 'phpstan-property-write',

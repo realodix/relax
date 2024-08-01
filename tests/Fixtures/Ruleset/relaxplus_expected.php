@@ -131,13 +131,13 @@ final class OrderedClassElements
     protected static function protStatFunc() {}
 }
 
+/**
+ * php_unit_fqcn_annotation
+ */
 class MyTest extends \PhpUnit\FrameWork\TestCase
 {
     /**
      * @covers \Project\NameSpace\Something
-     *
-     * @coversDefaultClass \Project\Default
-     *
      * @uses \Project\Test\Util
      */
     public function testPhpUnitFqcnAnnotation() {}
