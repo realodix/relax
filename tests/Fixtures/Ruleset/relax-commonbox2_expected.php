@@ -11,9 +11,6 @@ const BBB = '';
 
 namespace Realodix\Relax; // no_leading_namespace_whitespace
 
-use const OtherNamespace\AAAA;
-use const OtherNamespace\BBB;
-
 use OtherNamespace\AAC;
 use OtherNamespace\Acme;
 use OtherNamespace\Bar;
@@ -24,6 +21,9 @@ use SingleImportPerStatement\{SIPSA, SIPSAA};
 
 use function CCC\AA;
 use function DDD;
+
+use const OtherNamespace\AAAA;
+use const OtherNamespace\BBB;
 
 /**
  * ordered_imports
