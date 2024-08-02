@@ -2,17 +2,6 @@
 
 class relaxplus
 {
-    public function basic__numeric_literal_separator()
-    {
-        $integer = 12345678;
-        $octal = 0123456;
-        $binary = 0b0010010011011010;
-        $hexadecimal = 0x3D458F4F;
-
-        // override_existing
-        echo 1234_5678;
-    }
-
     /******
      * Multiline comment with arbitrary asterisks count
      ******/
@@ -128,11 +117,14 @@ final class OrderedClassElements
     public function __destruct() {}
 }
 
+/**
+ * php_unit_fqcn_annotation
+ */
 class MyTest extends \PhpUnit\FrameWork\TestCase
 {
     /**
      * @covers Project\NameSpace\Something
-     * @coversDefaultClass Project\Default
+     *
      * @uses Project\Test\Util
      */
     public function testPhpUnitFqcnAnnotation() {}

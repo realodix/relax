@@ -29,7 +29,6 @@ final class RelaxPlus extends AbstractRuleSet
             'assign_null_coalescing_to_coalesce_equal' => true,
             'explicit_string_variable' => true,
             'multiline_comment_opening_closing' => true,
-            'numeric_literal_separator' => ['override_existing' => true],
             'php_unit_fqcn_annotation' => true,
             'string_implicit_backslashes' => true,
             'ternary_to_null_coalescing' => true,

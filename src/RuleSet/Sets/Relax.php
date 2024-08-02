@@ -34,7 +34,6 @@ final class Relax extends AbstractRuleSet
             'no_useless_concat_operator' => true,
             'no_useless_else' => true,
             'no_useless_nullsafe_operator' => true,
-            'numeric_literal_separator' => true,
             'operator_linebreak' => ['only_booleans' => true],
             'ordered_class_elements' => ['order' => ['use_trait']],
             'ordered_types' => ['sort_algorithm' => 'none'],
@@ -91,18 +90,18 @@ final class Relax extends AbstractRuleSet
                     ['category', 'package', 'subpackage', 'deprecated', 'since'], ['link', 'see'],
                     // Add 'method' to 'property'
                     ['method', 'property', 'property-read', 'property-write'], ['author', 'copyright', 'license'],
-                    // https://phpunit.readthedocs.io/en/9.5/annotations.html
+                    // https://github.com/sebastianbergmann/phpunit-documentation-english/blob/main/src/annotations.rst
                     ['test', 'testWith', 'dataProvider', 'covers', 'group', 'uses'], ['runInSeparateProcess', 'preserveGlobalState'],
                     ['runTestsInSeparateProcesses', 'runClassInSeparateProcess'],
                     // https://psalm.dev/docs/annotating_code/supported_annotations/
-                    ['psalm-param', 'psalm-return', 'psalm-suppress', 'psalm-pure', 'psalm-param-out', 'psalm-template',
+                    ['psalm-template', 'psalm-import-type', 'psalm-property', 'psalm-property-read', 'psalm-property-write',
+                        'psalm-param', 'psalm-return', 'psalm-type', 'psalm-suppress', 'psalm-pure', 'psalm-param-out',
                         'psalm-assert', 'psalm-assert-if-true', 'psalm-assert-if-false', 'psalm-if-this-is', 'psalm-this-out',
-                        'psalm-property', 'psalm-property-read', 'psalm-property-write',
                     ],
-                    // PHPSatan
-                    ['phpstan-param', 'phpstan-return', 'phpstan-pure', 'phpstan-template', 'phpstan-type', 'phpstan-import-type',
-                        'phpstan-assert', 'phpstan-assert-if-true', 'phpstan-assert-if-false',
-                        'phpstan-property', 'phpstan-property-read', 'phpstan-property-write',
+                    // https://phpstan.org/writing-php-code/phpdocs-basics
+                    ['phpstan-template', 'phpstan-import-type', 'phpstan-property', 'phpstan-property-read', 'phpstan-property-write',
+                        'phpstan-param', 'phpstan-return', 'phpstan-type', 'phpstan-pure', 'phpstan-impure',
+                        'phpstan-assert', 'phpstan-assert-if-true', 'phpstan-assert-if-false', 'phpstan-self-out', 'phpstan-this-out',
                     ],
                 ],
             ],
