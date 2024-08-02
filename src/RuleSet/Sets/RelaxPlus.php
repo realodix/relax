@@ -38,7 +38,8 @@ final class RelaxPlus extends AbstractRuleSet
             'no_superfluous_elseif' => true,
             'ordered_class_elements' => [
                 'order' => [
-                    'use_trait', 'case', 'constant_public', 'constant_protected', 'constant_private', 'property_public', 'property_protected', 'property_private', 'construct', 'destruct', 'magic', 'phpunit',
+                    'use_trait', 'case', 'constant', 'property',
+                    'construct', 'destruct', 'magic',
                 ],
             ],
 

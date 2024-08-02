@@ -86,23 +86,23 @@ final class OrderedClassElements
 
     const C2 = 2;
 
+    protected static $protStatProp;
+
     public static $pubStatProp1;
 
     public $pubProp1;
 
-    public $pubProp2;
-
-    public static $pubStatProp2;
-
-    public $pubProp3;
-
-    protected static $protStatProp;
-
     protected $protProp;
+
+    public $pubProp2;
 
     private static $privStatProp;
 
     private $privProp;
+
+    public static $pubStatProp2;
+
+    public $pubProp3;
 
     protected function __construct() {}
 
