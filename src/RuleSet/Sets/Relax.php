@@ -72,6 +72,7 @@ final class Relax extends AbstractRuleSet
                     'curly_brace_block', 'parenthesis_brace_block', 'square_brace_block',
                 ],
             ],
+            'ordered_imports' => ['sort_algorithm' => 'alpha', 'imports_order' => ['class', 'function', 'const']],
             'single_import_per_statement' => ['group_to_single_imports' => false],
             'space_after_semicolon' => ['remove_in_empty_for_expressions' => true],
             // TODO: Add 'match' & 'parameters' when PHP 8.0+ is required
