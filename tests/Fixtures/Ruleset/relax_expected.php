@@ -108,6 +108,12 @@ class relax_actual extends no_unneeded_import_alias
         return true;
     }
 
+    public function casing__lowercase_static_reference()
+    {
+        static::baz2();
+        true instanceof self;
+    }
+
     public function casing__magic_constant_casing()
     {
         echo __DIR__;
