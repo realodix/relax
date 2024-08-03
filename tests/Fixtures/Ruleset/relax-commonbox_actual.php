@@ -73,12 +73,30 @@ class ClassAttributesSeparation
     use trait_b;
     private $a;
     private $b;
+    /**
+     * @var int
+     */
+    const C2 = 2;
+
     /** @var int */
-    const SECOND = 1;
-    /** @var int */
-    const MINUTE = 60;
+    const C1 = 1;
+
+    const C3 = 3;
+    const C4 = 4;
+
+
+    const C5 = 5;
     protected function foo() {}
     protected function bar() {}
+}
+enum ClassAttributesSeparationEnum
+{
+    case Case1;
+
+    case Case2;
+    case Case3;
+
+    case Case4;
 }
 
 /**

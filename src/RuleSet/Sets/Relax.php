@@ -62,6 +62,14 @@ final class Relax extends AbstractRuleSet
                 'default' => 'single_space',
                 'operators' => ['=>' => 'at_least_single_space'],
             ],
+            'class_attributes_separation' => [
+                'elements' => [
+                    'trait_import' => 'none',
+                    'const' => 'none',
+                    'property' => 'one',
+                    'method' => 'one',
+                ],
+            ],
             'class_definition' => ['inline_constructor_arguments' => false, 'space_before_parenthesis' => true],
             'braces_position' => ['anonymous_classes_opening_brace' => 'next_line_unless_newline_at_signature_end'],
             'function_declaration' => ['closure_fn_spacing' => 'none'],

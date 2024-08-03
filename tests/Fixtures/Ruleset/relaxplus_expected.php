@@ -83,7 +83,6 @@ final class OrderedClassElements
     use TraiB;
 
     const C1 = 1;
-
     const C2 = 2;
 
     protected static $protStatProp;

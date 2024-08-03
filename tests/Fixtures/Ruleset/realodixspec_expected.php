@@ -24,6 +24,10 @@ class RealodixSpec
     /** @var int */
     const C1 = 1;
 
+    const C3 = 3;
+    const C4 = 4;
+    const C5 = 5;
+
     /** @var int */
     protected static $protStatProp;
 
