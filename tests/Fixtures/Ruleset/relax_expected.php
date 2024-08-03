@@ -832,7 +832,8 @@ class relax_actual extends no_unneeded_import_alias
         sample(
             <<<'EOD'
         foo
-        EOD,
+        EOD
+            ,
             'bar',
         );
 
