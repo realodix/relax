@@ -30,7 +30,6 @@ final class RelaxPlus extends AbstractRuleSet
             'explicit_string_variable' => true,
             'multiline_comment_opening_closing' => true,
             'php_unit_fqcn_annotation' => true,
-            'string_implicit_backslashes' => true,
             'ternary_to_null_coalescing' => true,
 
             // Control Structure
