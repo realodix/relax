@@ -131,8 +131,8 @@ class relax_actual extends no_unneeded_import_alias
 
     public function cast_notation()
     {
-        $a =  1;
-        $b =  2;
+        $a = 1;
+        $b = 2;
 
         // cast_spaces
         $bar = ( string )   $a;
