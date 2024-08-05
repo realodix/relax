@@ -10,11 +10,6 @@ class RelaxCustom
      */
     private $instance;
 
-    /**
-     * @var array<int,string>
-     */
-    private $phpdocTypesCommaSpacesFixer;
-
     /** Hello
      * World!
      */

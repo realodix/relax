@@ -68,6 +68,19 @@ class RealodixSpec
     }
 
     /**
+     * Get the attributes that should be cast.
+     *
+     * @return array{user_id:'integer',is_custom:'boolean'}
+     */
+    protected function casts(): array
+    {
+        return [
+            'user_id' => 'integer',
+            'is_custom' => 'boolean',
+        ];
+    }
+
+    /**
      * @param null|string|boll $a comment
      * @return null|string|boll comment
      *

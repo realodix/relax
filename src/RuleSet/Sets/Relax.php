@@ -51,7 +51,6 @@ final class Relax extends AbstractRuleSet
             Fixer\PhpdocNoSuperfluousParamFixer::name() => true,
             Fixer\PhpdocParamTypeFixer::name() => true,
             Fixer\PhpdocSelfAccessorFixer::name() => true,
-            Fixer\PhpdocTypesCommaSpacesFixer::name() => true,
             Fixer\PhpdocTypesTrimFixer::name() => true,
 
             /*
