@@ -43,7 +43,7 @@ class GenerateConfigCommand extends Command
     /**
      * Returns true if the file should be overwritten, otherwise false.
      *
-     * @param InputInterface  $input
+     * @param InputInterface $input
      * @param OutputInterface $output
      */
     protected function overwriteExistingFile($input, $output): bool

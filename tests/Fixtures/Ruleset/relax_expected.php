@@ -452,7 +452,7 @@ class relax_actual extends no_unneeded_import_alias
 
     /**
      * @param string $foo
-     * @param bool   $bar Bar
+     * @param bool $bar Bar
      * @return int Return the number of changes.
      *
      * @throws \Exception|\RuntimeException foo
@@ -462,15 +462,15 @@ class relax_actual extends no_unneeded_import_alias
     /**
      * Annotations in wrong order
      *
-     * @param int   $a
+     * @param int $a
      * @param array $b
-     * @param Foo   $c
+     * @param Foo $c
      */
     public function phpdoc__phpdoc_param_order($a, $b, $c) {}
 
     /**
-     * @param int   $a
-     * @param bool  $b
+     * @param int $a
+     * @param bool $b
      * @param float $c
      * @return float
      */
@@ -522,7 +522,7 @@ class relax_actual extends no_unneeded_import_alias
     public function phpdoc__phpdoc_types($bar) {}
 
     /**
-     * @param string|int|\Foo|null             $bar
+     * @param string|int|\Foo|null $bar
      * @param \RuntimeException|CacheException $e
      */
     public function phpdoc__phpdoc_types_order($bar, $e) {}

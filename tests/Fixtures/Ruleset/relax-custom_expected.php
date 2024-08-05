@@ -31,7 +31,7 @@ class RelaxCustom
 
     /**
      * @param string $foo Comment
-     * @param mixed  $bar Comment
+     * @param mixed $bar Comment
      */
     public function phpdocParamTypeFixer($foo, $bar) {}
 

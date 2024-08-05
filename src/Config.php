@@ -41,7 +41,7 @@ class Config extends \PhpCsFixer\Config
      * @return self
      *
      * @throws \InvalidArgumentException
-     * @throws RulesetNotFoundException  If the rule set does not exist.
+     * @throws RulesetNotFoundException If the rule set does not exist.
      */
     public static function create($ruleSet = null)
     {
