@@ -494,11 +494,6 @@ with a line not prefixed with asterisk
      */
     public function phpdoc__phpdoc_summary() {}
 
-    /**
-     * @inheritdoc
-     */
-    public function phpdoc__phpdoc_tag_type() {}
-
     public function phpdoc__phpdoc_to_comment()
     {
         /** This should be a comment */

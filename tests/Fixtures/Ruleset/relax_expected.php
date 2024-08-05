@@ -487,11 +487,6 @@ class relax_actual extends no_unneeded_import_alias
      */
     public function phpdoc__phpdoc_summary() {}
 
-    /**
-     * {@inheritdoc}
-     */
-    public function phpdoc__phpdoc_tag_type() {}
-
     public function phpdoc__phpdoc_to_comment()
     {
         /** This should be a comment */
