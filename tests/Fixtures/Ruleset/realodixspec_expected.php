@@ -52,7 +52,7 @@ class RealodixSpec
 
     public function __construct(
         public int $a,
-        public ?int $b,
+        public ?int $b = 3600, // 1 hour...
         public string $c
     ) {}
 

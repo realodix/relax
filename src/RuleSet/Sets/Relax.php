@@ -45,7 +45,6 @@ final class Relax extends AbstractRuleSet
             'single_line_comment_spacing' => true,
 
             Fixer\MultilineCommentOpeningClosingAloneFixer::name() => true,
-            Fixer\MultilinePromotedPropertiesFixer::name() => ['minimum_number_of_parameters' => 2],
             Fixer\NoImportFromGlobalNamespaceFixer::name() => true,
             Fixer\NoUselessParenthesisFixer::name() => true,
             // This makes Laravel `no_superfluous_phpdoc_tags['allow_unused_params']` not work

@@ -46,24 +46,3 @@ class RelaxCustom
      */
     public function phpdocTypesTrimFixer($x) {}
 }
-
-class MultilineCommentOpeningClosingAloneFixer
-{
-    public function __construct(private array $a, private bool $b, private int $i) {}
-}
-
-/**
- * Option: minimum_number_of_parameters
- */
-class MultilineCommentOpeningClosingAloneFixerTwo
-{
-    public function __construct(private array $a, private bool $b) {}
-}
-
-/**
- * Option: minimum_number_of_parameters
- */
-class MultilineCommentOpeningClosingAloneFixerThree
-{
-    public function __construct(private array $a) {}
-}
