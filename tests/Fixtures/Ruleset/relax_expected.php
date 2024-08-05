@@ -453,7 +453,7 @@ class relax_actual extends no_unneeded_import_alias
     /**
      * @param string $foo
      * @param bool   $bar Bar
-     * @return int  Return the number of changes.
+     * @return int Return the number of changes.
      *
      * @throws \Exception|\RuntimeException foo
      */
@@ -527,7 +527,7 @@ class relax_actual extends no_unneeded_import_alias
     public function phpdoc__phpdoc_types($bar) {}
 
     /**
-     * @param null|string|int|\Foo             $bar
+     * @param string|int|\Foo|null             $bar
      * @param \RuntimeException|CacheException $e
      */
     public function phpdoc__phpdoc_types_order($bar, $e) {}

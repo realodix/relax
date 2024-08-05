@@ -460,7 +460,7 @@ with a line not prefixed with asterisk
 
     /**
      * @throws \Exception|\RuntimeException foo
-     * @return int  Return the number of changes.
+     * @return int Return the number of changes.
      * @param string $foo
      * @param bool   $bar Bar
      */
@@ -537,10 +537,10 @@ with a line not prefixed with asterisk
     public function phpdoc__phpdoc_types($bar) {}
 
     /**
-     * @param string|int|\Foo|null $bar
+     * @param string|null|int|\Foo $bar
      * @param \RuntimeException|CacheException $e
      */
-    public function phpdoc__phpdoc_types_order($bar = null, $e) {}
+    public function phpdoc__phpdoc_types_order($bar, $e) {}
 
     public function phpdoc__phpdoc_var_annotation_correct_order()
     {

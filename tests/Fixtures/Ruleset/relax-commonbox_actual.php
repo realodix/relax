@@ -17,7 +17,7 @@ class NoBlankLinesAfterClassOpening
  * phpdoc_align
  *
  * @property int $a
- * @property-read null|int       $b
+ * @property-read int       $b
  * @property-write string         $c
  */
 class PhpdocAlign

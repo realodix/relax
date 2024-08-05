@@ -36,7 +36,7 @@ class RelaxCustom
     public function phpdocParamTypeFixer($foo, $bar) {}
 
     /**
-     * @param null|string $x
+     * @param int|string $x
      */
     public function phpdocTypesTrimFixer($x) {}
 }
