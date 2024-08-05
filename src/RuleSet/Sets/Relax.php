@@ -93,12 +93,12 @@ final class Relax extends AbstractRuleSet
             'phpdoc_separation' => [
                 'groups' => [
                     ['param', 'param-out', 'return'], ['var', 'readonly'],
+                    ['property', 'property-read', 'property-write', 'method'],
                     ['template', 'extends', 'implements', 'template-extends', 'template-implements', 'template-covariant', 'template-use'],
-                    // https://github.com/FriendsOfPHP/PHP-CS-Fixer/blob/master/doc/rules/phpdoc/phpdoc_separation.rst
-                    // Dengan perubahan `deprecated` & `since` digabungkan ke kolompok `package`.
-                    ['category', 'package', 'subpackage', 'deprecated', 'since'], ['link', 'see'],
-                    // Add 'method' to 'property'
-                    ['method', 'property', 'property-read', 'property-write'], ['author', 'copyright', 'license'],
+                    [
+                        'author', 'copyright', 'license', 'category', 'package', 'subpackage', 'deprecated', 'since',
+                        'link', 'see',
+                    ],
                     // https://github.com/sebastianbergmann/phpunit-documentation-english/blob/main/src/annotations.rst
                     ['test', 'testWith', 'dataProvider', 'covers', 'group', 'uses'], ['runInSeparateProcess', 'preserveGlobalState'],
                     ['runTestsInSeparateProcesses', 'runClassInSeparateProcess'],
