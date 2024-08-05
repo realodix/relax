@@ -151,7 +151,7 @@ class relax_actual extends no_unneeded_import_alias
         $a = (string) $b;
     }
 
-    public function class_notation__ordered_types(null|string|int $foo): null|string|int
+    public function class_notation__ordered_types(string|int|null $foo): string|int|null
     {
         return null;
     }
@@ -307,9 +307,9 @@ class relax_actual extends no_unneeded_import_alias
 
     public function function_notation__nullable_type_declaration_for_default_null_value(?string $str = null) {}
 
-    public function function_notation__nullable_type_declaration_for_default_null_value_2(null|string|int $str = null) {}
+    public function function_notation__nullable_type_declaration_for_default_null_value_2(string|int|null $str = null) {}
 
-    public function function_notation__nullable_type_declaration_for_default_null_value_3(null|(\Foo&\Bar) $str = null) {}
+    public function function_notation__nullable_type_declaration_for_default_null_value_3((\Foo&\Bar)|null $str = null) {}
 
     public function function_notation__return_type_declaration(): void {}
 

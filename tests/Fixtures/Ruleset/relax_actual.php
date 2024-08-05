@@ -151,7 +151,7 @@ class relax_actual extends no_unneeded_import_alias
         $a = (binary) $b;
     }
 
-    public function class_notation__ordered_types(string|int|null $foo):string|int|null
+    public function class_notation__ordered_types(string|null|int $foo):string|null|int
     {
         return null;
     }

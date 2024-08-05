@@ -8,7 +8,7 @@ use function is_int;
 
 /**
  * @property       int      $a
- * @property-read  null|int $b
+ * @property-read  int|null $b
  * @property-write string   $c
  */
 class RealodixSpec
@@ -67,12 +67,12 @@ class RealodixSpec
     }
 
     /**
-     * @param null|string|boll $a comment
-     * @return null|string|boll comment
+     * @param string|boll|null $a comment
+     * @return string|boll|null comment
      *
      * @throws \Exception
      */
-    public function exampleMethod(null|string|boll $a = null): null|string|boll
+    public function exampleMethod(string|boll|null $a = null): string|boll|null
     {
         $a = null;
         if ($a === null || ! $a === true) {
