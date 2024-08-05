@@ -353,7 +353,7 @@ class relax_actual extends no_unneeded_import_alias
 
     public function operator__concat_space()
     {
-        $foo = 'bar'. 3 .'bazqux';
+        $foo = 'bar' . 3 . 'bazqux';
     }
 
     public function operator__increment_style()

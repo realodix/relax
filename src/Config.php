@@ -58,7 +58,7 @@ class Config extends \PhpCsFixer\Config
                 $ruleSet = 'Relax';
             }
 
-            $relaxRuleset = 'Realodix\Relax\RuleSet\Sets\\'.ucfirst($ruleSet);
+            $relaxRuleset = 'Realodix\Relax\RuleSet\Sets\\' . ucfirst($ruleSet);
 
             if (! class_exists($relaxRuleset)) {
                 throw new RulesetNotFoundException($ruleSet);

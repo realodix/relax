@@ -65,7 +65,7 @@ class GenerateConfigCommand extends Command
      */
     protected function getOutputFilename(): string
     {
-        return getcwd().DIRECTORY_SEPARATOR.self::FILE_NAME;
+        return getcwd() . DIRECTORY_SEPARATOR . self::FILE_NAME;
     }
 
     /**

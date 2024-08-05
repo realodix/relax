@@ -16,4 +16,4 @@ return Config::create('relax')
     ->setRules($localRules)
     ->setFinder($finder)
     ->setParallelConfig(\PhpCsFixer\Runner\Parallel\ParallelConfigFactory::detect())
-    ->setCacheFile(__DIR__.'/.tmp/.php-cs-fixer.cache');
+    ->setCacheFile(__DIR__ . '/.tmp/.php-cs-fixer.cache');

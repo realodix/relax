@@ -23,7 +23,7 @@ class FinderTest extends TestCase
 
     public function testLaravelFinderMustReturnsAPhpCsFinderObject(): void
     {
-        $finder = Finder::laravel(__DIR__.'/../..');
+        $finder = Finder::laravel(__DIR__ . '/../..');
 
         $this->assertInstanceOf(PhpCsFixerFinder::class, $finder);
     }

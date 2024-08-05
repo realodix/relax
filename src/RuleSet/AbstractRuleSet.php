@@ -10,6 +10,6 @@ abstract class AbstractRuleSet implements RuleSetInterface
     {
         $name = substr(static::class, 1 + strrpos(static::class, '\\'));
 
-        return '@'.$name;
+        return '@' . $name;
     }
 }

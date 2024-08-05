@@ -191,7 +191,7 @@ final class SelfStaticAccessor
 
     public function getBar()
     {
-        return static::class.static::test().static::$A;
+        return self::class . self::test() . self::$A;
     }
 }
 
