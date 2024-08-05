@@ -37,6 +37,26 @@ class relaxplus
         /** @type string */
         $foo = 'https://github.com/PHP-CS-Fixer/PHP-CS-Fixer';
     }
+    public function phpdoc__phpdoc_to_comment()
+    {
+        /** This should be a comment */
+        foreach ([] as $key => $sqlite) {
+            $sqlite->open('');
+        }
+
+        // ignored_tags
+        /** @todo This should be a PHPDoc as the tag is on "ignored_tags" list */
+        Url::withCount([
+            'visits as unique_visit_count' => function (Builder $query) {
+                /** @var Builder<\App\Models\Visit> $query */
+                $query->where('is_first_click', true);
+            },
+        ]);
+
+        // allow_before_return_statement
+        /** \stdClass::class */
+        return \stdClass::class;
+    }
 
     public function string_notation__explicit_string_variable()
     {

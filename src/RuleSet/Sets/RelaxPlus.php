@@ -44,6 +44,7 @@ final class RelaxPlus extends AbstractRuleSet
 
             // Cleanup
             'phpdoc_no_alias_tag' => ['replacements' => ['type' => 'var', 'link' => 'see']],
+            'phpdoc_to_comment' => ['ignored_tags' => ['var']],
             'general_phpdoc_annotation_remove' => [
                 'annotations' => [
                     // https://github.com/doctrine/coding-standard/blob/3e88327/lib/Doctrine/ruleset.xml#L227

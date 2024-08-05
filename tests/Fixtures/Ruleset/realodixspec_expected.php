@@ -104,6 +104,13 @@ class RealodixSpec
             ->unique()->sort()
             ->toArray();
 
+        $u = withCount([
+            'visits as unique_visit_count' => function (Builder $query) {
+                /** @var Builder<\App\Models\Visit> $query */
+                $query->where('is_first_click', true);
+            },
+        ]);
+
         return null;
     }
 

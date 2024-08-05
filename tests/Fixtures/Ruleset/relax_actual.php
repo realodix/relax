@@ -497,14 +497,21 @@ with a line not prefixed with asterisk
     public function phpdoc__phpdoc_to_comment()
     {
         /** This should be a comment */
-        $foo = true;
+        foreach ([] as $key => $sqlite) {
+            $sqlite->open('');
+        }
 
         // ignored_tags
-        // TODO: This should be a PHPDoc as the tag is on "ignored_tags" list
-        $bar = true;
+        /** @todo This should be a PHPDoc as the tag is on "ignored_tags" list */
+        Url::withCount([
+            'visits as unique_visit_count' => function (Builder $query) {
+                /** @var Builder<\App\Models\Visit> $query */
+                $query->where('is_first_click', true);
+            },
+        ]);
 
         // allow_before_return_statement
-        /** @var class-string */
+        /** \stdClass::class */
         return \stdClass::class;
     }
 
