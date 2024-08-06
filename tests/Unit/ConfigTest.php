@@ -26,7 +26,7 @@ class ConfigTest extends TestCase
     public function testSetRulesetWithStringInput(): void
     {
         $ruleset = new \Realodix\Relax\RuleSet\Sets\Relax;
-        $config = Config::create('realodix');
+        $config = Config::create('relax');
 
         $this->assertSame(count($ruleset->rules()), count($config->getRules()));
 
