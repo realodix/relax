@@ -2,13 +2,6 @@
 
 namespace Realodix\Relax;
 
-/**
- * {@inheritDoc}
- *
- * @see https://symfony.com/doc/current/components/finder.html
- * @see https://github.com/symfony/finder/blob/7.1/Finder.php
- * @see https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/blob/master/src/Finder.php
- */
 class Finder extends \PhpCsFixer\Finder
 {
     /**
