@@ -57,6 +57,7 @@ final class Relax extends AbstractRuleSet
              * Laravel rules adjustment
              */
             'not_operator_with_successor_space' => false,
+            'phpdoc_tag_type' => false,
             'binary_operator_spaces' => [
                 'default' => 'single_space',
                 'operators' => ['=>' => 'at_least_single_space'],
@@ -81,7 +82,6 @@ final class Relax extends AbstractRuleSet
                 ],
             ],
             'ordered_imports' => ['sort_algorithm' => 'alpha', 'imports_order' => ['class', 'function', 'const']],
-            'phpdoc_tag_type' => false,
             'single_import_per_statement' => ['group_to_single_imports' => false],
             'space_after_semicolon' => ['remove_in_empty_for_expressions' => true],
             // TODO: Add 'match' & 'parameters' when PHP 8.0+ is required

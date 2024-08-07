@@ -49,9 +49,7 @@ final class Laravel extends AbstractRuleSet
             'concat_space' => ['spacing' => 'none'],
             'constant_case' => ['case' => 'lower'],
             'control_structure_braces' => true,
-            'control_structure_continuation_position' => [
-                'position' => 'same_line',
-            ],
+            'control_structure_continuation_position' => ['position' => 'same_line'],
             'declare_equal_normalize' => true,
             'declare_parentheses' => true,
             'elseif' => true,
@@ -79,10 +77,7 @@ final class Laravel extends AbstractRuleSet
             'multiline_whitespace_before_semicolons' => ['strategy' => 'no_multi_line'],
             'native_function_casing' => true,
             'native_type_declaration_casing' => true,
-            'new_with_parentheses' => [
-                'named_class' => false,
-                'anonymous_class' => false,
-            ],
+            'new_with_parentheses' => ['named_class' => false, 'anonymous_class' => false],
             'no_alias_functions' => true,
             'no_alias_language_construct_call' => true,
             'no_alternative_syntax' => true,
@@ -103,10 +98,7 @@ final class Laravel extends AbstractRuleSet
             'no_space_around_double_colon' => true,
             'no_spaces_after_function_name' => true,
             'no_spaces_around_offset' => ['positions' => ['inside', 'outside']],
-            'no_superfluous_phpdoc_tags' => [
-                'allow_mixed' => true,
-                'allow_unused_params' => true,
-            ],
+            'no_superfluous_phpdoc_tags' => ['allow_mixed' => true, 'allow_unused_params' => true],
             'no_trailing_comma_in_singleline' => true,
             'no_trailing_whitespace' => true,
             'no_trailing_whitespace_in_comment' => true,
@@ -131,20 +123,13 @@ final class Laravel extends AbstractRuleSet
             ],
             'ordered_interfaces' => true,
             'ordered_traits' => true,
-            'phpdoc_align' => [
-                'align' => 'left',
-                'spacing' => [
-                    'param' => 2,
-                ],
-            ],
+            'phpdoc_align' => ['align' => 'left', 'spacing' => ['param' => 2]],
             'phpdoc_indent' => true,
             'phpdoc_inline_tag_normalizer' => true,
             'phpdoc_no_access' => true,
             'phpdoc_no_package' => true,
             'phpdoc_no_useless_inheritdoc' => true,
-            'phpdoc_order' => [
-                'order' => ['param', 'return', 'throws'],
-            ],
+            'phpdoc_order' => ['order' => ['param', 'return', 'throws']],
             'phpdoc_scalar' => true,
             'phpdoc_separation' => [
                 'groups' => [
