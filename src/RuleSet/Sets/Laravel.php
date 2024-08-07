@@ -15,17 +15,10 @@ final class Laravel extends AbstractRuleSet
         return [
             'array_indentation' => true,
             'array_syntax' => ['syntax' => 'short'],
-            'binary_operator_spaces' => [
-                'default' => 'single_space',
-            ],
+            'binary_operator_spaces' => ['default' => 'single_space'],
             'blank_line_after_namespace' => true,
             'blank_line_after_opening_tag' => true,
-            'blank_line_before_statement' => [
-                'statements' => [
-                    'continue',
-                    'return',
-                ],
-            ],
+            'blank_line_before_statement' => ['statements' => ['continue', 'return']],
             'blank_line_between_import_groups' => true,
             'blank_lines_before_namespace' => true,
             'braces_position' => [
@@ -53,9 +46,7 @@ final class Laravel extends AbstractRuleSet
             ],
             'clean_namespace' => true,
             'compact_nullable_type_declaration' => true,
-            'concat_space' => [
-                'spacing' => 'none',
-            ],
+            'concat_space' => ['spacing' => 'none'],
             'constant_case' => ['case' => 'lower'],
             'control_structure_braces' => true,
             'control_structure_continuation_position' => [
@@ -83,13 +74,9 @@ final class Laravel extends AbstractRuleSet
             'lowercase_static_reference' => true,
             'magic_constant_casing' => true,
             'magic_method_casing' => true,
-            'method_argument_space' => [
-                'on_multiline' => 'ignore',
-            ],
+            'method_argument_space' => ['on_multiline' => 'ignore'],
             'method_chaining_indentation' => true,
-            'multiline_whitespace_before_semicolons' => [
-                'strategy' => 'no_multi_line',
-            ],
+            'multiline_whitespace_before_semicolons' => ['strategy' => 'no_multi_line'],
             'native_function_casing' => true,
             'native_type_declaration_casing' => true,
             'new_with_parentheses' => [
@@ -105,27 +92,17 @@ final class Laravel extends AbstractRuleSet
             'no_closing_tag' => true,
             'no_empty_phpdoc' => true,
             'no_empty_statement' => true,
-            'no_extra_blank_lines' => [
-                'tokens' => [
-                    'extra',
-                    'throw',
-                    'use',
-                ],
-            ],
+            'no_extra_blank_lines' => ['tokens' => ['extra', 'throw', 'use']],
             'no_leading_import_slash' => true,
             'no_leading_namespace_whitespace' => true,
-            'no_mixed_echo_print' => [
-                'use' => 'echo',
-            ],
+            'no_mixed_echo_print' => ['use' => 'echo'],
             'no_multiline_whitespace_around_double_arrow' => true,
             'no_multiple_statements_per_line' => true,
             'no_short_bool_cast' => true,
             'no_singleline_whitespace_before_semicolons' => true,
             'no_space_around_double_colon' => true,
             'no_spaces_after_function_name' => true,
-            'no_spaces_around_offset' => [
-                'positions' => ['inside', 'outside'],
-            ],
+            'no_spaces_around_offset' => ['positions' => ['inside', 'outside']],
             'no_superfluous_phpdoc_tags' => [
                 'allow_mixed' => true,
                 'allow_unused_params' => true,
@@ -148,7 +125,10 @@ final class Laravel extends AbstractRuleSet
             'nullable_type_declaration' => true,
             'nullable_type_declaration_for_default_null_value' => true,
             'object_operator_without_whitespace' => true,
-            'ordered_imports' => ['sort_algorithm' => 'alpha', 'imports_order' => ['const', 'class', 'function']],
+            'ordered_imports' => [
+                'sort_algorithm' => 'alpha',
+                'imports_order' => ['const', 'class', 'function'],
+            ],
             'ordered_interfaces' => true,
             'ordered_traits' => true,
             'phpdoc_align' => [
@@ -177,11 +157,7 @@ final class Laravel extends AbstractRuleSet
             ],
             'phpdoc_single_line_var_spacing' => true,
             'phpdoc_summary' => false,
-            'phpdoc_tag_type' => [
-                'tags' => [
-                    'inheritdoc' => 'inline',
-                ],
-            ],
+            'phpdoc_tag_type' => ['tags' => ['inheritdoc' => 'inline']],
             'phpdoc_to_comment' => false,
             'phpdoc_trim' => true,
             'phpdoc_types' => true,
@@ -193,14 +169,10 @@ final class Laravel extends AbstractRuleSet
             'short_scalar_cast' => true,
             'simplified_null_return' => false,
             'single_blank_line_at_eof' => true,
-            'single_class_element_per_statement' => [
-                'elements' => ['const', 'property'],
-            ],
+            'single_class_element_per_statement' => ['elements' => ['const', 'property']],
             'single_import_per_statement' => true,
             'single_line_after_imports' => true,
-            'single_line_comment_style' => [
-                'comment_types' => ['hash'],
-            ],
+            'single_line_comment_style' => ['comment_types' => ['hash']],
             'single_line_empty_body' => true,
             'single_quote' => true,
             'single_space_around_construct' => true,
@@ -216,9 +188,7 @@ final class Laravel extends AbstractRuleSet
             'type_declaration_spaces' => true,
             'types_spaces' => true,
             'unary_operator_spaces' => true,
-            'visibility_required' => [
-                'elements' => ['method', 'property'],
-            ],
+            'visibility_required' => ['elements' => ['method', 'property']],
             'whitespace_after_comma_in_array' => true,
             'yoda_style' => [
                 'always_move_variable' => false,
