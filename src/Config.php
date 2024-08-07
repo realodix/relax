@@ -45,7 +45,7 @@ class Config extends \PhpCsFixer\Config
      */
     public static function create($ruleSet = null)
     {
-        if (! $ruleSet instanceof RuleSetInterface && ! is_string($ruleSet) && $ruleSet !== null) {
+        if (!$ruleSet instanceof RuleSetInterface && !is_string($ruleSet) && $ruleSet !== null) {
             throw new \InvalidArgumentException(
                 'Ruleset must be of type Relax RuleSetInterface, string or null',
             );
@@ -55,7 +55,7 @@ class Config extends \PhpCsFixer\Config
         if (is_string($ruleSet)) {
             $relaxRuleset = 'Realodix\Relax\RuleSet\Sets\\' . ucfirst($ruleSet);
 
-            if (! class_exists($relaxRuleset)) {
+            if (!class_exists($relaxRuleset)) {
                 throw new RulesetNotFoundException($ruleSet);
             }
 

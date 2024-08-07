@@ -42,7 +42,7 @@ class Utils
             }
         }
 
-        if (! \array_key_exists($name, $fixers)) {
+        if (!\array_key_exists($name, $fixers)) {
             throw new \InvalidArgumentException(\sprintf('Fixer "%s" does not exist.', $name));
         }
 

@@ -89,7 +89,7 @@ class RealodixSpec
     public function exampleMethod(null|string|boll $a = null): null|string|boll
     {
         $a = null;
-        if ($a === null || ! $a === true) {
+        if ($a === null || !$a === true) {
             echo 'null';
         }
 
@@ -101,7 +101,7 @@ class RealodixSpec
 
         $c = collect(\Illuminate\Support\Facades\Route::getRoutes()->get())
             ->map(fn(\Illuminate\Routing\Route $route) => $route->uri)
-            ->reject(fn($value) => ! preg_match('/^[a-zA-Z\-]+$/', $value))
+            ->reject(fn($value) => !preg_match('/^[a-zA-Z\-]+$/', $value))
             ->unique()->sort()
             ->toArray();
 

@@ -24,7 +24,7 @@ abstract class IntegrationTestCase extends TestCase
     {
         $fileName = $name;
 
-        if (! is_null($suffix)) {
+        if (!is_null($suffix)) {
             $fileName = $fileName . '-' . $suffix;
         }
 

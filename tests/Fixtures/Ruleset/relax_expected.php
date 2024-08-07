@@ -389,13 +389,6 @@ class relax_actual extends no_unneeded_import_alias
         echo $this->parentMethod();
     }
 
-    public function operator__not_operator_with_successor_space()
-    {
-        if (! true) {
-            echo 'Help!';
-        }
-    }
-
     public function operator__object_operator_without_whitespace()
     {
         $finder = \Symfony\Component\Finder\Finder::create();
