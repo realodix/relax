@@ -766,6 +766,13 @@ class relax_actual extends no_unneeded_import_alias
             2,
         ];
 
+        // array_destructuring
+        $a = [11, 2, 3];
+        [
+            $c,
+            $d,
+        ] = $a;
+
         // arguments
         foo(
             1,
@@ -775,13 +782,13 @@ class relax_actual extends no_unneeded_import_alias
         // parameters
         function foo_trailing_comma_in_multiline(
             $x,
-            $y
+            $y,
         ) {}
 
         // match
         match (true) {
             1 => '1',
-            2 => '2'
+            2 => '2',
         };
 
         // after_heredoc in array
