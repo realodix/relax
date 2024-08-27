@@ -84,8 +84,7 @@ final class Relax extends AbstractRuleSet
             'ordered_imports' => ['sort_algorithm' => 'alpha', 'imports_order' => ['class', 'function', 'const']],
             'single_import_per_statement' => ['group_to_single_imports' => false],
             'space_after_semicolon' => ['remove_in_empty_for_expressions' => true],
-            // TODO: Add 'match' & 'parameters' when PHP 8.0+ is required
-            'trailing_comma_in_multiline' => ['elements' => ['arrays', 'arguments']],
+            'trailing_comma_in_multiline' => ['elements' => ['arguments', 'array_destructuring', 'arrays', 'match', 'parameters']],
             'unary_operator_spaces' => ['only_dec_inc' => true],
             'whitespace_after_comma_in_array' => ['ensure_single_space' => true],
             'phpdoc_align' => [

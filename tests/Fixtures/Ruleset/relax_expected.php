@@ -821,7 +821,7 @@ class relax_actual extends no_unneeded_import_alias
         function om_ensure_single_line(
             $a = 10,
             $b = 20,
-            $c = 30
+            $c = 30,
         ) {}
         sample(
             1,
