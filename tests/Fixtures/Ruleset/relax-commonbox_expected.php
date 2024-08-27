@@ -227,7 +227,7 @@ final class SelfStaticAccessor
 class SingleLineEmptyBody
 {
     public function __construct(
-        int $ruleSet
+        int $ruleSet,
     ) {}
 
     public function basic__single_line_empty_body() {}

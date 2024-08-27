@@ -793,6 +793,13 @@ if ($foo == true) {
             2
         ];
 
+        // array_destructuring
+        $a = [11, 2, 3];
+        [
+            $c,
+            $d
+        ] = $a;
+
         // arguments
         foo(
             1,
