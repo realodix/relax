@@ -101,7 +101,6 @@ class RealodixSpec
 
         $c = collect(\Illuminate\Support\Facades\Route::getRoutes()->get())
             ->map(fn(\Illuminate\Routing\Route $route) => $route->uri)
-            ->reject(fn($value) => !preg_match('/^[a-zA-Z\-]+$/', $value))
             ->unique()->sort()
             ->toArray();
 
@@ -111,6 +110,11 @@ class RealodixSpec
                 $query->where('is_first_click', true);
             },
         ]);
+
+        // not_operator_with_successor_space
+        if (! is_int(1) || !is_string(2)) {
+            echo 'Help!';
+        }
 
         return null;
     }
