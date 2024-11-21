@@ -5,7 +5,7 @@ namespace Realodix\Relax\RuleSet\Sets;
 use Realodix\Relax\RuleSet\AbstractRuleSet;
 
 /**
- * Latest commit 72f3117
+ * Latest commit 6ef7e3c
  * https://github.com/laravel/pint/blob/main/resources/presets/laravel.php
  */
 final class Laravel extends AbstractRuleSet
@@ -124,6 +124,7 @@ final class Laravel extends AbstractRuleSet
             'ordered_interfaces' => true,
             'ordered_traits' => true,
             'php_unit_method_casing' => ['case' => 'snake_case'],
+            'php_unit_set_up_tear_down_visibility' => true,
             'phpdoc_align' => ['align' => 'left', 'spacing' => ['param' => 2]],
             'phpdoc_indent' => true,
             'phpdoc_inline_tag_normalizer' => true,

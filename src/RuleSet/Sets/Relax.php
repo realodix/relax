@@ -58,6 +58,7 @@ final class Relax extends AbstractRuleSet
              */
             'not_operator_with_successor_space' => false,
             'php_unit_method_casing' => false,
+            'php_unit_set_up_tear_down_visibility' => false,
             'phpdoc_tag_type' => false,
             'binary_operator_spaces' => [
                 'default' => 'single_space',
