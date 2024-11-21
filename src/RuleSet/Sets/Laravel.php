@@ -123,6 +123,7 @@ final class Laravel extends AbstractRuleSet
             ],
             'ordered_interfaces' => true,
             'ordered_traits' => true,
+            'php_unit_method_casing' => ['case' => 'snake_case'],
             'phpdoc_align' => ['align' => 'left', 'spacing' => ['param' => 2]],
             'phpdoc_indent' => true,
             'phpdoc_inline_tag_normalizer' => true,

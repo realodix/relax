@@ -57,6 +57,7 @@ final class Relax extends AbstractRuleSet
              * Laravel rules adjustment
              */
             'not_operator_with_successor_space' => false,
+            'php_unit_method_casing' => false,
             'phpdoc_tag_type' => false,
             'binary_operator_spaces' => [
                 'default' => 'single_space',
