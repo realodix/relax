@@ -5,7 +5,7 @@ namespace Realodix\Relax\RuleSet\Sets;
 use Realodix\Relax\RuleSet\AbstractRuleSet;
 
 /**
- * Latest commit 6ef7e3c
+ * Latest commit fecb306
  * https://github.com/laravel/pint/blob/main/resources/presets/laravel.php
  */
 final class Laravel extends AbstractRuleSet
@@ -159,6 +159,7 @@ final class Laravel extends AbstractRuleSet
             'single_class_element_per_statement' => ['elements' => ['const', 'property']],
             'single_import_per_statement' => true,
             'single_line_after_imports' => true,
+            'single_line_comment_spacing' => true,
             'single_line_comment_style' => ['comment_types' => ['hash']],
             'single_line_empty_body' => true,
             'single_quote' => true,

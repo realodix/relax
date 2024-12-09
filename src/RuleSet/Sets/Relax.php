@@ -42,7 +42,6 @@ final class Relax extends AbstractRuleSet
             'phpdoc_types_order' => ['null_adjustment' => 'always_last', 'sort_algorithm' => 'none'],
             'phpdoc_var_annotation_correct_order' => true,
             'simple_to_complex_string_variable' => true,
-            'single_line_comment_spacing' => true,
 
             Fixer\MultilineCommentOpeningClosingAloneFixer::name() => true,
             Fixer\NoImportFromGlobalNamespaceFixer::name() => true,
