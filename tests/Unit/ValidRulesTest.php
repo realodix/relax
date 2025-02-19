@@ -56,7 +56,7 @@ class ValidRulesTest extends TestCase
             $rules = method_exists($ruleSet, 'mainRules') ? $ruleSet->mainRules() : $ruleSet->rules();
 
             foreach (Utils::nativeRules($rules) as $rule => $config) {
-                yield $rulesetName . ':' . $rule => [$rulesetName, $rule, $config];
+                yield $rulesetName.':'.$rule => [$rulesetName, $rule, $config];
             }
         }
     }

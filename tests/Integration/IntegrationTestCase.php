@@ -25,10 +25,10 @@ abstract class IntegrationTestCase extends TestCase
         $fileName = $name;
 
         if (!is_null($suffix)) {
-            $fileName = $fileName . '-' . $suffix;
+            $fileName = $fileName.'-'.$suffix;
         }
 
-        copy(__DIR__ . "/../Fixtures/Ruleset/{$fileName}_actual.php", __DIR__ . "/tmp/{$fileName}.php");
+        copy(__DIR__."/../Fixtures/Ruleset/{$fileName}_actual.php", __DIR__."/tmp/{$fileName}.php");
 
         $this->assertTrue(
             $this->runFixer($name),
@@ -36,8 +36,8 @@ abstract class IntegrationTestCase extends TestCase
         );
 
         $this->assertFileEquals(
-            __DIR__ . "/../Fixtures/Ruleset/{$fileName}_expected.php",
-            __DIR__ . "/tmp/{$fileName}.php",
+            __DIR__."/../Fixtures/Ruleset/{$fileName}_expected.php",
+            __DIR__."/tmp/{$fileName}.php",
             "Result of proceeded fixture fixtures/{$fileName} is not equal to expected.",
         );
     }
@@ -61,7 +61,7 @@ abstract class IntegrationTestCase extends TestCase
 
     protected function clearTempDirectory(): void
     {
-        $files = glob(__DIR__ . '/tmp/*.php');
+        $files = glob(__DIR__.'/tmp/*.php');
 
         foreach ($files as $file) {
             unlink($file);
