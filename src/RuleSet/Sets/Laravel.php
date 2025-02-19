@@ -5,7 +5,7 @@ namespace Realodix\Relax\RuleSet\Sets;
 use Realodix\Relax\RuleSet\AbstractRuleSet;
 
 /**
- * Latest commit fecb306
+ * Latest commit df4438b
  * https://github.com/laravel/pint/blob/main/resources/presets/laravel.php
  */
 final class Laravel extends AbstractRuleSet
@@ -106,6 +106,7 @@ final class Laravel extends AbstractRuleSet
                 'statements' => ['break', 'clone', 'continue', 'echo_print', 'return', 'switch_case', 'yield'],
             ],
             'no_unneeded_braces' => true,
+            'no_unneeded_import_alias' => true,
             'no_unreachable_default_argument_value' => true,
             'no_unset_cast' => true,
             'no_unused_imports' => true,
