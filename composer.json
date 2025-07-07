@@ -7,8 +7,8 @@
     "homepage": "https://github.com/realodix/relax",
     "require": {
         "php": "^7.4 || ^8.0",
-        "friendsofphp/php-cs-fixer": "^3.63",
-        "kubawerlos/php-cs-fixer-custom-fixers": "^3.21",
+        "friendsofphp/php-cs-fixer": "^3.74",
+        "kubawerlos/php-cs-fixer-custom-fixers": "^3.22",
         "symfony/console": "^5.4.41 || ^6.0 || ^7.0"
     },
     "require-dev": {

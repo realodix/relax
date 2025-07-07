@@ -15,9 +15,9 @@ use OtherNamespace\AAC;
 use OtherNamespace\Acme;
 use OtherNamespace\Bar;
 use OtherNamespace\no_leading_import_slash;
+use SingleImportPerStatement\{SIPSA, SIPSAA};
 use SingleImportPerStatement\SIPSB;
 use SingleImportPerStatement\SIPSC;
-use SingleImportPerStatement\{SIPSA, SIPSAA};
 
 use function CCC\AA;
 use function DDD;
