@@ -100,7 +100,9 @@ class RealodixSpec
         }
 
         $c = collect(\Illuminate\Support\Facades\Route::getRoutes()->get())
-            ->map(fn(\Illuminate\Routing\Route $route) => $route->uri)
+            ->map(fn(\Illuminate\Routing\Route $route) =>
+                $route->uri
+            )
             ->unique()->sort()
             ->toArray();
 
