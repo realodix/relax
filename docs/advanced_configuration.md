@@ -19,7 +19,7 @@ $localRules = [
     'array_syntax' => true,
 
     // Add rule or override predefined rule
-    'visibility_required' => true,
+    'modifier_keywords' => true,
 
     // Override predefined rule
     'braces' => false,

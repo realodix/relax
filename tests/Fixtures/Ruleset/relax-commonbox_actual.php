@@ -117,6 +117,20 @@ $inline_constructor_arguments= new class(
 ) {};
 
 /**
+ * modifier_keywords
+ */
+class ModifierKeywords
+{
+    var $a;
+
+    static protected $var_foo2;
+
+    const SAMPLE = 1;
+
+    function A() {}
+}
+
+/**
  * ordered_class_elements
  */
 final class OrderedClassElements
@@ -223,18 +237,4 @@ class TypeDeclarationSpaces
     private bool   $b;
 
     public function __invoke(array   $c) {}
-}
-
-/**
- * visibility_required
- */
-class VisibilityRequired
-{
-    var $a;
-
-    static protected $var_foo2;
-
-    const SAMPLE = 1;
-
-    function A() {}
 }

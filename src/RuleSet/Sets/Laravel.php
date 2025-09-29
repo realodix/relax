@@ -74,6 +74,7 @@ final class Laravel extends AbstractRuleSet
             'magic_method_casing' => true,
             'method_argument_space' => ['on_multiline' => 'ignore'],
             'method_chaining_indentation' => true,
+            'modifier_keywords' => ['elements' => ['method', 'property']],
             'multiline_whitespace_before_semicolons' => ['strategy' => 'no_multi_line'],
             'native_function_casing' => true,
             'native_type_declaration_casing' => true,
@@ -177,7 +178,6 @@ final class Laravel extends AbstractRuleSet
             'type_declaration_spaces' => true,
             'types_spaces' => true,
             'unary_operator_spaces' => true,
-            'visibility_required' => ['elements' => ['method', 'property']],
             'whitespace_after_comma_in_array' => true,
             'yoda_style' => [
                 'always_move_variable' => false,
