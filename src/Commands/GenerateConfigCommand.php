@@ -27,11 +27,11 @@ class GenerateConfigCommand extends Command
     {
         $filename = self::FILE_NAME;
 
-        if ($this->outputFileExists() && ! $this->overwriteExistingFile($input, $output)) {
+        if (file_exists($this->configPath()) && !$this->overwriteExistingFile($input, $output)) {
             return Command::FAILURE;
         }
 
-        if (! $this->generateAndSaveCode($output)) {
+        if (!$this->generateAndSaveCode($output)) {
             return Command::FAILURE;
         }
 
@@ -46,12 +46,12 @@ class GenerateConfigCommand extends Command
      * @param InputInterface $input
      * @param OutputInterface $output
      */
-    protected function overwriteExistingFile($input, $output): bool
+    private function overwriteExistingFile($input, $output): bool
     {
         $io = new SymfonyStyle($input, $output);
-        $filename = $this->getOutputFilename();
+        $filename = $this->configPath();
 
-        if (! $io->confirm("The file '{$filename}' already exists. Overwrite it?", false)) {
+        if (!$io->confirm("The file '{$filename}' already exists. Overwrite it?", false)) {
             $output->writeln('<comment>Not overwriting existing file.</comment>');
 
             return false;
@@ -63,7 +63,7 @@ class GenerateConfigCommand extends Command
     /**
      * Returns the fully-qualified output filename.
      */
-    protected function getOutputFilename(): string
+    private function configPath(): string
     {
         return getcwd().DIRECTORY_SEPARATOR.self::FILE_NAME;
     }
@@ -74,7 +74,7 @@ class GenerateConfigCommand extends Command
      *
      * @param OutputInterface $output
      */
-    protected function generateAndSaveCode($output): bool
+    private function generateAndSaveCode($output): bool
     {
         $code = <<<'CODE'
             <?php
@@ -93,21 +93,12 @@ class GenerateConfigCommand extends Command
                 ->setFinder($finder);
             CODE;
 
-        if (file_put_contents($this->getOutputFilename(), $code) === false) {
+        if (file_put_contents($this->configPath(), $code) === false) {
             $output->writeln('<comment>Failed to write to output file.</comment>');
 
             return false;
         }
 
         return true;
-    }
-
-    /**
-     * Returns true if the output file exists, otherwise false.
-     */
-    protected function outputFileExists(): bool
-    {
-        return file_exists($this->getOutputFilename())
-            && ! is_dir($this->getOutputFilename());
     }
 }
