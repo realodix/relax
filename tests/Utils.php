@@ -10,10 +10,9 @@ class Utils
     public static function ruleSets(): array
     {
         return [
-            new \Realodix\Relax\RuleSet\Sets\Laravel,
-            new \Realodix\Relax\RuleSet\Sets\Relax,
-            new \Realodix\Relax\RuleSet\Sets\RelaxPlus,
-            new \Realodix\Relax\RuleSet\Sets\Spatie,
+            new \Realodix\Relax\Rulesets\Laravel,
+            new \Realodix\Relax\Rulesets\Relax,
+            new \Realodix\Relax\Rulesets\RelaxPlus,
         ];
     }
 
