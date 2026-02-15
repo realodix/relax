@@ -61,7 +61,7 @@ class ConfigTest extends TestCase
 
     public function testOnlyLocalRules(): void
     {
-        $rules = Config::create()->setRules(['foo' => 'bar']);
+        $rules = Config::this()->setRules(['foo' => 'bar']);
 
         $this->assertSame(1, count($rules->getRules()));
         $this->assertSame(Config::LOCAL_RULES_NAME, $rules->getName());

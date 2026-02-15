@@ -30,6 +30,11 @@ class Config extends \PhpCsFixer\Config
             ->setRules();
     }
 
+    public static function this()
+    {
+        return new self(null);
+    }
+
     /**
      * Sets the rules for the configuration.
      */

@@ -29,7 +29,7 @@ composer require --dev realodix/relax
 ```php
 use Realodix\Relax\Config;
 
-return Config::create()
+return Config::this()
     ->setRules([
         '@Realodix/Laravel' => true,
     ]);
