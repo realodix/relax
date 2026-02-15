@@ -18,10 +18,16 @@ class Config extends \PhpCsFixer\Config
         $name = $this->ruleSet ? $this->ruleSet->name() : self::LOCAL_RULES_NAME;
 
         parent::__construct($name);
-        $this->registerCustomFixers(new \PhpCsFixerCustomFixers\Fixers);
-        $this->setFinder(Finder::base()->in(getcwd()));
-        $this->setRiskyAllowed(true);
-        $this->setRules();
+        $this
+            ->setFinder(Finder::base()->in(getcwd()))
+            ->setRiskyAllowed(true)
+            ->registerCustomFixers(new \PhpCsFixerCustomFixers\Fixers)
+            ->registerCustomRuleSets([
+                new \Realodix\Relax\Rulesets\Laravel,
+                new \Realodix\Relax\Rulesets\Relax,
+                new \Realodix\Relax\Rulesets\RelaxPlus,
+            ])
+            ->setRules();
     }
 
     /**

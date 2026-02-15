@@ -4,38 +4,26 @@ namespace Realodix\Relax\Tests\Integration;
 
 class RelaxRulesetTest extends IntegrationTestCase
 {
-    public function testRelaxRuleset(): void
+    /**
+     * @runInSeparateProcess
+     *
+     * @dataProvider provideAllRelaxRulesets
+     */
+    public function testRuleset($name, $suffix): void
     {
-        $this->testFixture('relax');
+        $this->testFixture($name, $suffix);
     }
 
-    public function testRelaxBox(): void
+    public static function provideAllRelaxRulesets(): array
     {
-        $this->testFixture('relax', 'commonbox');
-    }
-
-    public function testRelaxBoxTwo(): void
-    {
-        $this->testFixture('relax', 'commonbox2');
-    }
-
-    public function testRelaxCustom(): void
-    {
-        $this->testFixture('relax', 'custom');
-    }
-
-    public function testRelaxCleanup(): void
-    {
-        $this->testFixture('relax', 'deprecated');
-    }
-
-    public function testRelaxPlusRuleset(): void
-    {
-        $this->testFixture('relaxplus');
-    }
-
-    public function testRealodixSpec(): void
-    {
-        $this->testFixture('realodixspec');
+        return [
+            ['relax', null],
+            ['relax', 'commonbox'],
+            ['relax', 'commonbox2'],
+            ['relax', 'custom'],
+            ['relax', 'deprecated'],
+            ['relaxplus', null],
+            ['realodixspec', null],
+        ];
     }
 }

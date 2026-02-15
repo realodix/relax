@@ -12,7 +12,8 @@ class ValidRulesTest extends TestCase
      */
     public function testValidFixerConfiguration($ruleSet): void
     {
-        $ruleSet = new \PhpCsFixer\RuleSet\RuleSet($ruleSet->rules());
+        $rules = Utils::nativeRules($ruleSet->getRules());
+        $ruleSet = new \PhpCsFixer\RuleSet\RuleSet($rules);
         $factory = Utils::fixerFactory()
             ->useRuleSet($ruleSet);
 
@@ -52,8 +53,8 @@ class ValidRulesTest extends TestCase
     public static function provideAllRulesFromRulesets(): iterable
     {
         foreach (Utils::ruleSets() as $ruleSet) {
-            $rulesetName = $ruleSet->name();
-            $rules = method_exists($ruleSet, 'mainRules') ? $ruleSet->mainRules() : $ruleSet->rules();
+            $rulesetName = $ruleSet->getName();
+            $rules = $ruleSet->getRules();
 
             foreach (Utils::nativeRules($rules) as $rule => $config) {
                 yield $rulesetName.':'.$rule => [$rulesetName, $rule, $config];
