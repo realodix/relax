@@ -61,4 +61,16 @@ class Utils
 
         return $rules;
     }
+
+    public static function baseConfig()
+    {
+        $finder = (new \PhpCsFixer\Finder)->in('./tests/Integration/tmp');
+
+        return (new \PhpCsFixer\Config)
+            ->registerCustomFixers(new \PhpCsFixerCustomFixers\Fixers)
+            ->registerCustomRuleSets(self::ruleSets())
+            ->setRiskyAllowed(true)
+            ->setFinder($finder)
+            ->setUsingCache(false);
+    }
 }

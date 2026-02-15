@@ -1,11 +1,6 @@
 <?php
 
-use PhpCsFixer\Finder;
-use Realodix\Relax\Config;
-use Realodix\Relax\RuleSet\Sets\RelaxPlus;
+use Realodix\Relax\Tests\Utils;
 
-$finder = (new Finder)->in('./tests/Integration/tmp');
-
-return Config::create(new RelaxPlus)
-    ->setFinder($finder)
-    ->setUsingCache(false);
+return Utils::baseConfig()
+    ->setRules(['@Realodix/RelaxPlus' => true]);
