@@ -3,8 +3,9 @@
 use Realodix\Relax\Config;
 use Realodix\Relax\Finder;
 
-$localRules = [
+$rules = [
     // ...
+    '@Realodix/Relax' => true,
 ];
 
 $finder = Finder::base()
@@ -12,8 +13,8 @@ $finder = Finder::base()
     ->append(['.php-cs-fixer.dist.php', 'bin/relax'])
     ->notName('*_actual.php');
 
-return Config::create('relax')
-    ->setRules($localRules)
+return Config::this()
+    ->setRules($rules)
     ->setFinder($finder)
     ->setParallelConfig(\PhpCsFixer\Runner\Parallel\ParallelConfigFactory::detect())
     ->setCacheFile(__DIR__.'/.tmp/.php-cs-fixer.cache');
