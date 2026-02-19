@@ -56,7 +56,7 @@ final class Relax extends AbstractRuleSetDefinition implements RuleSetDefinition
             'class_attributes_separation' => [
                 'elements' => [
                     'trait_import' => 'none',
-                    'const' => 'none',
+                    // 'const' => 'none',
                     'property' => 'one',
                     'method' => 'one',
                 ],

@@ -75,7 +75,6 @@ class ClassAttributesSeparation
     private $a;
 
     private $b;
-
     /**
      * @var int
      */
@@ -86,6 +85,7 @@ class ClassAttributesSeparation
 
     const C3 = 3;
     const C4 = 4;
+
     const C5 = 5;
 
     protected function foo() {}
@@ -139,7 +139,6 @@ final class OrderedClassElements
     use TraiB;
 
     protected static $protStatProp;
-
     const C1 = 1;
     const C2 = 2;
 
