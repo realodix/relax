@@ -447,7 +447,6 @@ class relax_actual extends no_unneeded_import_alias
      * @param string $foo
      * @param bool $bar Bar
      * @return int Return the number of changes.
-     *
      * @throws \Exception|\RuntimeException foo
      */
     public function phpdoc__phpdoc_order($foo, $bar) {}
@@ -872,14 +871,13 @@ class relax_actual extends no_unneeded_import_alias
      * @see
      *
      * @param string $a
-     * @return void
      *
+     * @return void
      * @throws \Exception
      * @throws \RuntimeException
      *
      * @psalm-pure
      * @psalm-template T
-     *
      * @phpstan-pure
      * @phpstan-template T
      */

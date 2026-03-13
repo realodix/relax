@@ -83,28 +83,7 @@ final class Relax extends AbstractRuleSetDefinition implements RuleSetDefinition
                 'tags' => ['method', 'param', 'property', 'property-read', 'property-write', 'throws', 'type', 'var'],
             ],
             'phpdoc_separation' => [
-                'groups' => [
-                    ['param', 'param-out', 'return'], ['var', 'readonly'],
-                    ['property', 'property-read', 'property-write', 'method'],
-                    ['template', 'extends', 'implements', 'template-extends', 'template-implements', 'template-covariant', 'template-use'],
-                    [
-                        'author', 'copyright', 'license', 'category', 'package', 'subpackage', 'deprecated', 'since',
-                        'link', 'see',
-                    ],
-                    // https://github.com/sebastianbergmann/phpunit-documentation-english/blob/main/src/annotations.rst
-                    ['test', 'testWith', 'dataProvider', 'covers', 'group', 'uses'], ['runInSeparateProcess', 'preserveGlobalState'],
-                    ['runTestsInSeparateProcesses', 'runClassInSeparateProcess'],
-                    // https://psalm.dev/docs/annotating_code/supported_annotations/
-                    ['psalm-template', 'psalm-import-type', 'psalm-property', 'psalm-property-read', 'psalm-property-write',
-                        'psalm-param', 'psalm-return', 'psalm-type', 'psalm-suppress', 'psalm-pure', 'psalm-param-out',
-                        'psalm-assert', 'psalm-assert-if-true', 'psalm-assert-if-false', 'psalm-if-this-is', 'psalm-this-out',
-                    ],
-                    // https://phpstan.org/writing-php-code/phpdocs-basics
-                    ['phpstan-template', 'phpstan-import-type', 'phpstan-property', 'phpstan-property-read', 'phpstan-property-write',
-                        'phpstan-param', 'phpstan-return', 'phpstan-type', 'phpstan-pure', 'phpstan-impure',
-                        'phpstan-assert', 'phpstan-assert-if-true', 'phpstan-assert-if-false', 'phpstan-self-out', 'phpstan-this-out',
-                    ],
-                ],
+                'skip_unlisted_annotations' => true,
             ],
         ];
     }

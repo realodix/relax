@@ -138,6 +138,7 @@ class RealodixSpec
 
     /**
      * @test
+     *
      * @dataProvider validTypesProvider
      */
     public function test_b(?int $a): void {}

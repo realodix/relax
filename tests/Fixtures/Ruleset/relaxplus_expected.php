@@ -148,6 +148,7 @@ class MyTest extends \PhpUnit\FrameWork\TestCase
 {
     /**
      * @covers \Project\NameSpace\Something
+     *
      * @uses \Project\Test\Util
      */
     public function testPhpUnitFqcnAnnotation() {}
