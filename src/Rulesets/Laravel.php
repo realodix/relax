@@ -5,7 +5,7 @@ namespace Realodix\Relax\Rulesets;
 use PhpCsFixer\RuleSet\RuleSetDefinitionInterface;
 
 /**
- * Latest commit c7b1b72
+ * Latest commit 5a56e16
  * https://github.com/laravel/pint/blob/main/resources/presets/laravel.php
  */
 final class Laravel extends AbstractRuleSetDefinition implements RuleSetDefinitionInterface
@@ -60,7 +60,19 @@ final class Laravel extends AbstractRuleSetDefinition implements RuleSetDefiniti
             'elseif' => true,
             'encoding' => true,
             'full_opening_tag' => true,
-            'fully_qualified_strict_types' => false,
+            'fully_qualified_strict_types' => [
+                'import_symbols' => true,
+                'phpdoc_tags' => [
+                    'extends', 'implements', 'mixin', 'param-closure-this', 'param-out', 'param', 'property-read',
+                    'property-write', 'property', 'return', 'see', 'throws', 'use', 'var',
+                    'phpstan-assert-if-false', 'phpstan-assert-if-true', 'phpstan-assert', 'phpstan-extends',
+                    'phpstan-implements', 'phpstan-param-out', 'phpstan-param', 'phpstan-property-read',
+                    'phpstan-property-write', 'phpstan-property', 'phpstan-require-extends', 'phpstan-require-implements',
+                    'phpstan-return', 'phpstan-self-out', 'phpstan-this-out', 'phpstan-use', 'phpstan-var',
+                    'psalm-extends', 'psalm-implements', 'psalm-param', 'psalm-property-read', 'psalm-property-write',
+                    'psalm-property', 'psalm-return', 'psalm-use', 'psalm-var',
+                ],
+            ],
             'function_declaration' => true,
             'general_phpdoc_tag_rename' => true,
             'heredoc_to_nowdoc' => true,
