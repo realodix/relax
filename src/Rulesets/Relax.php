@@ -42,9 +42,10 @@ final class Relax extends AbstractRuleSetDefinition implements RuleSetDefinition
             Fixer\PhpdocSelfAccessorFixer::name() => true,
             Fixer\PhpdocTypesTrimFixer::name() => true,
 
-            /*
-             * Laravel rules adjustment
-             */
+            //
+            // Laravel rules adjustment
+            //
+            'fully_qualified_strict_types' => false,
             'not_operator_with_successor_space' => false,
             'php_unit_method_casing' => false,
             'php_unit_set_up_tear_down_visibility' => false,
