@@ -1,6 +1,6 @@
 <?php
 
-namespace Realodix\Relax\RuleSet;
+namespace Realodix\Relax\Rulesets;
 
 interface RuleSetInterface
 {
