@@ -402,8 +402,8 @@ class relax_actual extends no_unneeded_import_alias
             || false;
 
         // non boolean operators
-        $foo = 2 >
-            1;
+        $foo = 2
+            > 1;
     }
 
     public function operator__ternary_operator_spaces()
@@ -795,7 +795,7 @@ class relax_actual extends no_unneeded_import_alias
             'foo',
             <<<'EOD'
                 bar
-            EOD
+            EOD,
         ];
     }
 
