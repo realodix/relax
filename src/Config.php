@@ -3,20 +3,17 @@
 namespace Realodix\Relax;
 
 use PhpCsFixer\ConfigInterface;
-use Realodix\Relax\Rulesets\RuleSetInterface;
 
 class Config extends \PhpCsFixer\Config
 {
-    const LOCAL_RULES_NAME = 'Local Rules';
-
-    private ?RuleSetInterface $ruleSet;
-
-    public function __construct(?RuleSetInterface $ruleSet)
+    public function __construct(?string $name)
     {
-        $this->ruleSet = $ruleSet;
-        $name = $this->ruleSet ? $this->ruleSet->name() : self::LOCAL_RULES_NAME;
+        if ($name === null) {
+            parent::__construct();
+        } else {
+            parent::__construct($name);
+        }
 
-        parent::__construct($name);
         $this
             ->setFinder(Finder::base()->in(getcwd()))
             ->setRiskyAllowed(true)
@@ -29,9 +26,9 @@ class Config extends \PhpCsFixer\Config
             ->setRules();
     }
 
-    public static function this(): self
+    public static function this(?string $name = null): self
     {
-        return new self(null);
+        return new self($name);
     }
 
     /**
@@ -39,8 +36,6 @@ class Config extends \PhpCsFixer\Config
      */
     public function setRules(array $rules = []): ConfigInterface
     {
-        $ruleSet = $this->ruleSet ? $this->ruleSet->rules() : [];
-
-        return parent::setRules(array_merge($ruleSet, $rules));
+        return parent::setRules($rules);
     }
 }
